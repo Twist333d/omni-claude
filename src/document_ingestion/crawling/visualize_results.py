@@ -1,5 +1,6 @@
 import os
 import json
+from urllib.parse import urlparse
 
 def analyze_content_structure(data, output_dir="data/formatted/"):
     if not os.path.exists(output_dir):
@@ -7,6 +8,9 @@ def analyze_content_structure(data, output_dir="data/formatted/"):
 
     # Number of URLs parsed
     num_urls = len(data)
+
+    # Dictionary to hold URLs grouped by root domain
+    urls_by_root = {}
 
     # Sample files
     sample_markdown = []
@@ -16,9 +20,23 @@ def analyze_content_structure(data, output_dir="data/formatted/"):
         sample_markdown.append(f"# {item['metadata']['sourceURL']}\n{item['markdown']}")
         sample_content.append(f"# {item['metadata']['sourceURL']}\n{item['content']}")
 
-    # Writing summary stats
+        # Parse URL to get the root domain
+        parsed_url = urlparse(item['metadata']['sourceURL'])
+        root_domain = parsed_url.netloc
+
+        # Group URLs by root domain
+        if root_domain not in urls_by_root:
+            urls_by_root[root_domain] = []
+        urls_by_root[root_domain].append(item['metadata']['sourceURL'])
+
+    # Writing summary stats including URLs by root domain
     with open(os.path.join(output_dir, 'summary.txt'), 'w', encoding='utf-8') as f:
-        f.write(f"Number of URLs parsed: {num_urls}\n")
+        f.write(f"Number of URLs parsed: {num_urls}\n\n")
+        f.write("URLs by root domain:\n")
+        for root, urls in urls_by_root.items():
+            f.write(f"\n{root}:\n")
+            for url in urls:
+                f.write(f"  - {url}\n")
 
     # Writing sample markdown file
     with open(os.path.join(output_dir, 'sample_markdown.md'), 'w', encoding='utf-8') as f:
