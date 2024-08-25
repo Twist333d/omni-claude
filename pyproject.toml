@@ -11,6 +11,7 @@ anthropic = "^0.34.1"
 openai = "^1.42.0"
 firecrawl-py = "^0.0.20"
 chromadb = "^0.5.5"
+colorama = "^0.4.6"
 
 
 [build-system]
