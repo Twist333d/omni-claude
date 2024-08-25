@@ -13,6 +13,19 @@ import requests
 load_dotenv()
 
 
+def update_job_file(job_id, url, status):
+    job_file = "jobs.json"  # Changed from "active_jobs.json"
+    jobs = {}
+    if os.path.exists(job_file):
+        with open(job_file, 'r') as f:
+            jobs = json.load(f)
+
+    jobs[job_id] = {"url": url, "status": status}
+
+    with open(job_file, 'w') as f:
+        json.dump(jobs, f, indent=2)
+
+
 class FirecrawlScraper:
     def __init__(self):
         self.api_key = os.getenv("FIRECRAWL_API_KEY")
@@ -21,31 +34,13 @@ class FirecrawlScraper:
         self.interrupt_received = False
         self.api_base_url = "https://api.firecrawl.dev/v0"
 
-    def signal_handler(self, signum, frame):
-        print("\nInterrupt received. Cancelling job...")
-        self.interrupt_received = True
-        if self.current_job_id:
-            self.cancel_job(self.current_job_id)
-
-    def cancel_job(self, job_id):
-        url = f"{self.api_base_url}/crawl/cancel/{job_id}"
-        headers = {"Authorization": f"Bearer {self.api_key}"}
-        try:
-            response = requests.delete(url, headers=headers)
-            response.raise_for_status()
-            result = response.json()
-            if result.get('status') == 'cancelled':
-                print(f"Job {job_id} cancelled successfully.")
-            else:
-                print(f"Unexpected response when cancelling job {job_id}: {result}")
-        except requests.RequestException as e:
-            print(f"Error cancelling job {job_id}: {str(e)}")
-
     def crawl_url(self, base_url, max_pages):
+        self.base_url = base_url  # Store base_url as an instance variable
         params = {
             'crawlerOptions': {
                 'includes': [
-                    "/en/latest/*",
+                    "/guides/*",
+                    "/reference/python/*",
                 ],
                 'excludes': [
                     # Add any patterns here you want to exclude, if any
@@ -65,25 +60,51 @@ class FirecrawlScraper:
         self.current_job_id = crawl_result['jobId']
 
         print(f"Crawl job started for {base_url}. Job ID: {self.current_job_id}")
-        print("Checking status every 5 seconds...")
+        update_job_file(self.current_job_id, base_url, "pending")
+        print("Checking status every 30 seconds...")
 
         while not self.interrupt_received:
             time.sleep(30)
             status = self.app.check_crawl_status(self.current_job_id)
-            print(f"Crawl job status: {status['status']} - {status['current']}/{status['total']} pages processed. "
-                  f"Re-checking in 30 seconds...")
+            print(
+                f"[STATUS] Job {self.current_job_id}: {status['status']} - {status['current']}/{status['total']} pages processed.")
 
             if status['status'] == 'completed':
+                update_job_file(self.current_job_id, base_url, "completed")
                 return status['data']
             if status['status'] == 'failed':
-                if self.interrupt_received:
-                    print("Crawl job was cancelled.")
-                    return None
-                else:
-                    raise Exception(f"Crawl job failed: {status.get('error', 'Unknown error')}")
+                update_job_file(self.current_job_id, base_url, "failed")
+                raise Exception(f"Crawl job failed: {status.get('error', 'Unknown error')}")
+            if self.interrupt_received:
+                print("[INFO] Crawl interrupted by user.")
+                return None
 
         print("Crawl interrupted by user.")
+        update_job_file(self.current_job_id, base_url, "cancelled")
         return None
+
+
+    def signal_handler(self, signum, frame):
+        print("\n[INFO] Interrupt received. Cancelling job...")
+        self.interrupt_received = True
+        if self.current_job_id:
+            self.cancel_job(self.current_job_id)
+            sys.exit(0)  # Exit immediately after cancellation
+
+    def cancel_job(self, job_id):
+        url = f"{self.api_base_url}/crawl/cancel/{job_id}"
+        headers = {"Authorization": f"Bearer {self.api_key}"}
+        try:
+            response = requests.delete(url, headers=headers)
+            response.raise_for_status()
+            result = response.json()
+            if result.get('status') == 'cancelled':
+                print(f"[INFO] Job {job_id} cancelled successfully.")
+                update_job_file(job_id, self.base_url, "cancelled")
+            else:
+                print(f"[WARNING] Unexpected response when cancelling job {job_id}: {result}")
+        except requests.RequestException as e:
+            print(f"[ERROR] Error cancelling job {job_id}: {str(e)}")
 
 def save_raw_data(url, data):
     parsed_url = urlparse(url)
@@ -107,13 +128,17 @@ def scrape_and_save(base_url, max_pages):
     scraper = FirecrawlScraper()
     signal.signal(signal.SIGINT, scraper.signal_handler)
 
-    raw_data = scraper.crawl_url(base_url, max_pages)
-    if raw_data:
-        filename = save_raw_data(base_url, raw_data)
-        print(f"Crawl completed. Data saved to: {filename}")
-        return filename
-    else:
-        print("Crawl was interrupted. No data saved.")
+    try:
+        raw_data = scraper.crawl_url(base_url, max_pages)
+        if raw_data:
+            filename = save_raw_data(base_url, raw_data)
+            print(f"[INFO] Crawl completed. Data saved to: {filename}")
+            return filename
+        else:
+            print("[INFO] Crawl was interrupted. No data saved.")
+            return None
+    except SystemExit:
+        print("[INFO] Script terminated due to job cancellation.")
         return None
 
 def view_results(filename):
@@ -139,6 +164,6 @@ def view_results(filename):
         print(f"\n... and {len(crawled_data['data']) - 5} more pages")
 
 if __name__ == "__main__":
-    base_url = "https://docs.python-telegram-bot.org/"
+    base_url = "https://supabase.com/docs/"
     result_file = scrape_and_save(base_url, max_pages=25)  # Set max_pages high enough to capture all pages
     view_results(result_file)
