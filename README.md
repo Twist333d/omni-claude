@@ -1,30 +1,40 @@
-Project structure:
-This structure aligns more closely with your feature template:
+# RAG v0.1
 
-Document Ingestion Layer:
+## Overview
+This project implements a Retrieval-Augmented Generation (RAG) system for improving LLM responses with external knowledge.
 
-scraping.py: Handles interaction with FireCrawl API
-chunking.py: Implements the chunking strategy
-embedding.py: Manages embedding generation using OpenAI's API
+## Features
+- Document Ingestion: Crawl and store web content using FireCrawl API
+- Vector Database: Store and retrieve document chunks and embeddings using Chroma DB
+- Query Processing: Handle query processing and relevance determination
+- LLM Integration: Interact with Claude 3 Sonnet for generating responses
 
+## Setup
+1. Install dependencies:
+    ```
+    poetry install
+    ```
+   
+2. Set up environment variables:
+- Create a `.env` file in the project root
+- Add the following variables:
+  ```
+  FIRECRAWL_API_KEY=your_firecrawl_api_key
+  OPENAI_API_KEY=your_openai_api_key
+  ```
 
-Vector Database:
+## Usage
+(To be implemented)
 
-chroma_db.py: Implements Chroma DB integration for storing and retrieving document chunks and embeddings
+## Testing
+Run tests using pytest:
+    ```python
+    pytest tests/
 
+## Acknowledgements
+- FireCrawl
+- ChromaDB
+- Anthropic
 
-Query Processing Engine:
-
-engine.py: Handles query processing and relevance determination
-
-
-LLM Integration Layer:
-
-claude_integration.py: Manages interaction with Claude 3 Sonnet
-
-
-Additional components:
-
-utils/config.py: Centralized configuration management
-main.py: Entry point for the application
-data/raw/: Directory to store raw scraped data if needed
+## License
+(Add license information)
