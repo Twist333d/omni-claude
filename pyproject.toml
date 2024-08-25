@@ -12,6 +12,7 @@ openai = "^1.42.0"
 firecrawl-py = "^0.0.20"
 chromadb = "^0.5.5"
 colorama = "^0.4.6"
+requests = "^2.32.3"
 
 
 [build-system]

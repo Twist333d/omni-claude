@@ -5,67 +5,95 @@ from datetime import datetime
 from firecrawl import FirecrawlApp
 from dotenv import load_dotenv
 from urllib.parse import urlparse
-import re
+import signal
+import sys
+import requests
 
 
 load_dotenv()
 
+
 class FirecrawlScraper:
-    def __init__(self, max_pages, base_urls):
+    def __init__(self):
         self.api_key = os.getenv("FIRECRAWL_API_KEY")
         self.app = FirecrawlApp(api_key=self.api_key)
-        self.max_pages = max_pages
-        self.base_urls = base_urls
+        self.current_job_id = None
+        self.interrupt_received = False
+        self.api_base_url = "https://api.firecrawl.dev/v0"
 
-    def crawl_url(self, url):
+    def signal_handler(self, signum, frame):
+        print("\nInterrupt received. Cancelling job...")
+        self.interrupt_received = True
+        if self.current_job_id:
+            self.cancel_job(self.current_job_id)
+
+    def cancel_job(self, job_id):
+        url = f"{self.api_base_url}/crawl/cancel/{job_id}"
+        headers = {"Authorization": f"Bearer {self.api_key}"}
+        try:
+            response = requests.delete(url, headers=headers)
+            response.raise_for_status()
+            result = response.json()
+            if result.get('status') == 'cancelled':
+                print(f"Job {job_id} cancelled successfully.")
+            else:
+                print(f"Unexpected response when cancelling job {job_id}: {result}")
+        except requests.RequestException as e:
+            print(f"Error cancelling job {job_id}: {str(e)}")
+
+    def crawl_url(self, base_url, max_pages):
         params = {
             'crawlerOptions': {
-                'limit': self.max_pages,
-                'maxDepth': 10,
+                'includes': [
+                    "/en/latest/*",
+                ],
+                'excludes': [
+                    # Add any patterns here you want to exclude, if any
+                ],
+                'limit': max_pages,
+                'maxDepth': 5,
                 'allowBackwardCrawling': True,
                 'allowExternalContentLinks': False,
             },
             'pageOptions': {
-                'onlyMainContent': True
+                'onlyMainContent': False # want to get all footers, navi, headers
             }
         }
 
-        print(f"Starting crawl for: {url}")
-        crawl_result = self.app.crawl_url(url, params=params, wait_until_done=False)
-        job_id = crawl_result['jobId']
+        print(f"Starting crawl for: {base_url}")
+        crawl_result = self.app.crawl_url(base_url, params=params, wait_until_done=False)
+        self.current_job_id = crawl_result['jobId']
 
-        print(f"Crawl job started for {url}. Job ID: {job_id}")
+        print(f"Crawl job started for {base_url}. Job ID: {self.current_job_id}")
         print("Checking status every 5 seconds...")
 
-        while True:
-            time.sleep(5)
-            status = self.app.check_crawl_status(job_id)
-            print(f"Crawl job status for {url}: {status['status']} - {status['current']}/{status['total']} pages "
-                  f"processed. Re-checking in 5 seconds...")
+        while not self.interrupt_received:
+            time.sleep(30)
+            status = self.app.check_crawl_status(self.current_job_id)
+            print(f"Crawl job status: {status['status']} - {status['current']}/{status['total']} pages processed. "
+                  f"Re-checking in 30 seconds...")
 
             if status['status'] == 'completed':
                 return status['data']
-            elif status['status'] == 'failed':
-                raise Exception(f"Crawl job failed for {url}: {status.get('error', 'Unknown error')}")
+            if status['status'] == 'failed':
+                if self.interrupt_received:
+                    print("Crawl job was cancelled.")
+                    return None
+                else:
+                    raise Exception(f"Crawl job failed: {status.get('error', 'Unknown error')}")
 
-    def crawl_all_urls(self):
-        all_data = []
-        for url in self.base_urls:
-            try:
-                data = self.crawl_url(url)
-                all_data.extend(data)
-            except Exception as e:
-                print(f"Error crawling {url}: {str(e)}")
-        return all_data
+        print("Crawl interrupted by user.")
+        return None
 
 def save_raw_data(url, data):
     parsed_url = urlparse(url)
+    print("Printing parsed url:", parsed_url)
     base_name = parsed_url.netloc + parsed_url.path.replace('/', '_')
     filename = f"data/raw/{base_name}.json"
     os.makedirs(os.path.dirname(filename), exist_ok=True)
 
     content = {
-        "url": url,
+        "base_url": url,
         "timestamp": datetime.now().isoformat(),
         "data": data
     }
@@ -75,19 +103,29 @@ def save_raw_data(url, data):
 
     return filename
 
-def scrape_and_save(base_urls, max_pages):
-    scraper = FirecrawlScraper(max_pages=max_pages, base_urls=base_urls)
-    raw_data = scraper.crawl_all_urls()
-    filename = save_raw_data("multiple_urls", raw_data)
-    print(f"Crawl completed. Data saved to: {filename}")
-    return filename
+def scrape_and_save(base_url, max_pages):
+    scraper = FirecrawlScraper()
+    signal.signal(signal.SIGINT, scraper.signal_handler)
+
+    raw_data = scraper.crawl_url(base_url, max_pages)
+    if raw_data:
+        filename = save_raw_data(base_url, raw_data)
+        print(f"Crawl completed. Data saved to: {filename}")
+        return filename
+    else:
+        print("Crawl was interrupted. No data saved.")
+        return None
 
 def view_results(filename):
+    if not filename:
+        print("No results to view.")
+        return
+
     with open(filename, 'r') as f:
         crawled_data = json.load(f)
 
     print(f"\nCrawl Results:")
-    print(f"URL: {crawled_data['url']}")
+    print(f"URL: {crawled_data['base_url']}")
     print(f"Timestamp: {crawled_data['timestamp']}")
     print(f"Number of pages crawled: {len(crawled_data['data'])}")
 
@@ -100,16 +138,7 @@ def view_results(filename):
     if len(crawled_data['data']) > 5:
         print(f"\n... and {len(crawled_data['data']) - 5} more pages")
 
-# Test the scraping functionality
-
-
-# Test the scraping functionality
 if __name__ == "__main__":
-    base_urls = [
-        "https://docs.python-telegram-bot.org/en/v21.4/telegram.html",
-        "https://docs.python-telegram-bot.org/en/v21.4/telegram.ext.html",
-        "https://docs.python-telegram-bot.org/en/v21.4/telegram_auxil.html",
-        "https://docs.python-telegram-bot.org/en/v21.4/examples.html"
-    ]
-    result_file = scrape_and_save(base_urls, max_pages=3)  # Adjust max_pages as needed
+    base_url = "https://docs.python-telegram-bot.org/"
+    result_file = scrape_and_save(base_url, max_pages=25)  # Set max_pages high enough to capture all pages
     view_results(result_file)
