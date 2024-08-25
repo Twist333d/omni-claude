@@ -5,24 +5,28 @@ from datetime import datetime
 from firecrawl import FirecrawlApp
 from dotenv import load_dotenv
 from urllib.parse import urlparse
+import re
+
 
 load_dotenv()
 
 class FirecrawlScraper:
-    def __init__(self, max_pages):
+    def __init__(self, max_pages, base_urls):
         self.api_key = os.getenv("FIRECRAWL_API_KEY")
         self.app = FirecrawlApp(api_key=self.api_key)
         self.max_pages = max_pages
+        self.base_urls = base_urls
 
     def crawl_url(self, url):
         params = {
             'crawlerOptions': {
                 'limit': self.max_pages,
-                'maxDepth': 4,
-                "allowBackwardCrawling": True,
+                'maxDepth': 10,
+                'allowBackwardCrawling': True,
+                'allowExternalContentLinks': False,
             },
             'pageOptions': {
-                'onlyMainContent': False # we want the markdown
+                'onlyMainContent': True
             }
         }
 
@@ -30,19 +34,29 @@ class FirecrawlScraper:
         crawl_result = self.app.crawl_url(url, params=params, wait_until_done=False)
         job_id = crawl_result['jobId']
 
-        print(f"Crawl job started. Job ID: {job_id}")
+        print(f"Crawl job started for {url}. Job ID: {job_id}")
         print("Checking status every 5 seconds...")
 
         while True:
-            time.sleep(5)  # Check status every 5 seconds
+            time.sleep(5)
             status = self.app.check_crawl_status(job_id)
-            print(f"Crawl job status: {status['status']} - {status['current']}/{status['total']} pages processed. "
-                  f"Re-checking status every 5 seconds...")
+            print(f"Crawl job status for {url}: {status['status']} - {status['current']}/{status['total']} pages "
+                  f"processed. Re-checking in 5 seconds...")
 
             if status['status'] == 'completed':
                 return status['data']
             elif status['status'] == 'failed':
-                raise Exception(f"Crawl job failed: {status.get('error', 'Unknown error')}")
+                raise Exception(f"Crawl job failed for {url}: {status.get('error', 'Unknown error')}")
+
+    def crawl_all_urls(self):
+        all_data = []
+        for url in self.base_urls:
+            try:
+                data = self.crawl_url(url)
+                all_data.extend(data)
+            except Exception as e:
+                print(f"Error crawling {url}: {str(e)}")
+        return all_data
 
 def save_raw_data(url, data):
     parsed_url = urlparse(url)
@@ -61,10 +75,10 @@ def save_raw_data(url, data):
 
     return filename
 
-def scrape_and_save(url, max_pages):
-    scraper = FirecrawlScraper(max_pages=max_pages)
-    raw_data = scraper.crawl_url(url)
-    filename = save_raw_data(url, raw_data)
+def scrape_and_save(base_urls, max_pages):
+    scraper = FirecrawlScraper(max_pages=max_pages, base_urls=base_urls)
+    raw_data = scraper.crawl_all_urls()
+    filename = save_raw_data("multiple_urls", raw_data)
     print(f"Crawl completed. Data saved to: {filename}")
     return filename
 
@@ -91,6 +105,11 @@ def view_results(filename):
 
 # Test the scraping functionality
 if __name__ == "__main__":
-    test_url = "https://docs.python-telegram-bot.org/en/v21.4/"
-    result_file = scrape_and_save(test_url, max_pages=5)
+    base_urls = [
+        "https://docs.python-telegram-bot.org/en/v21.4/telegram.html",
+        "https://docs.python-telegram-bot.org/en/v21.4/telegram.ext.html",
+        "https://docs.python-telegram-bot.org/en/v21.4/telegram_auxil.html",
+        "https://docs.python-telegram-bot.org/en/v21.4/examples.html"
+    ]
+    result_file = scrape_and_save(base_urls, max_pages=3)  # Adjust max_pages as needed
     view_results(result_file)
