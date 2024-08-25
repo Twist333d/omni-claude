@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "rag-doc"
+version = "0.1.0"
+description = ""
+authors = ["AZ <azuev@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+anthropic = "^0.34.1"
+openai = "^1.42.0"
+firecrawl-py = "^0.0.20"
+chromadb = "^0.5.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
