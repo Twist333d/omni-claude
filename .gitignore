@@ -290,3 +290,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 structure.txt
+
+# Parsed docs
+/src/document_ingestion/crawling/data/raw
+/src/document_ingestion/crawling/data/formatted
