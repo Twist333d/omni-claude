@@ -14,7 +14,7 @@ logger = setup_logger(__name__, "chunking.log")
 
 # Constants
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-INPUT_FILE = os.path.join(RAW_DATA_DIR, "supabase.com_docs_.json")
+INPUT_FILE = os.path.join(RAW_DATA_DIR, "supabase.com_docs_1.json")
 OUTPUT_FILE = os.path.join(BASE_DIR, "src", "document_ingestion", "data", "processed", "chunked_supabase_docs.json")
 TARGET_CHUNK_SIZE = 1000
 CHUNK_SIZE_TOLERANCE = 0.2
