@@ -31,7 +31,7 @@ def save_raw_data(url, data):
     parsed_url = urlparse(url)
     print("Printing parsed url:", parsed_url)
     base_name = parsed_url.netloc + parsed_url.path.replace('/', '_')
-    filename = f"crawling/data/raw/{base_name}.json"
+    filename = f"data/raw/{base_name}.json"
     os.makedirs(os.path.dirname(filename), exist_ok=True)
 
     content = {
