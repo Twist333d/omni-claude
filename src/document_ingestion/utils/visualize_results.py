@@ -4,7 +4,7 @@ from urllib.parse import urlparse
 
 # Define the correct paths relative to the script location
 current_dir = os.path.dirname(os.path.abspath(__file__))
-INPUT_FILE = os.path.join(current_dir, '..', 'data', 'raw', 'supabase.com_docs_.json')
+INPUT_FILE = os.path.join(current_dir, '..', 'data', 'raw', 'supabase.com_docs_1.json')
 OUTPUT_DIR = os.path.join(current_dir, '..', 'data', 'formatted')
 
 def get_absolute_path(path):
@@ -63,7 +63,7 @@ print(f"Current working directory: {os.getcwd()}")
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Construct the path to the data file relative to the script's location
-data_file_path = os.path.join(current_dir, '..', 'data', 'raw', 'supabase.com_docs_.json')
+data_file_path = os.path.join(current_dir, '..', 'data', 'raw', 'supabase.com_docs_1.json')
 
 # Print the path we're trying to open for debugging
 print(f"Attempting to open file at: {get_absolute_path(data_file_path)}")

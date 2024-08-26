@@ -110,7 +110,8 @@ def save_raw_data(url, data):
     parsed_url = urlparse(url)
     print("Printing parsed url:", parsed_url)
     base_name = parsed_url.netloc + parsed_url.path.replace('/', '_')
-    filename = os.path.join(os.path.dirname(__file__), "..", "data", "raw", f"{base_name}.json")
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = os.path.join(os.path.dirname(__file__), "..", "data", "raw", f"{base_name}_{timestamp}.json")
     os.makedirs(os.path.dirname(filename), exist_ok=True)
 
     content = {
@@ -165,5 +166,6 @@ def view_results(filename):
 
 if __name__ == "__main__":
     base_url = "https://supabase.com/docs/"
-    result_file = scrape_and_save(base_url, max_pages=25)  # Set max_pages high enough to capture all pages
+    result_file = scrape_and_save(base_url, max_pages=50)  # Set max_pages high enough to capture
+    # all pages
     view_results(result_file)
