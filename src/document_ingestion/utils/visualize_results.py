@@ -2,7 +2,15 @@ import os
 import json
 from urllib.parse import urlparse
 
-def analyze_content_structure(data, output_dir="data/formatted/"):
+# Define the correct paths relative to the script location
+current_dir = os.path.dirname(os.path.abspath(__file__))
+INPUT_FILE = os.path.join(current_dir, '..', 'data', 'raw', 'supabase.com_docs_.json')
+OUTPUT_DIR = os.path.join(current_dir, '..', 'data', 'formatted')
+
+def get_absolute_path(path):
+    return os.path.abspath(path)
+
+def analyze_content_structure(data, output_dir=OUTPUT_DIR):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
@@ -46,7 +54,7 @@ def analyze_content_structure(data, output_dir="data/formatted/"):
     with open(os.path.join(output_dir, 'sample_content.md'), 'w', encoding='utf-8') as f:
         f.write("\n\n".join(sample_content))
 
-    print(f"Summary and samples written to: {output_dir}")
+    print(f"Summary and samples written to: {get_absolute_path(output_dir)}")
 
 # Print current working directory for debugging
 print(f"Current working directory: {os.getcwd()}")
@@ -55,10 +63,10 @@ print(f"Current working directory: {os.getcwd()}")
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Construct the path to the data file relative to the script's location
-data_file_path = os.path.join(current_dir, 'data', 'raw', 'supabase.com_docs_.json')
+data_file_path = os.path.join(current_dir, '..', 'data', 'raw', 'supabase.com_docs_.json')
 
 # Print the path we're trying to open for debugging
-print(f"Attempting to open file at: {data_file_path}")
+print(f"Attempting to open file at: {get_absolute_path(data_file_path)}")
 
 # Check if the file exists before trying to open it
 if not os.path.exists(data_file_path):
