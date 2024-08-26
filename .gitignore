@@ -292,5 +292,5 @@ cython_debug/
 structure.txt
 
 # Parsed docs
-/src/document_ingestion/crawling/data/raw
-/src/document_ingestion/crawling/data/formatted
+!src/document_ingestion/crawling/data/raw
+!/src/document_ingestion/crawling/data/formatted
