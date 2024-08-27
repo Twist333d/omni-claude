@@ -188,50 +188,48 @@ following structure:
 ```
 
 ## Document Structure
-- Main headings (underlined with dashes)
+- Main headings (underlined with dashes or equals signs)
 - Subheadings (prefixed with ###)
 - Content (including parameters, code blocks, and examples)
 - Separators (* * *)
-- 
+
 ## Chunking Strategy
 
 1. **Main Chunks**
-   - Each main heading (underlined with dashes) starts a new chunk
+   - Each main heading (underlined with dashes or equals signs) starts a new chunk
    - Content following the main heading, up to the next main heading or separator (* * *), is included in the chunk
 
-2. **Sub-chunks**
-   - Within each main chunk, subheadings create sub-chunks
-   - Content following a subheading, up to the next subheading or end of the main chunk, is included in the sub-chunk
-
-3. **Content Handling**
-   - All content (including code blocks, lists, and examples) is treated as text within its respective chunk
+2. **Content Handling**
+   - All content (including subheadings, code blocks, lists, and examples) is treated as text within its respective main chunk
    - Formatting is preserved to maintain the original structure
+   - Subheadings are preserved within the content
 
-4. **Special Cases**
+3. **Special Cases**
    - Code blocks: Preserve backtick formatting
    - Lists: Maintain indentation and bullet points/numbering
    - Tables: Preserve table structure (if present)
 
+4. **Chunk Size Control**
+   - Implement soft token limits (500-1000 tokens) for each chunk
+   - Split large chunks if they exceed the token limit
 
 ## Processing Steps
 
 1. **Load Data**
    - Read the JSON file containing scraped markdown content
 
-2. **Parse markdown**
-   - Use the markdown library to parse the content and create a structured representation
+2. **Identify Chunks**
+   - Use regex to split content at main headings (underlined with dashes or equals signs) and separators (* * *)
+   - Create chunks containing main headings and their associated content
 
-**Identify Chunks**
-   - Traverse the parsed markdown structure to identify main chunks and sub-chunks
-   - Use main headings (underlined with dashes) and separators (* * *) as main chunk delimiters
-   - Use subheadings (###) as sub-chunk delimiters within main chunks
-
-4**Process Chunks**
+3. **Process Chunks**
    - For each chunk:
-     - Extract heading/subheading
+     - Extract main heading
      - Capture all content, preserving formatting
+     - Identify and list subheadings within the content
      - Generate a unique ID
      - Record source URL
+     - Check token count and split if necessary
 
 4. **Generate Summaries**
    - Use Claude 3 Haiku to create concise summaries for each chunk
@@ -243,6 +241,7 @@ following structure:
 6. **Validate Output**
    - Ensure all content is captured
    - Verify chunk structure and completeness
+   - Check that total content matches the original input
 
 ## Modular Structure
 
@@ -250,13 +249,12 @@ following structure:
    - load_json_data()
 
 2. ChunkIdentifier
-   - identify_main_chunks()
-   - identify_sub_chunks()
+   - identify_chunks()
 
 3. ChunkProcessor
    - process_chunk()
-   - preserve_formatting()
-   - generate_chunk_id()
+   - split_large_chunks()
+   - extract_subheadings()
 
 4. SummaryGenerator
    - generate_summary()
@@ -274,15 +272,26 @@ following structure:
    - handle_errors()
 
 ## Implementation considerations
-- Use the markdown library for parsing and maintaining document structure
-- Implement a flexible chunking strategy that respects markdown structure and code blocks
-- Implement simple error handling and logging
-- Create a focused test script for initial validationn
+- Use regex for identifying main headings with both dashes and equals signs
+- Implement token counting using a suitable library (tiktoken)
+- Ensure code blocks are not split across chunks
+- Implement error handling and logging for edge cases
 
 ## Test script
 Create a simple script that:
 - Loads the file from src/document_ingestion/crawling/data/raw/{filename}.json
 - Processes the content using the implemented chunking logic
-- Generates summaries for each chunk
+- Generates summaries for each chunk using Claude 3 Haiku
 - Outputs the processed chunks to data/processed/{filename}.json
-- Performs basic validation checks on the output
+- Performs validation checks on the output
+
+# Iterations 
+## Iteration #1 comments
+Handling of equals sign (=) for main headings:
+Your current implementation doesn't handle main headings underlined with equals signs. The "Python Client Library" section is missing from the chunks because it uses "===" instead of dashes.
+Chunk size control:
+Some chunks (like "Fetch data" and "Call a Postgres function") are quite large and might benefit from further splitting based on a maximum token or character count.
+Subheading preservation:
+While we're not creating separate sub-chunks, it might be beneficial to preserve the structure of subheadings within the content, perhaps by adding an additional field in the chunk object for a list of subheadings.
+Validation:
+Add a validation step to ensure that all content from the original markdown is present in the chunked output, and that no information is lost in the process.
