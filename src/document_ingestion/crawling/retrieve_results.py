@@ -4,6 +4,7 @@ import requests
 from dotenv import load_dotenv
 from datetime import datetime
 from urllib.parse import urlparse
+from src.document_ingestion.crawling.scraping import save_raw_data
 
 # Load environment variables
 load_dotenv()
@@ -11,7 +12,7 @@ load_dotenv()
 # FireCrawl API configuration
 API_KEY = os.getenv("FIRECRAWL_API_KEY")
 API_BASE_URL = "https://api.firecrawl.dev/v0"
-JOB_ID = "b6a75495-09b2-4c77-a1b7-b08f315bd43e"
+JOB_ID = "8a9e1630-5d07-4da8-aab3-332786533195" # replace to retrieve the results
 BASE_URL = "https://supabase.com/docs/"
 
 
@@ -25,25 +26,6 @@ def check_job_status(job_id):
     response = requests.get(url, headers=headers)
     response.raise_for_status()
     return response.json()
-
-
-def save_raw_data(url, data):
-    parsed_url = urlparse(url)
-    print("Printing parsed url:", parsed_url)
-    base_name = parsed_url.netloc + parsed_url.path.replace('/', '_')
-    filename = f"data/raw/{base_name}.json"
-    os.makedirs(os.path.dirname(filename), exist_ok=True)
-
-    content = {
-        "base_url": url,
-        "timestamp": datetime.now().isoformat(),
-        "data": data
-    }
-
-    with open(filename, 'w') as f:
-        json.dump(content, f, indent=2)
-
-    return filename
 
 
 def retrieve_and_save_results():
