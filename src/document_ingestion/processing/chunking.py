@@ -1,72 +1,105 @@
 import json
 import os
+import re
+import uuid
 from typing import List, Dict, Any
-import markdown
-import tiktoken
-from anthropic import Anthropic
-
-# Import our custom logger and config
 from src.utils.logger import setup_logger
-from src.utils.config import API_KEY, RAW_DATA_DIR
+from src.utils.config import RAW_DATA_DIR, BASE_DIR
 
 # Set up logging
-logger = setup_logger(__name__, "chunking.log")
+logger = setup_logger(__name__, "chunking.py")
 
-# Constants
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-INPUT_FILE = os.path.join(RAW_DATA_DIR, "supabase.com_docs__20240826_201304.json")
-OUTPUT_FILE = os.path.join(BASE_DIR, "src", "document_ingestion", "data", "processed", "chunked_supabase_docs.json")
-TARGET_CHUNK_SIZE = 1000
-CHUNK_SIZE_TOLERANCE = 0.2
 
-# Initialize Anthropic client
-anthropic = Anthropic(api_key=API_KEY)
+class DataLoader:
+    def __init__(self, filename: str):
+        self.filepath = os.path.join(RAW_DATA_DIR, filename)
 
-class DataProcessor:
-    def load_data(self, file_path: str) -> Dict[str, Any]:
+    def load_json_data(self) -> Dict[str, Any]:
         try:
-            with open(file_path, 'r') as f:
+            with open(self.filepath, 'r') as f:
                 data = json.load(f)
-            logger.info(f"Successfully loaded data from {file_path}")
+            logger.info(f"Successfully loaded data from {self.filepath}")
             return data
         except Exception as e:
-            logger.error(f"Error loading data from {file_path}: {str(e)}")
+            logger.error(f"Error loading data from {self.filepath}: {str(e)}")
             raise
 
-    def extract_page_content(self, page: Dict[str, Any]) -> str:
-        return page.get('markdown', '')
 
-    def remove_boilerplate(self, content: str) -> str:
-        # TODO: Implement boilerplate removal if necessary
-        return content
+class ChunkIdentifier:
+    @staticmethod
+    def identify_chunks(content: str) -> List[Dict[str, Any]]:
+        # Split content at main headings (underlined with dashes) or separators (***)
+        chunks = re.split(r'\n([^\n]+)\n-+\n|\n\*\s\*\s\*\n', content)
 
-class ChunkCreator:
-    """ # TODO: Implement ChunkCreator"""
+        processed_chunks = []
+        current_chunk = None
 
-class SummaryGenerator:
-    """# TODO: Implement SummaryGenerator"""
+        for i, chunk in enumerate(chunks):
+            if chunk is None or chunk.strip() == '':
+                continue
 
-class OutputFormatter:
-    """# TODO: Implement OutputFormatter"""
+            if i % 2 == 0 and current_chunk:  # Even indexes contain content
+                current_chunk['content'] += chunk
+                processed_chunks.append(current_chunk)
+                current_chunk = None
+            elif i % 2 != 0:  # Odd indexes contain headings
+                current_chunk = {
+                    'main_heading': chunk.strip(),
+                    'content': ''
+                }
 
-class MainProcessor:
-    """# TODO: Implement MainProcessor"""
+        # Add the last chunk if it exists
+        if current_chunk:
+            processed_chunks.append(current_chunk)
+
+        return processed_chunks
+
+
+class ChunkProcessor:
+    @staticmethod
+    def process_chunk(chunk: Dict[str, Any], source_url: str) -> Dict[str, Any]:
+        return {
+            "chunk_id": str(uuid.uuid4()),
+            "source_url": source_url,
+            "main_heading": chunk['main_heading'],
+            "content": chunk['content'].strip(),
+            "summary": ""  # Placeholder for summary
+        }
 
 
 def main():
-    processor = DataProcessor()
-    raw_data = processor.load_data(INPUT_FILE)
+    filename = "supabase.com_docs__20240826_212435.json"
+    data_loader = DataLoader(filename)
+    raw_data = data_loader.load_json_data()
 
-    # Test with the first page
     if raw_data['data']:
         first_page = raw_data['data'][0]
-        content = processor.extract_page_content(first_page)
-        cleaned_content = processor.remove_boilerplate(content)
+        content = first_page.get('markdown', '')
+        source_url = first_page.get('metadata', {}).get('sourceURL', 'Unknown URL')
 
-        logger.info(f"Processed content length: {len(cleaned_content)}")
-        logger.info(f"First 500 characters:\n{cleaned_content[:500]}")
+        logger.info(f"Processing page: {source_url}")
+
+        chunks = ChunkIdentifier.identify_chunks(content)
+        processed_chunks = [ChunkProcessor.process_chunk(chunk, source_url) for chunk in chunks]
+
+        logger.info(f"Total chunks identified: {len(processed_chunks)}")
+
+        # Display the first few chunks for verification
+        for i, chunk in enumerate(processed_chunks[:3], 1):
+            logger.info(f"\nChunk {i}:")
+            logger.info(f"Chunk ID: {chunk['chunk_id']}")
+            logger.info(f"Main Heading: {chunk['main_heading']}")
+            logger.info(f"Content Preview: {chunk['content'][:100]}...")
+
+        # Save processed chunks to a JSON file
+        output_file = os.path.join(BASE_DIR, "src", "document_ingestion", "data", "processed",
+                                   "chunked_supabase_docs.json")
+        with open(output_file, 'w') as f:
+            json.dump(processed_chunks, f, indent=2)
+        logger.info(f"Saved processed chunks to {output_file}")
     else:
         logger.warning("No data found in the input file.")
+
 
 if __name__ == "__main__":
     main()
