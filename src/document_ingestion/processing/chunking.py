@@ -5,6 +5,7 @@ import uuid
 from typing import List, Dict, Any
 from src.utils.logger import setup_logger
 from src.utils.config import RAW_DATA_DIR, BASE_DIR
+import anthropic
 
 # Set up logging
 logger = setup_logger(__name__, "chunking.py")
@@ -26,7 +27,6 @@ class DataLoader:
 
 
 class ChunkIdentifier:
-    @staticmethod
     def identify_chunks(content: str) -> List[Dict[str, Any]]:
         # Split content at main headings (underlined with dashes) or separators (***)
         chunks = re.split(r'\n([^\n]+)\n-+\n|\n\*\s\*\s\*\n', content)
@@ -56,7 +56,6 @@ class ChunkIdentifier:
 
 
 class ChunkProcessor:
-    @staticmethod
     def process_chunk(chunk: Dict[str, Any], source_url: str) -> Dict[str, Any]:
         return {
             "chunk_id": str(uuid.uuid4()),
@@ -65,6 +64,20 @@ class ChunkProcessor:
             "content": chunk['content'].strip(),
             "summary": ""  # Placeholder for summary
         }
+
+class SummaryGenerator:
+    def __init__(self, api_key: str):
+        self.client = anthropic.Client(api_key)
+
+    def generate_summary(self, chunk: Dict[str, Any]) -> str:
+        prompt = f"Please summarize the following content in 2-3 sentences:\n\n{chunk['content']}"
+        response = self.client.completions.create(
+            model="claude-3-haiku-20240307",
+            prompt=prompt,
+            max_tokens_to_sample=250,
+            temperature=0
+        )
+        return response.completion.strip()
 
 
 def main():
