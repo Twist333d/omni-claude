@@ -39,11 +39,9 @@ class FirecrawlScraper:
         params = {
             'crawlerOptions': {
                 'includes': [
-                    "/guides/*",
-                    "/reference/python/*",
+                    "/docs.firecrawl.dev/*",
                 ],
                 'excludes': [
-                    # Add any patterns here you want to exclude, if any
                 ],
                 'limit': max_pages,
                 'maxDepth': 5,
@@ -51,7 +49,8 @@ class FirecrawlScraper:
                 'allowExternalContentLinks': False,
             },
             'pageOptions': {
-                'onlyMainContent': False # want to get all footers, navi, headers
+                'onlyMainContent': True, # get only the main content
+                'includeHtml' : True # let's see how it works.
             }
         }
 
@@ -165,7 +164,7 @@ def view_results(filename):
         print(f"\n... and {len(crawled_data['data']) - 5} more pages")
 
 if __name__ == "__main__":
-    base_url = "https://supabase.com/docs/"
-    result_file = scrape_and_save(base_url, max_pages=50)  # Set max_pages high enough to capture
+    base_url = "https://docs.firecrawl.dev/"
+    result_file = scrape_and_save(base_url, max_pages=25)  # Set max_pages high enough to capture
     # all pages
     view_results(result_file)

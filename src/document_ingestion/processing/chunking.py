@@ -6,15 +6,15 @@ import tiktoken
 from anthropic import Anthropic
 
 # Import our custom logger and config
-from ...utils.logger import setup_logger
-from ...utils.config import API_KEY, RAW_DATA_DIR
+from src.utils.logger import setup_logger
+from src.utils.config import API_KEY, RAW_DATA_DIR
 
 # Set up logging
 logger = setup_logger(__name__, "chunking.log")
 
 # Constants
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-INPUT_FILE = os.path.join(RAW_DATA_DIR, "supabase.com_docs_1.json")
+INPUT_FILE = os.path.join(RAW_DATA_DIR, "supabase.com_docs__20240826_201304.json")
 OUTPUT_FILE = os.path.join(BASE_DIR, "src", "document_ingestion", "data", "processed", "chunked_supabase_docs.json")
 TARGET_CHUNK_SIZE = 1000
 CHUNK_SIZE_TOLERANCE = 0.2
