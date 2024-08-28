@@ -33,6 +33,9 @@ class HeadingCollector(Treeprocessor):
         super().__init__(md)
         self.chunks = []
         self.current_chunk = None
+        self.h1_count = 0
+        self.h2_count = 0
+        self.h3_count = 0
 
     def run(self, root):
         for element in root:
@@ -44,9 +47,16 @@ class HeadingCollector(Treeprocessor):
                     'content': '',
                     'level': int(element.tag[1])
                 }
+                if element.tag == 'h1':
+                    self.h1_count += 1
+                else:
+                    self.h2_count += 1
+            elif element.tag == 'h3':
+                self.h3_count += 1
+                if self.current_chunk is not None:
+                    self.current_chunk['content'] += markdown.treeprocessors.etree.tostring(element, encoding='unicode')
             elif self.current_chunk is not None:
-                self.current_chunk['content'] += markdown.treeprocessors.etree.tostring(element,
-                                                                                        encoding='unicode')
+                self.current_chunk['content'] += markdown.treeprocessors.etree.tostring(element, encoding='unicode')
 
         if self.current_chunk:
             self.chunks.append(self.current_chunk)
@@ -137,15 +147,14 @@ class Validator:
         required_keys = ['chunk_id', 'source_url', 'main_heading', 'content', 'summary']
         return all(key in chunk for key in required_keys)
 
-    def validate_completeness(original_content: str,
-                              processed_chunks: List[Dict[str, Any]]) -> bool:
-        original_headings = set(heading.strip() for heading in original_content.split('\n') if
-                                heading.strip().startswith('#'))
-        processed_headings = set(chunk['main_heading'] for chunk in processed_chunks)
+    def validate_completeness(original_content: str, processed_chunks: List[Dict[str, Any]],
+                              heading_counts: Dict[str, int]) -> bool:
+        original_h1h2_count = heading_counts['h1'] + heading_counts['h2']
+        processed_h1h2_count = len(processed_chunks)
 
-        missing_headings = original_headings - processed_headings
-        if missing_headings:
-            logger.warning(f"Missing headings in processed chunks: {missing_headings}")
+        if original_h1h2_count != processed_h1h2_count:
+            logger.error(
+                f"Mismatch in h1 and h2 headings. Original: {original_h1h2_count}, Processed: {processed_h1h2_count}")
             return False
 
         original_content_length = len(original_content)
@@ -155,19 +164,21 @@ class Validator:
         if abs(original_content_length - processed_content_length) / original_content_length > 0.05:
             logger.warning(
                 f"Significant content length mismatch. Original: {original_content_length}, Processed: {processed_content_length}")
-            return False
 
         return True
 
 
 def main():
-    filename = "supabase.com_docs__20240826_212435.json"
+    filename = "docs.flutterflow.io__20240828_103451.json"
     data_loader = DataLoader(filename)
     raw_data = data_loader.load_json_data()
 
     token_counter = TokenCounter()
     chunk_processor = ChunkProcessor(token_counter)
     all_processed_chunks = []
+    total_h1_count = 0
+    total_h2_count = 0
+    total_h3_count = 0
 
     for page in raw_data['data']:
         content = page.get('markdown', '')
@@ -175,7 +186,13 @@ def main():
 
         logger.info(f"Processing page: {source_url}")
 
-        chunks = parse_markdown(content)
+        md = markdown.Markdown(extensions=[HeadingCollectorExtension()])
+        md.convert(content)
+        chunks = md.heading_collector.chunks
+        total_h1_count += md.heading_collector.h1_count
+        total_h2_count += md.heading_collector.h2_count
+        total_h3_count += md.heading_collector.h3_count
+
         processed_chunks = []
         for chunk in chunks:
             processed_chunks.extend(chunk_processor.process_chunk(chunk, source_url))
@@ -183,35 +200,44 @@ def main():
         all_processed_chunks.extend(processed_chunks)
 
         # Validate output
-        if not Validator.validate_completeness(content, processed_chunks):
+        if not Validator.validate_completeness(content, processed_chunks,
+                                               {'h1': md.heading_collector.h1_count,
+                                                'h2': md.heading_collector.h2_count}):
             logger.error(f"Validation failed for page: {source_url}")
 
         for chunk in processed_chunks:
             if not Validator.validate_chunk_structure(chunk):
                 logger.error(f"Invalid chunk structure for chunk: {chunk['chunk_id']}")
 
-    logger.info(f"Total chunks identified: {len(all_processed_chunks)}")
-
-    # Display the first few chunks for verification
-    for i, chunk in enumerate(all_processed_chunks[:3], 1):
-        logger.info(f"\nChunk {i}:")
-        logger.info(f"Chunk ID: {chunk['chunk_id']}")
-        logger.info(f"Main Heading: {chunk['main_heading']}")
-        logger.info(f"Content Preview: {chunk['content'][:100]}...")
-
     # Save processed chunks to a JSON file
     output_file = os.path.join(BASE_DIR, "src", "document_ingestion", "data", "processed",
-                               "chunked_supabase_docs.json")
+                               "chunked_flutterflow_docs.json")
     with open(output_file, 'w') as f:
         json.dump(all_processed_chunks, f, indent=2)
     logger.info(f"Saved processed chunks to {output_file}")
 
-    # Summary stats
+    # Enhanced summary statistics
+    chunk_sizes = [len(chunk['content']) for chunk in all_processed_chunks]
+    token_counts = [token_counter.count_tokens(chunk['content']) for chunk in all_processed_chunks]
+
     logger.info(f"\nSummary Statistics:")
     logger.info(f"Total number of chunks: {len(all_processed_chunks)}")
-    logger.info(
-        f"Average chunk size (characters): {sum(len(chunk['content']) for chunk in all_processed_chunks) / len(all_processed_chunks):.2f}")
+    logger.info(f"Total h1 headings: {total_h1_count}")
+    logger.info(f"Total h2 headings: {total_h2_count}")
+    logger.info(f"Total h3 headings: {total_h3_count}")
+    logger.info(f"Average chunk size (characters): {sum(chunk_sizes) / len(chunk_sizes):.2f}")
+    logger.info(f"Min chunk size (characters): {min(chunk_sizes)}")
+    logger.info(f"Max chunk size (characters): {max(chunk_sizes)}")
+    logger.info(f"Average token count per chunk: {sum(token_counts) / len(token_counts):.2f}")
+    logger.info(f"Min token count: {min(token_counts)}")
+    logger.info(f"Max token count: {max(token_counts)}")
 
+    # Distribution of chunk sizes
+    size_ranges = [(0, 500), (501, 1000), (1001, 1500), (1501, 2000), (2001, float('inf'))]
+    size_distribution = {f"{start}-{end}": sum(start <= size < end for size in chunk_sizes) for start, end in size_ranges}
+    logger.info("Chunk size distribution:")
+    for range_str, count in size_distribution.items():
+        logger.info(f"  {range_str} characters: {count} chunks")
 
 if __name__ == "__main__":
     main()

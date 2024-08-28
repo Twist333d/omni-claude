@@ -39,9 +39,16 @@ class FirecrawlScraper:
         params = {
             'crawlerOptions': {
                 'includes': [
-                    "/docs.firecrawl.dev/*",
                 ],
                 'excludes': [
+                    '/blog',  # Exclude /blog page (end of string)
+                    '/search',  # Exclude /search page (end of string)
+                    '/tags',
+                    '/marketplace',# Exclude /tags page (end of string)
+                    '/blog/*',  # Exclude /blog page (end of string)
+                    '/search/*',  # Exclude /search page (end of string)
+                    '/tags/*',
+                    '/marketplace/*',  # Exclude /tags page (end of string)
                 ],
                 'limit': max_pages,
                 'maxDepth': 5,
@@ -164,7 +171,7 @@ def view_results(filename):
         print(f"\n... and {len(crawled_data['data']) - 5} more pages")
 
 if __name__ == "__main__":
-    base_url = "https://docs.firecrawl.dev/"
-    result_file = scrape_and_save(base_url, max_pages=25)  # Set max_pages high enough to capture
+    base_url = "https://docs.flutterflow.io/"
+    result_file = scrape_and_save(base_url, max_pages=200)  # Set max_pages high enough to capture
     # all pages
     view_results(result_file)
