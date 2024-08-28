@@ -14,6 +14,7 @@ from tqdm import tqdm
 import asyncio
 from anthropic import Anthropic, RateLimitError
 from tqdm.asyncio import tqdm_asyncio
+import time
 
 
 # Set up logging
@@ -181,13 +182,13 @@ class SummaryGenerator:
         self.max_concurrent_requests = max_concurrent_requests
         self.system_prompt = """You are an AI assistant specializing in summarizing technical documentation. Your task is to create concise, accurate summaries of various sections of a software documentation. These summaries will be used in a search pipeline to help users quickly find relevant information."""
 
-    async def generate_summaries(self, chunks: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    async def generate_summaries(self, chunks: List[Dict[str, Any]], pbar: tqdm) -> List[Dict[str, Any]]:
         semaphore = asyncio.Semaphore(self.max_concurrent_requests)
-        tasks = [self._process_chunk(chunk, semaphore) for chunk in chunks]
-        summarized_chunks = await tqdm_asyncio.gather(*tasks, desc="Generating summaries")
+        tasks = [self._process_chunk(chunk, semaphore, pbar) for chunk in chunks]
+        summarized_chunks = await asyncio.gather(*tasks)
         return summarized_chunks
 
-    async def _process_chunk(self, chunk: Dict[str, Any], semaphore: asyncio.Semaphore) -> Dict[str, Any]:
+    async def _process_chunk(self, chunk: Dict[str, Any], semaphore: asyncio.Semaphore, pbar: tqdm) -> Dict[str, Any]:
         async with semaphore:
             try:
                 context = self._gather_context(chunk)
@@ -206,11 +207,12 @@ class SummaryGenerator:
                 chunk['summary'] = response.content[0].text
             except RateLimitError:
                 await asyncio.sleep(1)  # Wait for 1 second before retrying
-                return await self._process_chunk(chunk, semaphore)
+                return await self._process_chunk(chunk, semaphore, pbar)
             except Exception as e:
                 logger.error(f"Error processing chunk {chunk['chunk_id']}: {str(e)}")
                 chunk['summary'] = ""
-
+            finally:
+                pbar.update(1)
         return chunk
 
     def _gather_context(self, chunk: Dict[str, Any]) -> str:
@@ -237,6 +239,7 @@ class SummaryGenerator:
 
 
 async def main():
+    start_time = time.time()
     filename = "supabase.com_docs__20240826_212435.json"
     data_loader = DataLoader(filename)
     raw_data = data_loader.load_json_data()
@@ -249,36 +252,49 @@ async def main():
     total_h2_count = 0
     total_h3_count = 0
 
-    for page in raw_data['data']:
-        content = page.get('markdown', '')
-        source_url = page.get('metadata', {}).get('sourceURL', 'Unknown URL')
+    # Pre-process to get total chunk count
+    total_chunks = sum(len(chunk_processor.process_chunk(chunk, page.get('metadata', {}).get('sourceURL', 'Unknown URL')))
+                       for page in raw_data['data']
+                       for chunk in parse_markdown(page.get('markdown', '')))
 
-        logger.info(f"Processing page: {source_url}")
+    logger.info(f"Total chunks to process: {total_chunks}")
 
-        md = markdown.Markdown(extensions=[HeadingCollectorExtension()])
-        md.convert(content)
-        chunks = md.heading_collector.chunks
-        total_h1_count += md.heading_collector.h1_count
-        total_h2_count += md.heading_collector.h2_count
-        total_h3_count += md.heading_collector.h3_count
+    with tqdm(total=total_chunks, desc="Processing chunks") as pbar:
+        for page in raw_data['data']:
+            content = page.get('markdown', '')
+            source_url = page.get('metadata', {}).get('sourceURL', 'Unknown URL')
 
-        processed_chunks = []
-        for chunk in chunks:
-            processed_chunks.extend(chunk_processor.process_chunk(chunk, source_url))
+            logger.info(f"Processing page: {source_url}")
 
-        # Generate summaries for the processed chunks
-        summarized_chunks = await summary_generator.generate_summaries(processed_chunks)
-        all_processed_chunks.extend(summarized_chunks)
+            md = markdown.Markdown(extensions=[HeadingCollectorExtension()])
+            md.convert(content)
+            chunks = md.heading_collector.chunks
+            total_h1_count += md.heading_collector.h1_count
+            total_h2_count += md.heading_collector.h2_count
+            total_h3_count += md.heading_collector.h3_count
 
-        # Validate output
-        if not Validator.validate_completeness(content, summarized_chunks,
-                                               {'h1': md.heading_collector.h1_count,
-                                                'h2': md.heading_collector.h2_count}):
-            logger.error(f"Validation failed for page: {source_url}")
+            processed_chunks = []
+            for chunk in chunks:
+                processed_chunks.extend(chunk_processor.process_chunk(chunk, source_url))
 
-        for chunk in summarized_chunks:
-            if not Validator.validate_chunk_structure(chunk):
-                logger.error(f"Invalid chunk structure for chunk: {chunk['chunk_id']}")
+            # Generate summaries for the processed chunks
+            summarized_chunks = await summary_generator.generate_summaries(processed_chunks, pbar)
+            all_processed_chunks.extend(summarized_chunks)
+
+            # Validate output
+            if not Validator.validate_completeness(content, summarized_chunks,
+                                                   {'h1': md.heading_collector.h1_count,
+                                                    'h2': md.heading_collector.h2_count}):
+                logger.error(f"Validation failed for page: {source_url}")
+
+            for chunk in summarized_chunks:
+                if not Validator.validate_chunk_structure(chunk):
+                    logger.error(f"Invalid chunk structure for chunk: {chunk['chunk_id']}")
+
+    end_time = time.time()
+    total_time = end_time - start_time
+    logger.info(f"Total processing time: {total_time:.2f} seconds")
+    logger.info(f"Average time per chunk: {total_time / len(all_processed_chunks):.2f} seconds")
 
     # Save processed chunks to a JSON file
     output_file = os.path.join(BASE_DIR, "src", "document_ingestion", "data", "processed",
