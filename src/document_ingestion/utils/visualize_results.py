@@ -3,7 +3,7 @@ import json
 from urllib.parse import urlparse
 
 # Define the correct paths relative to the script location
-filename = 'supabase.com_docs__20240826_212435.json'
+filename = 'docs.flutterflow.io__20240828_103451.json'
 current_dir = os.path.dirname(os.path.abspath(__file__))
 INPUT_FILE = os.path.join(current_dir, '..', 'data', 'raw', filename)
 OUTPUT_DIR = os.path.join(current_dir, '..', 'data', 'formatted')
