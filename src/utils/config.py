@@ -3,9 +3,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# API Configuration
-API_KEY = os.getenv("FIRECRAWL_API_KEY")
-API_BASE_URL = "https://api.firecrawl.dev/v0"
+# FireCrawl Configuration
+FIRECRAWL_API_KEY = os.getenv("FIRECRAWL_API_KEY")
+FIRECRAWL_API_URL = "https://api.firecrawl.dev/v0"
+
+# Anthropic Configuration
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+
+
 
 # File Paths
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
