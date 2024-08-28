@@ -169,7 +169,7 @@ class Validator:
 
 
 def main():
-    filename = "docs.flutterflow.io__20240828_103451.json"
+    filename = "supabase.com_docs__20240826_212435.json"
     data_loader = DataLoader(filename)
     raw_data = data_loader.load_json_data()
 
@@ -211,7 +211,7 @@ def main():
 
     # Save processed chunks to a JSON file
     output_file = os.path.join(BASE_DIR, "src", "document_ingestion", "data", "processed",
-                               "chunked_flutterflow_docs.json")
+                               "chunked_supabase_docs.json")
     with open(output_file, 'w') as f:
         json.dump(all_processed_chunks, f, indent=2)
     logger.info(f"Saved processed chunks to {output_file}")
