@@ -3,11 +3,18 @@ import os
 import uuid
 from typing import List, Dict, Any
 from src.utils.logger import setup_logger
-from src.utils.config import RAW_DATA_DIR, BASE_DIR
+from src.utils.config import RAW_DATA_DIR, BASE_DIR, ANTHROPIC_API_KEY
 import markdown
 from markdown.treeprocessors import Treeprocessor
 from markdown.extensions import Extension
 import tiktoken
+from anthropic import Anthropic
+import asyncio
+from tqdm import tqdm
+import asyncio
+from anthropic import Anthropic, RateLimitError
+from tqdm.asyncio import tqdm_asyncio
+
 
 # Set up logging
 logger = setup_logger(__name__, "chunking.py")
@@ -168,13 +175,75 @@ class Validator:
         return True
 
 
-def main():
+class SummaryGenerator:
+    def __init__(self, api_key=ANTHROPIC_API_KEY, max_concurrent_requests=5):
+        self.client = Anthropic(api_key=api_key)
+        self.max_concurrent_requests = max_concurrent_requests
+        self.system_prompt = """You are an AI assistant specializing in summarizing technical documentation. Your task is to create concise, accurate summaries of various sections of a software documentation. These summaries will be used in a search pipeline to help users quickly find relevant information."""
+
+    async def generate_summaries(self, chunks: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        semaphore = asyncio.Semaphore(self.max_concurrent_requests)
+        tasks = [self._process_chunk(chunk, semaphore) for chunk in chunks]
+        summarized_chunks = await tqdm_asyncio.gather(*tasks, desc="Generating summaries")
+        return summarized_chunks
+
+    async def _process_chunk(self, chunk: Dict[str, Any], semaphore: asyncio.Semaphore) -> Dict[str, Any]:
+        async with semaphore:
+            try:
+                context = self._gather_context(chunk)
+                messages = [
+                    {"role": "user", "content": self._create_prompt(chunk, context)}
+                ]
+
+                response = await asyncio.to_thread(
+                    self.client.messages.create,
+                    model="claude-3-haiku-20240307",
+                    max_tokens=300,
+                    messages=messages,
+                    system=self.system_prompt
+                )
+
+                chunk['summary'] = response.content[0].text
+            except RateLimitError:
+                await asyncio.sleep(1)  # Wait for 1 second before retrying
+                return await self._process_chunk(chunk, semaphore)
+            except Exception as e:
+                logger.error(f"Error processing chunk {chunk['chunk_id']}: {str(e)}")
+                chunk['summary'] = ""
+
+        return chunk
+
+    def _gather_context(self, chunk: Dict[str, Any]) -> str:
+        # Simplified context gathering
+        return f"This chunk is about: {chunk['main_heading']}"
+
+    def _create_prompt(self, chunk: Dict[str, Any], context: str) -> str:
+        return f"""
+        Context: {context}
+
+        Content to summarize:
+        Heading: {chunk['main_heading']}
+        {chunk['content']}
+
+        Provide a brief, information-dense summary of the above content in 2-3 sentences. Capture the key technical points, focusing on the main ideas and their significance. This summary will be used in a search pipeline to answer user queries, so ensure it's highly relevant and precise.
+
+        Your response should:
+        1. Start immediately with the summary, without any preamble.
+        2. Be accurate and use appropriate technical terminology.
+        3. Be concise yet comprehensive, covering the most important aspects.
+
+        Summary:
+        """
+
+
+async def main():
     filename = "supabase.com_docs__20240826_212435.json"
     data_loader = DataLoader(filename)
     raw_data = data_loader.load_json_data()
 
     token_counter = TokenCounter()
     chunk_processor = ChunkProcessor(token_counter)
+    summary_generator = SummaryGenerator(max_concurrent_requests=3000)
     all_processed_chunks = []
     total_h1_count = 0
     total_h2_count = 0
@@ -197,24 +266,26 @@ def main():
         for chunk in chunks:
             processed_chunks.extend(chunk_processor.process_chunk(chunk, source_url))
 
-        all_processed_chunks.extend(processed_chunks)
+        # Generate summaries for the processed chunks
+        summarized_chunks = await summary_generator.generate_summaries(processed_chunks)
+        all_processed_chunks.extend(summarized_chunks)
 
         # Validate output
-        if not Validator.validate_completeness(content, processed_chunks,
+        if not Validator.validate_completeness(content, summarized_chunks,
                                                {'h1': md.heading_collector.h1_count,
                                                 'h2': md.heading_collector.h2_count}):
             logger.error(f"Validation failed for page: {source_url}")
 
-        for chunk in processed_chunks:
+        for chunk in summarized_chunks:
             if not Validator.validate_chunk_structure(chunk):
                 logger.error(f"Invalid chunk structure for chunk: {chunk['chunk_id']}")
 
     # Save processed chunks to a JSON file
     output_file = os.path.join(BASE_DIR, "src", "document_ingestion", "data", "processed",
-                               "chunked_supabase_docs.json")
+                               "chunked_summarized_supabase_docs.json")
     with open(output_file, 'w') as f:
         json.dump(all_processed_chunks, f, indent=2)
-    logger.info(f"Saved processed chunks to {output_file}")
+    logger.info(f"Saved processed and summarized chunks to {output_file}")
 
     # Enhanced summary statistics
     chunk_sizes = [len(chunk['content']) for chunk in all_processed_chunks]
@@ -240,4 +311,4 @@ def main():
         logger.info(f"  {range_str} characters: {count} chunks")
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

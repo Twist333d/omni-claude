@@ -299,8 +299,103 @@ Features yet to implement:
 - Token counting and chunk size control
 - Splitting large chunks if they exceed a token limit
 - Summary generation for each chunk
-- Validation of the output (completeness and structure)
-- Processing of multiple pages (if required in the future)
+
+Improvement Plan for Chunking System
+1. Summary Generation
+1.1 Refine Summary Prompt
+
+Create a generic prompt template not specific to documentation.
+Include placeholders for chunk content and context.
+Ensure the prompt asks for a brief, 2-3 sentence summary that captures key points concisely.
+Instruct the model to avoid preambles and get straight to the summary.
+
+1.2 Implement Context Gathering
+
+Develop a method to gather context from surrounding chunks.
+Use main H1 headings and brief excerpts from adjacent chunks.
+Allow for adjustable context window (e.g., 2 chunks before and after the current chunk).
+
+1.3 Update SummaryGenerator
+
+Modify the generate_summary method to include the gathered context.
+Implement rate limiting to manage API calls efficiently.
+Add error handling for API failures or unexpected responses.
+
+2. Chunk Splitting
+2.1 Implement Markdown-based Splitting
+
+Create a method to split chunks based on markdown structure.
+Preserve existing parsing logic, avoiding conversion to HTML or other formats.
+Use markdown headings and paragraph breaks as natural split points.
+Implement a soft token limit with a 20% tolerance to avoid unnecessary splits.
+
+2.2 Update Chunk ID Generation
+
+Modify chunk ID generation to handle split chunks.
+Use a base ID for the original chunk and add suffixes for split chunks.
+Ensure the ID system maintains uniqueness and traceability to the original content.
+
+3. Validator Enhancement
+3.1 Implement Strict and Lenient Rules
+
+Create separate methods for strict and lenient validation.
+Strict validation: Ensure all required fields are present and properly formatted.
+Lenient validation: Allow for some flexibility in content structure.
+Use flags to determine which validation level to apply during processing.
+
+4. OutputFormatter (Optional)
+
+If needed, implement a simple formatter for consistent output.
+Focus on creating a standardized JSON structure for each chunk.
+Include methods to format individual chunks and the entire output set.
+
+5. MainProcessor Refactoring
+5.1 Define MainProcessor Responsibilities
+
+Orchestrate the overall chunking process.
+Handle file I/O operations for input and output.
+Manage the flow between different components (chunking, summarizing, validating).
+Implement error handling and logging for the overall process.
+
+6. Refactoring and Improvements
+6.1 Modularize Chunking Process
+
+Create separate methods in ChunkProcessor for each step:
+
+Identifying headings
+Extracting content
+Creating chunks
 
 
-## Additional changes
+Ensure each method has a single responsibility for easier maintenance and testing.
+
+6.2 Error Handling and Logging
+
+Utilize the existing logger from logger.py.
+Implement a decorator for try/except handling to be used across critical methods.
+Ensure comprehensive logging of errors, warnings, and important process steps.
+
+6.3 Configuration Management
+
+Create a config.py file for all constants and configurations.
+Include API keys, token limits, file paths, and other adjustable parameters.
+Implement a method to easily update configuration values at runtime.
+
+6.4 Implement Iterator Pattern (if needed)
+
+Use Python's built-in iteration capabilities for processing multiple pages or chunks.
+Create an iterator class if complex iteration logic is required.
+
+Implementation Order:
+
+Update config.py with all necessary constants and configurations.
+Refactor ChunkProcessor to include modularized methods.
+Implement the enhanced chunk splitting logic.
+Update the SummaryGenerator with the new prompt and context gathering.
+Implement the Validator with strict and lenient rules.
+Create the OutputFormatter if needed.
+Refactor the MainProcessor to orchestrate the entire process.
+Implement error handling decorator and apply to key methods.
+Update the main script to use the new Config class for easy parameter adjustment.
+Test the entire pipeline with sample data.
+Refine and optimize based on test results.
