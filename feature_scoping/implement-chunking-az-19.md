@@ -294,13 +294,6 @@ following structure:
 
 
 # Iterations 
-## Iteration #2 comments
-**Good points**
-- H1 headings distinction: You're correct. Looking at the example chunks, we are indeed 
-  correctly identifying and splitting at H1 headers, regardless of whether they're marked with '===' or '#'. The current implementation is working as intended, and we don't need to make any changes here. Thank you for pointing this out.
-- Separators: Understood. We'll ignore the separators (* * *) and not handle them in any special 
-  way.
-
 
 Features yet to implement:
 - Token counting and chunk size control
@@ -311,31 +304,3 @@ Features yet to implement:
 
 
 ## Additional changes
-## Agreed Changes and Additions
-
-### 1. Implement More Lenient vs More Strict Validation Rules
-
-- Strict rules (raise errors):
-  - Each chunk must have the required structure (all necessary fields)
-  - The total number of h1 and h2 headings in chunks should match the original document
-
-- Lenient rules (log warnings):
-  - Content length differences between original and processed content (with a threshold, e.g., 5% difference)
-
-### 2. Implement Chunk Splitting
-
-- Prioritize splitting at logical boundaries:
-  1. Try to split at subheadings (h3, h4, etc.)
-  2. If no subheadings, split at paragraph boundaries
-  3. As a last resort, split at sentence boundaries
-- Implement a "soft" token limit (allow exceeding by 20%)
-- Look for "signals" of important content (e.g., code blocks, list structures)
-- Include a small overlap (1-2 sentences) between split chunks
-
-### 3. Enhance Summary Statistics
-
-- Report the total number of chunks created
-- Show approximate token counts for chunks (min, max, average)
-- Display character counts for chunks (min, max, average)
-- Report the number of h1, h2, and h3 headings found
-- Show the distribution of chunk sizes (e.g., how many are within different ranges)
