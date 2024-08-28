@@ -1,11 +1,14 @@
 import json
 import os
-import re
 import uuid
 from typing import List, Dict, Any
 from src.utils.logger import setup_logger
 from src.utils.config import RAW_DATA_DIR, BASE_DIR
 import anthropic
+import markdown
+from markdown.treeprocessors import Treeprocessor
+from markdown.extensions import Extension
+import tiktoken
 
 # Set up logging
 logger = setup_logger(__name__, "chunking.py")
@@ -26,36 +29,55 @@ class DataLoader:
             raise
 
 
-class ChunkIdentifier:
-    def identify_chunks(content: str) -> List[Dict[str, Any]]:
-        # Split content at main headings (underlined with dashes) or separators (***)
-        chunks = re.split(r'\n([^\n]+)\n-+\n|\n\*\s\*\s\*\n', content)
+class HeadingCollector(Treeprocessor):
+    def __init__(self, md):
+        super().__init__(md)
+        self.chunks = []
+        self.current_chunk = None
 
-        processed_chunks = []
-        current_chunk = None
-
-        for i, chunk in enumerate(chunks):
-            if chunk is None or chunk.strip() == '':
-                continue
-
-            if i % 2 == 0 and current_chunk:  # Even indexes contain content
-                current_chunk['content'] += chunk
-                processed_chunks.append(current_chunk)
-                current_chunk = None
-            elif i % 2 != 0:  # Odd indexes contain headings
-                current_chunk = {
-                    'main_heading': chunk.strip(),
-                    'content': ''
+    def run(self, root):
+        for element in root:
+            if element.tag in ['h1', 'h2']:
+                if self.current_chunk:
+                    self.chunks.append(self.current_chunk)
+                self.current_chunk = {
+                    'main_heading': element.text,
+                    'content': '',
+                    'level': int(element.tag[1])
                 }
+            elif self.current_chunk is not None:
+                self.current_chunk['content'] += markdown.treeprocessors.etree.tostring(element,
+                                                                                        encoding='unicode')
 
-        # Add the last chunk if it exists
-        if current_chunk:
-            processed_chunks.append(current_chunk)
+        if self.current_chunk:
+            self.chunks.append(self.current_chunk)
 
-        return processed_chunks
+        return root
+
+class HeadingCollectorExtension(Extension):
+    def __init__(self, **kwargs):
+        self.config = {}
+        super(HeadingCollectorExtension, self).__init__(**kwargs)
+
+    def extendMarkdown(self, md):
+        heading_collector = HeadingCollector(md)
+        md.treeprocessors.register(heading_collector, 'heading_collector', 15)
+        md.heading_collector = heading_collector
+
+class TokenCounter:
+    def __init__(self, model_name="cl100k_base"):
+        self.encoder = tiktoken.get_encoding(model_name)
+
+    def count_tokens(self, text: str) -> int:
+        return len(self.encoder.encode(text))
 
 
 class ChunkProcessor:
+    def __init__(self, token_counter: TokenCounter, min_tokens: int = 800, max_tokens: int = 1200):
+        self.token_counter = token_counter
+        self.min_tokens = min_tokens
+        self.max_tokens = max_tokens
+
     def process_chunk(chunk: Dict[str, Any], source_url: str) -> Dict[str, Any]:
         return {
             "chunk_id": str(uuid.uuid4()),
@@ -65,19 +87,11 @@ class ChunkProcessor:
             "summary": ""  # Placeholder for summary
         }
 
-class SummaryGenerator:
-    def __init__(self, api_key: str):
-        self.client = anthropic.Client(api_key)
 
-    def generate_summary(self, chunk: Dict[str, Any]) -> str:
-        prompt = f"Please summarize the following content in 2-3 sentences:\n\n{chunk['content']}"
-        response = self.client.completions.create(
-            model="claude-3-haiku-20240307",
-            prompt=prompt,
-            max_tokens_to_sample=250,
-            temperature=0
-        )
-        return response.completion.strip()
+def parse_markdown(content: str) -> List[Dict[str, Any]]:
+    md = markdown.Markdown(extensions=[HeadingCollectorExtension()])
+    md.convert(content)
+    return md.heading_collector.chunks
 
 
 def main():
@@ -92,7 +106,7 @@ def main():
 
         logger.info(f"Processing page: {source_url}")
 
-        chunks = ChunkIdentifier.identify_chunks(content)
+        chunks = parse_markdown(content)
         processed_chunks = [ChunkProcessor.process_chunk(chunk, source_url) for chunk in chunks]
 
         logger.info(f"Total chunks identified: {len(processed_chunks)}")
@@ -110,6 +124,12 @@ def main():
         with open(output_file, 'w') as f:
             json.dump(processed_chunks, f, indent=2)
         logger.info(f"Saved processed chunks to {output_file}")
+
+        # Summary stats
+        logger.info(f"\nSummary Statistics:")
+        logger.info(f"Total number of chunks: {len(processed_chunks)}")
+        logger.info(
+            f"Average chunk size (characters): {sum(len(chunk['content']) for chunk in processed_chunks) / len(processed_chunks):.2f}")
     else:
         logger.warning("No data found in the input file.")
 
