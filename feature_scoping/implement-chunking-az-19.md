@@ -252,10 +252,10 @@ following structure:
 
 ## Modular Structure
 
-1. DataLoader
+1. DataLoader (Done)
    - load_json_data()
 
-2. MarkdownParser
+2. MarkdownParser (Done)
    - parse_markdown()
 
 3. ChunkIdentifier
@@ -266,21 +266,21 @@ following structure:
    - split_large_chunks()
    - extract_subheadings()
 
-5. TokenCounter
+5. TokenCounter (Done) 
    - count_tokens()
 
-6. SummaryGenerator
+6. SummaryGenerator (Done)
    - generate_summary()
 
 7. OutputFormatter
    - create_chunk_object()
    - generate_json_output()
 
-8. Validator
+8. Validator (Done)
    - validate_completeness()
    - validate_structure()
 
-9. MainProcessor
+9. MainProcessor (Done)
    - orchestrate_chunking()
    - handle_errors()
 
@@ -293,27 +293,14 @@ following structure:
 
 # Iterations 
 
-Features yet to implement:
-- Token counting and chunk size control
-- Splitting large chunks if they exceed a token limit
-- Summary generation for each chunk
-
-Improvement Plan for Chunking System
 1. Summary Generation
-1.1 Refine Summary Prompt
-
-Create a generic prompt template not specific to documentation.
-Include placeholders for chunk content and context.
-Ensure the prompt asks for a brief, 2-3 sentence summary that captures key points concisely.
-Instruct the model to avoid preambles and get straight to the summary.
-
-1.2 Implement Context Gathering
+1.1 Implement Context Gathering
 
 Develop a method to gather context from surrounding chunks.
 Use main H1 headings and brief excerpts from adjacent chunks.
 Allow for adjustable context window (e.g., 2 chunks before and after the current chunk).
 
-1.3 Update SummaryGenerator
+1.2 Update SummaryGenerator
 
 Modify the generate_summary method to include the gathered context.
 Implement rate limiting to manage API calls efficiently.
@@ -333,21 +320,13 @@ Modify chunk ID generation to handle split chunks.
 Use a base ID for the original chunk and add suffixes for split chunks.
 Ensure the ID system maintains uniqueness and traceability to the original content.
 
-3. Validator Enhancement
-3.1 Implement Strict and Lenient Rules
-
-Create separate methods for strict and lenient validation.
-Strict validation: Ensure all required fields are present and properly formatted.
-Lenient validation: Allow for some flexibility in content structure.
-Use flags to determine which validation level to apply during processing.
-
-4. OutputFormatter (Optional)
+3. OutputFormatter (Optional)
 
 If needed, implement a simple formatter for consistent output.
 Focus on creating a standardized JSON structure for each chunk.
 Include methods to format individual chunks and the entire output set.
 
-5. MainProcessor Refactoring
+4. MainProcessor Refactoring (Cross check this is NOT yet doen)
 5.1 Define MainProcessor Responsibilities
 
 Orchestrate the overall chunking process.
@@ -363,7 +342,6 @@ Create separate methods in ChunkProcessor for each step:
 Identifying headings
 Extracting content
 Creating chunks
-
 
 Ensure each method has a single responsibility for easier maintenance and testing.
 
@@ -383,17 +361,3 @@ Implement a method to easily update configuration values at runtime.
 
 Use Python's built-in iteration capabilities for processing multiple pages or chunks.
 Create an iterator class if complex iteration logic is required.
-
-Implementation Order:
-
-Update config.py with all necessary constants and configurations.
-Refactor ChunkProcessor to include modularized methods.
-Implement the enhanced chunk splitting logic.
-Update the SummaryGenerator with the new prompt and context gathering.
-Implement the Validator with strict and lenient rules.
-Create the OutputFormatter if needed.
-Refactor the MainProcessor to orchestrate the entire process.
-Implement error handling decorator and apply to key methods.
-Update the main script to use the new Config class for easy parameter adjustment.
-Test the entire pipeline with sample data.
-Refine and optimize based on test results.

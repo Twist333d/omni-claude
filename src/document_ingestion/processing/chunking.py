@@ -21,6 +21,27 @@ import time
 logger = setup_logger(__name__, "chunking.py")
 
 
+def error_handler(func):
+    """Decorator to handle errors in both async and sync methods."""
+
+    if asyncio.iscoroutinefunction(func):
+        async def async_wrapper(*args, **kwargs):
+            try:
+                return await func(*args, **kwargs)
+            except Exception as e:
+                logger.error(f"Error in {func.__name__}: {str(e)}")
+                return None
+        return async_wrapper
+    else:
+        def sync_wrapper(*args, **kwargs):
+            try:
+                return func(*args, **kwargs)
+            except Exception as e:
+                logger.error(f"Error in {func.__name__}: {str(e)}")
+                return None
+        return sync_wrapper
+
+
 class DataLoader:
     """Loads JSON data from a specified file."""
     def __init__(self, filename: str):
@@ -185,6 +206,7 @@ class ChunkProcessor:
         self.min_tokens = min_tokens
         self.max_tokens = max_tokens
 
+    @error_handler
     def process_chunk(self, chunk: Dict[str, Any], source_url: str) -> List[Dict[str, Any]]:
         """
         Processes a single chunk, splitting it if necessary.
@@ -211,6 +233,7 @@ class ChunkProcessor:
 
         return [processed_chunk]
 
+    @error_handler
     def split_large_chunk(self, chunk: Dict[str, Any]) -> List[Dict[str, Any]]:
         """
         Splits a chunk that exceeds the maximum token limit into smaller chunks.
@@ -427,6 +450,7 @@ class MainProcessor:
         self.chunk_processor = ChunkProcessor(self.token_counter)
         self.summary_generator = SummaryGenerator()
 
+    @error_handler
     async def process_data(self) -> List[Dict[str, Any]]:
         """
         Processes the data, from loading to summarizing and saving.
