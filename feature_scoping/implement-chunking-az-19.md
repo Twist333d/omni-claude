@@ -345,12 +345,6 @@ Creating chunks
 
 Ensure each method has a single responsibility for easier maintenance and testing.
 
-6.2 Error Handling and Logging
-
-Utilize the existing logger from logger.py.
-Implement a decorator for try/except handling to be used across critical methods.
-Ensure comprehensive logging of errors, warnings, and important process steps.
-
 6.3 Configuration Management
 
 Create a config.py file for all constants and configurations.

@@ -350,11 +350,11 @@ class SummaryGenerator:
             List[Dict[str, Any]]: The list of chunks with summaries added.
         """
         semaphore = asyncio.Semaphore(self.max_concurrent_requests)
-        tasks = [self._process_chunk(chunk, semaphore, pbar) for chunk in chunks]
+        tasks = [self._process_chunk(chunk, chunks, semaphore, pbar) for chunk in chunks]  # Pass 'chunks' here
         summarized_chunks = await asyncio.gather(*tasks)
         return summarized_chunks
 
-    async def _process_chunk(self, chunk: Dict[str, Any], semaphore: asyncio.Semaphore, pbar: tqdm) -> Dict[str, Any]:
+    async def _process_chunk(self, chunk: Dict[str, Any], all_chunks: List[Dict[str, Any]], semaphore: asyncio.Semaphore, pbar: tqdm) -> Dict[str, Any]:
         """
         Processes a single chunk, generating its summary.
 
@@ -368,7 +368,7 @@ class SummaryGenerator:
         """
         async with semaphore:
             try:
-                context = self._gather_context(chunk)
+                context = self._gather_context(chunk, all_chunks)  # Pass all_chunks here
                 messages = [
                     {"role": "user", "content": self._create_prompt(chunk, context)}
                 ]
@@ -392,17 +392,48 @@ class SummaryGenerator:
                 pbar.update(1)
         return chunk
 
-    def _gather_context(self, chunk: Dict[str, Any]) -> str:
+    def _gather_context(self, chunk: Dict[str, Any], all_chunks: List[Dict[str, Any]], context_window: int = 1) -> str:
         """
-        Gathers context for the chunk. (Currently simplified - will be updated)
+        Gathers context for the chunk from surrounding chunks.
 
         Args:
             chunk (Dict[str, Any]): The chunk to gather context for.
+            all_chunks (List[Dict[str, Any]]): The list of all processed chunks.
+            context_window (int): The number of chunks to consider before and after the current chunk. Defaults to 2.
 
         Returns:
-            str: The gathered context.
+            str: The gathered context as a string.
         """
-        return f"This chunk is about: {chunk['main_heading']}"
+        chunk_index = all_chunks.index(chunk)
+        context = []
+
+        # Gather context from previous chunks
+        for i in range(max(0, chunk_index - context_window), chunk_index):
+            prev_chunk = all_chunks[i]
+            context.append(f"Previous H1: {prev_chunk['main_heading']}")
+            context.append(f"Previous Excerpt: {self._get_brief_excerpt(prev_chunk['content'])}")
+
+        # Gather context from next chunks
+        for i in range(chunk_index + 1, min(chunk_index + context_window + 1, len(all_chunks))):
+            next_chunk = all_chunks[i]
+            context.append(f"Next H1: {next_chunk['main_heading']}")
+            context.append(f"Next Excerpt: {self._get_brief_excerpt(next_chunk['content'])}")
+
+        return "\n".join(context)
+
+    def _get_brief_excerpt(self, content: str, max_length: int = 150) -> str:
+        """
+        Extracts a brief excerpt from the content.
+
+        Args:
+            content (str): The content to extract the excerpt from.
+            max_length (int): The maximum length of the excerpt. Defaults to 100.
+
+        Returns:
+            str: A brief excerpt from the content.
+        """
+        excerpt = content.strip().replace('\n', ' ')
+        return excerpt[:max_length] + "..." if len(excerpt) > max_length else excerpt
 
     def _create_prompt(self, chunk: Dict[str, Any], context: str) -> str:
         """
