@@ -16,6 +16,7 @@ colorama = "^0.4.6"
 requests = "^2.32.3"
 tiktoken = "^0.7.0"
 markdown = "^3.7"
+llama-index = "^0.11.2"
 
 
 [build-system]
