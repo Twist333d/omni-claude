@@ -285,13 +285,11 @@ following structure:
    - handle_errors()
 
 ## Implementation Considerations
-- Use the markdown library for parsing and maintaining document structure
-- Implement token counting using tiktoken for accurate token counts
-- Ensure code blocks and other special elements are not split across chunks
+- Use the **markdown** library for parsing and maintaining document structure
+- Implement token counting using **tiktoken** for accurate token counts
+- **Ensure code blocks and other special elements are not split across chunks.** If a code block exceeds the token limit for a chunk, move the entire block to the next chunk to maintain code integrity.
 - Implement error handling and logging for edge cases
 - Use regex only as a fallback for identifying main headings if the markdown parsing fails
-
-
 
 # Iterations 
 
