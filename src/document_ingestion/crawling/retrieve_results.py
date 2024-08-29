@@ -12,7 +12,7 @@ load_dotenv()
 # FireCrawl API configuration
 API_KEY = os.getenv("FIRECRAWL_API_KEY")
 API_BASE_URL = "https://api.firecrawl.dev/v0"
-JOB_ID = "8a9e1630-5d07-4da8-aab3-332786533195" # replace to retrieve the results
+JOB_ID = "bac58466-c4e6-444d-a8b0-92d13e7177f1" # replace to retrieve the results
 BASE_URL = "https://supabase.com/docs/"
 
 
