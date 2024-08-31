@@ -13,11 +13,12 @@ import asyncio
 from tqdm import tqdm
 import time
 import tiktoken
+import markdown
 
 
 
 # Set up logging
-logger = setup_logger(__name__, 'chunking.log')  # Remove the "chunking.py" argument
+logger = setup_logger(__name__, 'chunking.log')
 
 def error_handler(func):
     """Decorator to handle errors in both async and sync methods."""
@@ -51,25 +52,79 @@ class LlamaIndexLoader:
         """
         self.filepath = os.path.join(RAW_DATA_DIR, filename)
 
-    def load_json_data(self) -> Dict[str, Any]:
+    def load_json_data(self) -> List[Document]:
         """
         Loads JSON data from the file using LlamaIndex.
 
         Returns:
-            Dict[str, Any]: The loaded JSON data as a dictionary.
+            List[Document]: A list of LlamaIndex Document objects.
         """
         try:
-            reader = SimpleDirectoryReader(input_files=[self.filepath])
-            documents = reader.load_data()
-            if documents and len(documents) > 0:
-                json_data = json.loads(documents[0].text)
-                logger.info(f"Successfully loaded data from {self.filepath}")
-                return json_data
-            else:
-                raise ValueError("No data loaded from the file")
+            with open(self.filepath, 'r') as f:
+                data = json.load(f)
+
+            documents = []
+            for page in data['data']:
+                content = page.get('markdown', '')
+                metadata = page.get('metadata', {})
+                documents.append(Document(text=content, metadata=metadata))
+
+            logger.info(f"Successfully loaded {len(documents)} documents from {self.filepath}")
+            return documents
+
         except Exception as e:
             logger.error(f"Error loading data from {self.filepath}: {str(e)}")
             raise
+
+class CustomMarkdownNodeParser(MarkdownNodeParser):
+    """Custom Markdown parser to treat H1/H2 as top-level nodes."""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    def get_nodes_from_documents(self, documents: List[Document]) -> List[Dict[str, Any]]:
+        """
+        Get nodes from documents.
+
+        Args:
+            documents (List[Document]): List of documents.
+
+        Returns:
+            List[Dict[str, Any]]: List of nodes.
+        """
+        nodes = []
+        for document in documents:
+            md_parser = markdown.Markdown(extensions=['fenced_code', 'tables'])
+            parsed_text = md_parser.convert(document.text)
+
+            current_chunk = None
+            current_heading = None
+
+            for line in parsed_text.split("\n"):
+                if line.startswith("<h1>") or line.startswith("<h2>"):
+                    if current_chunk is not None:
+                        nodes.append(current_chunk)
+                    current_heading = line.strip("<h1><h2>")
+                    current_chunk = {
+                        "text": "",
+                        "metadata": {
+                            "heading": current_heading,
+                            "sourceURL": document.metadata.get('sourceURL', 'Unknown URL')
+                        }
+                    }
+                elif line.strip() == "<hr>":  # Treat horizontal rules as separators
+                    if current_chunk is not None:
+                        nodes.append(current_chunk)
+                    current_chunk = None
+                    current_heading = None
+                elif current_chunk is not None:
+                    current_chunk["text"] += line + "\n"
+
+            if current_chunk is not None:
+                nodes.append(current_chunk)
+
+        return nodes
+
 
 class LlamaIndexChunker:
     """Chunks Markdown content using LlamaIndex."""
@@ -79,11 +134,14 @@ class LlamaIndexChunker:
         Initializes LlamaIndexChunker.
 
         Args:
-            min_tokens (int): The minimum number of tokens allowed in a chunk. Defaults to 800.
-            max_tokens (int): The maximum number of tokens allowed in a chunk. Defaults to 1200.
+            min_tokens (int): Minimum tokens per chunk.
+            max_tokens (int): Maximum tokens per chunk.
         """
+        self.min_tokens = min_tokens
+        self.max_tokens = max_tokens
         self.text_splitter = TokenTextSplitter(chunk_size=max_tokens, chunk_overlap=100)
-        self.node_parser = MarkdownNodeParser(text_splitter=self.text_splitter, include_metadata=True)
+        self.node_parser = CustomMarkdownNodeParser(text_splitter=self.text_splitter, include_metadata=True)
+        self.token_counter = TokenCounter()
 
     def chunk_markdown(self, content: str, metadata: Dict[str, Any]) -> List[Dict[str, Any]]:
         """
@@ -101,16 +159,80 @@ class LlamaIndexChunker:
 
         chunks = []
         for node in nodes:
+            chunk_content = node.text
+            chunk_metadata = node.metadata
+            current_token_count = self.token_counter.count_tokens(chunk_content)
+
+            # Split if chunk exceeds max tokens
+            if current_token_count > self.max_tokens:
+                split_chunks = self._split_chunk(chunk_content, chunk_metadata)
+                chunks.extend(split_chunks)
+            else:
+                chunk = {
+                    "chunk_id": str(uuid.uuid4()),
+                    "source_url": chunk_metadata.get('sourceURL', 'Unknown URL'),
+                    "main_heading": chunk_metadata.get('heading', 'No Heading'),
+                    "content": chunk_content,
+                    "summary": ""
+                }
+                chunks.append(chunk)
+
+        return chunks
+
+    def _split_chunk(self, content: str, metadata: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Splits a chunk that exceeds the maximum token limit at paragraph breaks."""
+        split_chunks = []
+        remaining_content = content
+        current_heading = metadata.get('heading', 'No Heading')
+
+        while self.token_counter.count_tokens(remaining_content) > self.max_tokens:
+            split_index = self._find_last_paragraph_break(remaining_content)
+
+            if split_index != -1:
+                chunk_content = remaining_content[:split_index].strip()
+                chunk = {
+                    "chunk_id": str(uuid.uuid4()),
+                    "source_url": metadata.get('sourceURL', 'Unknown URL'),
+                    "main_heading": current_heading,
+                    "content": chunk_content,
+                    "summary": ""
+                }
+                split_chunks.append(chunk)
+
+                remaining_content = remaining_content[split_index:].strip()
+                # No need to update heading as we're splitting at paragraph breaks
+            else:
+                # If no suitable split point is found, create a single large chunk
+                chunk = {
+                    "chunk_id": str(uuid.uuid4()),
+                    "source_url": metadata.get('sourceURL', 'Unknown URL'),
+                    "main_heading": current_heading,
+                    "content": remaining_content,
+                    "summary": ""
+                }
+                split_chunks.append(chunk)
+                break
+
+        # Add the last remaining chunk
+        if remaining_content:
             chunk = {
                 "chunk_id": str(uuid.uuid4()),
                 "source_url": metadata.get('sourceURL', 'Unknown URL'),
-                "main_heading": node.metadata.get('heading', 'No Heading'),
-                "content": node.text,
+                "main_heading": current_heading,
+                "content": remaining_content,
                 "summary": ""
             }
-            chunks.append(chunk)
+            split_chunks.append(chunk)
 
-        return chunks
+        return split_chunks
+
+    def _find_last_paragraph_break(self, content: str) -> int:
+        """Finds the index of the last paragraph break within token limits."""
+        paragraph_break = content.rfind("\n\n")
+        if paragraph_break != -1 and self.token_counter.count_tokens(
+                content[:paragraph_break]) <= self.max_tokens:
+            return paragraph_break
+        return -1
 
 class TokenCounter:
     """Counts tokens in text using tiktoken."""
@@ -138,7 +260,7 @@ class TokenCounter:
 class Validator:
     """Validates the structure and completeness of processed chunks."""
 
-    def validate_chunk_structure(chunk: Dict[str, Any]) -> bool:
+    def validate_chunk_structure(self, chunk: Dict[str, Any]) -> bool:
         """
         Checks if a chunk has the required keys.
 
@@ -148,47 +270,35 @@ class Validator:
         Returns:
             bool: True if the chunk has all required keys, False otherwise.
         """
-        required_keys = ['chunk_id', 'source_url', 'main_heading', 'content', 'summary']
+        required_keys = ['chunk_id', 'source_url', 'main_heading', 'content']
         missing_keys = [key for key in required_keys if key not in chunk]
         if missing_keys:
-            logger.error(f"Invalid chunk structure. Missing keys: {missing_keys}")
-            logger.error(f"Chunk content: {chunk}")
+            logger.error(f"Invalid chunk structure. Missing keys: {missing_keys} in chunk {chunk['chunk_id']}")
             return False
         return True
 
-    def validate_completeness(original_content: str, processed_chunks: List[Dict[str, Any]],
-                              heading_counts: Dict[str, int]) -> bool:
+    def validate_completeness(self, original_content: str, processed_chunks: List[Dict[str, Any]]) -> bool:
         """
         Validates the completeness of the chunking process.
 
         Args:
             original_content (str): The original Markdown content.
             processed_chunks (List[Dict[str, Any]]): The list of processed chunks.
-            heading_counts (Dict[str, int]): A dictionary containing the counts of h1 and h2 headings.
 
         Returns:
             bool: True if the chunking process is deemed complete, False otherwise.
         """
-        original_h1h2_count = heading_counts['h1'] + heading_counts['h2']
-        processed_h1h2_count = len(processed_chunks)
-
-        if original_h1h2_count != processed_h1h2_count:
-            logger.error(
-                f"Mismatch in h1 and h2 headings. Original: {original_h1h2_count} (H1: {heading_counts['h1']}, H2: {heading_counts['h2']}), Processed: {processed_h1h2_count}")
-            logger.error(f"First few processed chunks: {processed_chunks[:3]}")
-            return False
-
         original_content_length = len(original_content)
         processed_content_length = sum(len(chunk['content']) for chunk in processed_chunks)
 
         if abs(original_content_length - processed_content_length) / original_content_length > 0.05:
             logger.warning(
                 f"Significant content length mismatch. Original: {original_content_length}, Processed: {processed_content_length}, Difference: {abs(original_content_length - processed_content_length)}")
-            logger.warning(f"Sample of original content: {original_content[:200]}...")
-            logger.warning(
-                f"Sample of processed content: {' '.join([chunk['content'][:50] for chunk in processed_chunks[:3]])}...")
+            return False
 
         return True
+
+
 
 class SummaryGenerator:
     """Generates summaries for chunks of text using the Anthropic API."""
@@ -334,53 +444,50 @@ class SummaryGenerator:
 class MainProcessor:
     """Orchestrates the entire chunking and summarizing process."""
 
-    def __init__(self, filename: str):
+    def __init__(self, filename: str, max_pages: int = 3):
         """
         Initializes MainProcessor with filename and dependencies.
 
         Args:
             filename (str): The name of the JSON file containing the data.
+            max_pages (int): Maximum number of pages to process. Defaults to 3.
         """
         self.filename = filename
+        self.max_pages = max_pages
         self.data_loader = LlamaIndexLoader(filename)
         self.chunker = LlamaIndexChunker()
-        self.summary_generator = SummaryGenerator()
+        # self.summary_generator = SummaryGenerator()
         self.token_counter = TokenCounter()
 
     @error_handler
     async def process_data(self) -> List[Dict[str, Any]]:
-        """
-        Processes the data, from loading to summarizing and saving.
-
-        Returns:
-            List[Dict[str, Any]]: A list of all processed chunks with summaries.
-        """
+        """Processes the data, from loading to summarizing and saving."""
         start_time = time.time()
-        raw_data = self.data_loader.load_json_data()
+        documents = self.data_loader.load_json_data()
 
         all_processed_chunks = []
         total_h1_count = 0
         total_h2_count = 0
 
-        # Pre-process to get total chunk count
+        documents_to_process = documents[:self.max_pages]
+
         total_chunks = sum(
-            len(self.chunker.chunk_markdown(page.get('markdown', ''), page.get('metadata', {})))
-            for page in raw_data['data']
+            len(self.chunker.chunk_markdown(doc.text, doc.metadata))
+            for doc in documents_to_process
         )
 
         logger.info(f"Total chunks to process: {total_chunks}")
 
         with tqdm(total=total_chunks, desc="Processing chunks") as pbar:
-            for page in raw_data['data']:
-                content = page.get('markdown', '')
-                metadata = page.get('metadata', {})
+            for doc in documents_to_process:
+                content = doc.text  # Access text directly
+                metadata = doc.metadata  # Access metadata directly
                 source_url = metadata.get('sourceURL', 'Unknown URL')
 
                 logger.info(f"Processing page: {source_url}")
 
                 chunks = self.chunker.chunk_markdown(content, metadata)
-                summarized_chunks = await self.summary_generator.generate_summaries(chunks, pbar)
-                all_processed_chunks.extend(summarized_chunks)
+                all_processed_chunks.extend(chunks)
 
                 # Count headings (this may need adjustment based on how LlamaIndex handles headings)
                 h1_count = content.count('\n# ')
@@ -388,24 +495,14 @@ class MainProcessor:
                 total_h1_count += h1_count
                 total_h2_count += h2_count
 
-                chunks = self.chunker.chunk_markdown(content, metadata)
-                summarized_chunks = await self.summary_generator.generate_summaries(chunks, pbar)
-                all_processed_chunks.extend(summarized_chunks)
-
                 # Validate output
-                if not Validator.validate_completeness(content, summarized_chunks, {'h1': h1_count, 'h2': h2_count}):
+                if not Validator.validate_completeness(content, chunks, {'h1': h1_count, 'h2': h2_count}):
                     logger.error(f"Validation failed for page: {source_url}")
-                    logger.error(f"Original content sample: {content[:500]}...")
-                    logger.error(f"Processed chunks sample: {summarized_chunks[:3]}")
+                    logger.error(f"Processed chunks sample: {chunks[:3]}")
 
-                for chunk in summarized_chunks:
+                for chunk in chunks:
                     if not Validator.validate_chunk_structure(chunk):
                         logger.error(f"Invalid chunk structure for chunk: {chunk['chunk_id']}")
-
-        end_time = time.time()
-        total_time = end_time - start_time
-        logger.info(f"Total processing time: {total_time:.2f} seconds")
-        logger.info(f"Average time per chunk: {total_time / len(all_processed_chunks):.2f} seconds")
 
         self._save_chunks(all_processed_chunks)
         self._log_summary_statistics(all_processed_chunks, total_h1_count, total_h2_count)
@@ -414,8 +511,16 @@ class MainProcessor:
 
     def _save_chunks(self, all_processed_chunks: List[Dict[str, Any]]):
         """Saves the processed chunks to a JSON file."""
-        output_file = os.path.join(BASE_DIR, "src", "document_ingestion", "data", "processed",
-                                   "chunked_summarized_supabase_docs.json")
+        input_base_name = os.path.splitext(self.filename)[0]
+
+        # Create a new filename for the output
+        output_filename = f"chunked_{input_base_name}.json"
+
+        output_file = os.path.join(BASE_DIR, "src", "document_ingestion", "data", "processed", output_filename)
+
+        # Ensure the directory exists
+        os.makedirs(os.path.dirname(output_file), exist_ok=True)
+
         with open(output_file, 'w') as f:
             json.dump(all_processed_chunks, f, indent=2)
         logger.info(f"Saved processed and summarized chunks to {output_file}")
@@ -443,8 +548,9 @@ class MainProcessor:
             logger.info(f"  {range_str} characters: {count} chunks")
 
 async def main():
-    filename = "supabase.com_docs__20240826_212435.json"
-    processor = MainProcessor(filename)
+    filename = "supabase.com_docs__20240830_073045.json"
+    max_pages = 5  # Set the number of pages you want to process here
+    processor = MainProcessor(filename, max_pages=max_pages)
     await processor.process_data()
 
 if __name__ == "__main__":
