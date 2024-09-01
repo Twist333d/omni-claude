@@ -1,4 +1,5 @@
 import json
+import re
 import uuid
 from typing import List, Dict, Any
 from collections import defaultdict
@@ -67,110 +68,89 @@ class DocumentTree:
 
 
 class CustomMarkdownParser:
-    def __init__(self, max_tokens: int = 1000):
+    def __init__(self, max_tokens: int = 1000, soft_limit: int = 800):
         self.max_tokens = max_tokens
+        self.soft_limit = soft_limit
         self.tokenizer = tiktoken.get_encoding("cl100k_base")
-        self.document_tree = DocumentTree()
 
     def parse_markdown(self, content: str, source_url: str) -> List[Dict[str, Any]]:
-        lines = content.split('\n')
+        sections = self._split_into_sections(content)
         chunks = []
-        current_chunk = {"content": "", "headers": {"H1": "", "H2": "", "H3": ""}, "source_url": source_url}
+        for section in sections:
+            chunks.extend(self._process_section(section, source_url))
+        return chunks
 
-        for i, line in enumerate(lines):
-            line = line.strip()
-            header_level = self._get_header_level(line, lines, i)
+    def _split_into_sections(self, content: str) -> List[str]:
+        pattern = r'(^|\n)([^\n]+)\n(-+|=+)\n'
+        sections = re.split(pattern, content, flags=re.MULTILINE)
+        return [''.join(sections[i:i + 4]) for i in range(1, len(sections), 4)]
 
-            if header_level:
-                if current_chunk["content"]:
-                    chunks.append(self._finalize_chunk(current_chunk))
-                current_chunk = {"content": line + '\n', "headers": self._update_headers(header_level, line), "source_url": source_url}
-                self._add_to_document_tree(header_level, line)
-            elif line.startswith('`'):
-                code_block = self._extract_code_block(lines, i)
-                current_chunk["content"] += code_block
-                i += len(code_block.split('\n')) - 1
+    def _process_section(self, section: str, source_url: str) -> List[Dict[str, Any]]:
+        lines = section.split('\n')
+        title = lines[0].strip()
+        underline = lines[1].strip()
+        content = '\n'.join(lines[2:])
+
+        header_level = 'H1' if '=' in underline else 'H2'
+
+        chunks = []
+        current_chunk = {"content": f"{title}\n{underline}\n\n",
+                         "headers": {header_level: title}, "source_url": source_url}
+
+        for part in self._split_content(content):
+            if self._should_split_chunk(current_chunk, part):
+                chunks.append(self._finalize_chunk(current_chunk))
+                current_chunk = {"content": f"{title}\n{underline}\n\n{part}",
+                                 "headers": {header_level: title}, "source_url": source_url}
             else:
-                current_chunk["content"] += line + '\n'
+                current_chunk["content"] += part
+
+            # Check for H3 headers
+            h3_match = re.match(r'^### (.+)', part.strip())
+            if h3_match:
+                current_chunk["headers"]["H3"] = h3_match.group(1)
 
         if current_chunk["content"]:
             chunks.append(self._finalize_chunk(current_chunk))
 
         return chunks
 
-    def _get_header_level(self, line: str, lines: List[str], index: int) -> int:
-        if line.startswith('# '):
-            return 1
-        elif line.startswith('## '):
-            return 2
-        elif line.startswith('### '):
-            return 3
-        elif index < len(lines) - 1:
-            next_line = lines[index + 1].strip()
-            if set(next_line) == {'='}:
-                return 1
-            elif set(next_line) == {'-'}:
-                return 2
-        return 0
+    def _split_content(self, content: str) -> List[str]:
+        patterns = [
+            r'(### .*?\n(?:(?!###).*\n)*)',  # H3 sections
+            r'(### Parameters.*?)(?=\n#|\Z)',
+            r'(```.*?```)',
+            r'(\* \* \*.*?)(?=\n#|\Z)'
+        ]
+        parts = []
+        last_end = 0
+        for pattern in patterns:
+            for match in re.finditer(pattern, content, re.DOTALL):
+                if match.start() > last_end:
+                    parts.append(content[last_end:match.start()])
+                parts.append(match.group())
+                last_end = match.end()
+        if last_end < len(content):
+            parts.append(content[last_end:])
+        return parts
 
-    def _update_headers(self, level: int, content: str) -> Dict[str, str]:
-        headers = {"H1": "", "H2": "", "H3": ""}
-        content = content.lstrip('#').strip()
-        if level == 1:
-            headers["H1"] = content
-        elif level == 2:
-            headers["H2"] = content
-        elif level == 3:
-            headers["H3"] = content
-        return headers
-
-    def _add_to_document_tree(self, level: int, content: str):
-        while self.document_tree.current_node.level >= level:
-            self.document_tree.current_node = self.document_tree.current_node.parent
-        new_node = DocumentNode(level, content)
-        new_node.parent = self.document_tree.current_node
-        self.document_tree.current_node.children.append(new_node)
-        self.document_tree.current_node = new_node
-
-    def _extract_code_block(self, lines: List[str], start_index: int) -> str:
-        code_block = [lines[start_index]]
-        for line in lines[start_index + 1:]:
-            code_block.append(line)
-            if line.strip().startswith('`'):
-                break
-        return '\n'.join(code_block)
+    def _should_split_chunk(self, chunk: Dict[str, Any], new_content: str) -> bool:
+        combined_content = chunk["content"] + new_content
+        return len(self.tokenizer.encode(combined_content)) > self.soft_limit
 
     def _finalize_chunk(self, chunk: Dict[str, Any]) -> Dict[str, Any]:
         chunk["chunk_id"] = str(uuid.uuid4())
         chunk["token_count"] = len(self.tokenizer.encode(chunk["content"]))
         chunk["has_code_block"] = '```' in chunk["content"]
-        chunk["document_position"] = self._get_document_position()
         return chunk
 
-    def _get_document_position(self) -> List[int]:
-        position = []
-        node = self.document_tree.current_node
-        while node != self.document_tree.root:
-            position.insert(0, node.parent.children.index(node))
-            node = node.parent
-        return position
-
 class Chunker:
-    def __init__(self, max_tokens: int = 1000):
-        self.parser = CustomMarkdownParser(max_tokens)
+    def __init__(self, max_tokens: int = 1000, soft_limit: int = 800):
+        self.parser = CustomMarkdownParser(max_tokens, soft_limit)
 
     def parse_markdown(self, markdown_content: str, source_url: str) -> List[Dict[str, Any]]:
-        chunks = self.parser.parse_markdown(markdown_content, source_url)
-        final_chunks = []
+        return self.parser.parse_markdown(markdown_content, source_url)
 
-        for chunk in chunks:
-            if chunk["token_count"] > self.parser.max_tokens:
-                sub_chunks = self.parser._split_oversized_chunk(chunk)
-                final_chunks.extend(sub_chunks)
-            else:
-                final_chunks.append(chunk)
-
-        return final_chunks
 
 class Summarizer:
     """Handles generating summaries for chunks using Google Gemini 1.5 Flash."""
@@ -193,8 +173,7 @@ class Validator:
         self.token_threshold = token_threshold
         self.tokenizer = tiktoken.get_encoding("cl100k_base")
 
-    def validate_document(self, original_doc: str, chunks: List[Dict[str, Any]], source_url: str) -> \
-    Dict[str, Any]:
+    def validate_document(self, original_doc: str, chunks: List[Dict[str, Any]], source_url: str) -> Dict[str, Any]:
         original_tokens = len(self.tokenizer.encode(original_doc))
         chunk_tokens = sum(chunk['token_count'] for chunk in chunks)
 
@@ -211,17 +190,21 @@ class Validator:
         }
 
     def _validate_headings(self, original_doc: str, chunks: List[Dict[str, Any]]) -> Dict[str, Any]:
-        original_h1 = original_doc.count('\n# ')
-        original_h2 = original_doc.count('\n## ')
-        chunk_h1 = sum(1 for chunk in chunks if chunk['headers']['H1'])
-        chunk_h2 = sum(1 for chunk in chunks if chunk['headers']['H2'])
+        original_h1 = len(re.findall(r'\n[^\n]+\n=+\n', original_doc))
+        original_h2 = len(re.findall(r'\n[^\n]+\n-+\n', original_doc))
+        original_h3 = len(re.findall(r'\n### ', original_doc))
+        chunk_h1 = len(set(chunk['headers']['H1'] for chunk in chunks if 'H1' in chunk['headers']))
+        chunk_h2 = len(set(chunk['headers']['H2'] for chunk in chunks if 'H2' in chunk['headers']))
+        chunk_h3 = len(set(chunk['headers']['H3'] for chunk in chunks if 'H3' in chunk['headers']))
 
         return {
             "original_h1_count": original_h1,
             "chunk_h1_count": chunk_h1,
             "original_h2_count": original_h2,
             "chunk_h2_count": chunk_h2,
-            "all_headings_preserved": original_h1 == chunk_h1 and original_h2 == chunk_h2
+            "original_h3_count": original_h3,
+            "chunk_h3_count": chunk_h3,
+            "all_headings_preserved": original_h1 == chunk_h1 and original_h2 == chunk_h2 and original_h3 == chunk_h3
         }
 
     def _validate_content(self, original_tokens: int, chunk_tokens: int) -> Dict[str, Any]:
@@ -255,33 +238,32 @@ class StatisticsGenerator:
         self.chunk_sizes = []
         self.chunks_with_code_blocks = 0
         self.heading_counts = {"H1": 0, "H2": 0, "H3": 0}
-        self.chunks_per_h1 = []
+        self.chunks_per_h2 = []
 
     def process_document(self, doc: str, chunks: List[Dict[str, Any]]):
         self.document_sizes.append(sum(chunk['token_count'] for chunk in chunks))
 
-        current_h1_chunks = 0
+        current_h2_chunks = 0
+        current_h2 = None
         for chunk in chunks:
             self.chunk_sizes.append(chunk['token_count'])
             if chunk['has_code_block']:
                 self.chunks_with_code_blocks += 1
 
-            if chunk['headers']['H1']:
-                if current_h1_chunks > 0:
-                    self.chunks_per_h1.append(current_h1_chunks)
-                current_h1_chunks = 1
-                self.heading_counts['H1'] += 1
+            for header_type in ['H1', 'H2', 'H3']:
+                if header_type in chunk['headers']:
+                    self.heading_counts[header_type] += 1
+
+            if chunk['headers'].get('H2') != current_h2:
+                if current_h2_chunks > 0:
+                    self.chunks_per_h2.append(current_h2_chunks)
+                current_h2_chunks = 1
+                current_h2 = chunk['headers'].get('H2')
             else:
-                current_h1_chunks += 1
+                current_h2_chunks += 1
 
-            if chunk['headers']['H2']:
-                self.heading_counts['H2'] += 1
-
-            if '###' in chunk['content']:
-                self.heading_counts['H3'] += 1
-
-        if current_h1_chunks > 0:
-            self.chunks_per_h1.append(current_h1_chunks)
+        if current_h2_chunks > 0:
+            self.chunks_per_h2.append(current_h2_chunks)
 
     def generate_statistics(self) -> Dict[str, Any]:
         return {
@@ -316,17 +298,18 @@ class StatisticsGenerator:
             "total_h1": self.heading_counts['H1'],
             "total_h2": self.heading_counts['H2'],
             "total_h3": self.heading_counts['H3'],
-            "avg_chunks_per_h1": round(
-                sum(self.chunks_per_h1) / len(self.chunks_per_h1)) if self.chunks_per_h1 else 0
+            "avg_chunks_per_h2": round(
+                sum(self.chunks_per_h2) / len(self.chunks_per_h2)) if self.chunks_per_h2 else 0
         }
 
 class Orchestrator:
-    def __init__(self, input_file: str, output_file: str, max_tokens: int = 1000):
+    def __init__(self, input_file: str, output_file: str, max_tokens: int = 1000, soft_limit: int = 800):
         self.input_file = input_file
         self.output_file = output_file
         self.max_tokens = max_tokens
+        self.soft_limit = soft_limit
         self.input_processor = InputProcessor(input_file)
-        self.chunker = Chunker(max_tokens)
+        self.chunker = Chunker(max_tokens, soft_limit)
         self.validator = Validator(max_tokens)
         self.stats_generator = StatisticsGenerator()
 
@@ -362,7 +345,7 @@ class Orchestrator:
                 "total_chunks": len(all_chunks)
             },
             "chunks": all_chunks,
-            "validation_report": self._aggregate_validation_reports(validation_reports),
+            "validation_report": validation_report,
             "statistics": statistics
         }
 
