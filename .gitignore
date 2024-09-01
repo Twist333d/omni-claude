@@ -297,6 +297,3 @@ structure.txt
 
 #logs
 logs
-
-# local testing files
-src/document_ingestion/processing/local
