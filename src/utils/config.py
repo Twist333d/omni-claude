@@ -10,6 +10,9 @@ FIRECRAWL_API_URL = "https://api.firecrawl.dev/v1"
 # Anthropic Configuration
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 
+# Google Configuration
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
 
 
 # File Paths
@@ -18,7 +21,9 @@ LOG_DIR = os.path.join(BASE_DIR, "logs")
 JOB_FILE_DIR = os.path.join(BASE_DIR, "src", "document_ingestion", "data", "jobs")
 JOB_FILE_PATH = os.path.join(JOB_FILE_DIR, "jobs.json")
 RAW_DATA_DIR = os.path.join(BASE_DIR, "src", "document_ingestion", "data", "raw")
+PROCESSED_DATA_DIR = os.path.join(BASE_DIR, "src", "document_ingestion", "data", "processed")
 
 # Ensure directories exist
 os.makedirs(JOB_FILE_DIR, exist_ok=True)
 os.makedirs(RAW_DATA_DIR, exist_ok=True)
+os.makedirs(PROCESSED_DATA_DIR, exist_ok=True)
