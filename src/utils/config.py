@@ -13,8 +13,6 @@ ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 # Google Configuration
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
-
-
 # File Paths
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 LOG_DIR = os.path.join(BASE_DIR, "logs")

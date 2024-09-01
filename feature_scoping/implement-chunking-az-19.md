@@ -241,9 +241,9 @@ to 0.71)
 - Utilize the markdown library to convert Markdown to HTML for easier line-by-line processing.
 - Implement line-by-line parsing logic as described in Section 2.
 - Generate and manage chunks based on heading hierarchy and token limits.
-- Handle code blocks as single units, flagging oversized ones.
+- Handle code blocks as single units, flagging oversized ones. (SKIPPED)
 
-### Summarization
+### Summarization (SKIPPED)
 - Generate summaries for each chunk using Google Gemini 1.5 Flash
 - Implement batch processing for API calls
 - Use a rate limiter to avoid exceeding API limits

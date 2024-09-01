@@ -1,4 +1,4 @@
-from src.document_ingestion.processing.chunking_new import InputProcessor, MarkdownParser
+from src.document_ingestion.processing.chunking import InputProcessor, MarkdownParser
 import os
 
 def test_markdown_parser():
