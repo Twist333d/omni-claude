@@ -195,173 +195,18 @@ to 0.71)
 
 # Chunking and Processing Approach for Supabase Documentation
 
-## 1. End-to-End Approach
+## 1. Step-by-Step Processing Approach
 
-1. **Input Processing**
-   - Load JSON data from FireCrawl
-   - Extract markdown content and metadata for each page
-   - Implement error handling for malformed JSON or missing required fields
+1. Load JSON data from FireCrawl
+2. Extract and parse markdown content for each page
+3. Identify document structure (headings, code blocks, special content)
+4. Generate and enrich chunks based on heading hierarchy and content
+5. Calculate token counts using tiktoken
+6. Generate summaries using Google Gemini 1.5 Flash (batch mode)
+7. Validate chunks and generate report
+8. Save processed chunks and validation report
 
-2. **Document Parsing**
-   - Parse markdown content using a robust Markdown parser (e.g., Python-Markdown)
-   - Identify H1, H2, and H3 headings using regular expressions
-   - Detect code blocks and other special content (e.g., tables, lists)
-   - Preserve original Markdown formatting
-
-3. **Chunking**
-   - Generate initial chunks based on heading hierarchy
-   - Implement a sliding window approach for chunking to ensure context preservation
-   - Split large chunks while respecting content boundaries and code blocks
-   - Ensure code blocks are not split across chunks
-   - Handle edge cases like inconsistent heading hierarchy and very long sections
-
-4. **Enrichment**
-   - Add metadata to each chunk (source URL, headings, etc.)
-   - Calculate token count using fast approximation method
-   - Generate unique chunk IDs (UUIDs)
-   - Preserve original heading structure (H1, H2, H3) for each chunk
-
-5. **Summarization**
-   - Generate summaries for each chunk using Claude 3 Haiku
-   - Implement asynchronous processing for API calls
-   - Use a rate limiter to avoid exceeding API limits
-   - Implement retry logic for failed API calls
-
-6. **Output Formatting**
-   - Structure chunks and summaries into JSON format
-   - Ensure proper escaping of special characters in JSON output
-   - Compress output if file size is large
-
-7. **Validation and Reporting**
-   - Perform integrity checks on the chunking process
-   - Generate and display summary statistics
-   - Implement checksums for data integrity verification
-- 
-## 2. Processing Steps and Data Flow
-
-1. Load JSON from FireCrawl
-2. Extract Markdown & Metadata
-3. Parse Markdown (multiprocessing)
-4. Generate Initial Chunks (multiprocessing)
-5. Split Large Chunks (multiprocessing)
-6. Enrich Chunks with Metadata (multiprocessing)
-7. Generate Summaries (async)
-8. Format Output JSON
-9. Save Output File
-10. Validate Results
-11. Display Summary Statistics
-
-## 3. Components, Functions, and Methods
-
-### InputProcessor
-- `load_json(file_path: str) -> Dict`
-- `extract_markdown(page_data: Dict) -> Tuple[str, Dict]`
-- `validate_input(data: Dict) -> bool`
-
-### MarkdownParser
-- `parse_markdown(content: str) -> ParsedDocument`
-- `identify_headings(parsed_doc: ParsedDocument) -> List[Heading]`
-- `detect_code_blocks(parsed_doc: ParsedDocument) -> List[CodeBlock]`
-- `detect_special_content(parsed_doc: ParsedDocument) -> List[SpecialContent]`
-
-### Chunker
-- `generate_initial_chunks(parsed_doc: ParsedDocument) -> List[Chunk]`
-- `split_large_chunks(chunks: List[Chunk], max_tokens: int) -> List[Chunk]`
-- `respect_code_blocks(chunk: Chunk, code_blocks: List[CodeBlock]) -> List[Chunk]`
-- `sliding_window_chunk(content: str, window_size: int, overlap: int) -> List[Chunk]`
-
-### ChunkEnricher
-- `enrich_chunk(chunk: Chunk, metadata: Dict) -> EnrichedChunk`
-- `generate_chunk_id() -> str`
-
-### Summarizer
-- `generate_summary(chunk: EnrichedChunk) -> str`
-- `batch_summarize(chunks: List[EnrichedChunk]) -> List[str]`
-- `retry_api_call(func: Callable, max_retries: int, backoff_factor: float) -> Any`
-
-### OutputFormatter
-- `format_chunks(chunks: List[EnrichedChunk], summaries: List[str]) -> List[Dict]`
-- `save_output(formatted_chunks: List[Dict], file_path: str)`
-- `compress_output(data: str) -> bytes`
-
-### Validator
-- `validate_token_counts(original_docs: List[str], chunks: List[EnrichedChunk]) -> bool`
-- `validate_headings_preserved(original_docs: List[str], chunks: List[EnrichedChunk]) -> bool`
-- `validate_chunk_sizes(chunks: List[EnrichedChunk], min_tokens: int, max_tokens: int) -> bool`
-- `validate_code_block_integrity(original_docs: List[str], chunks: List[EnrichedChunk]) -> bool`
-- `calculate_checksum(data: str) -> str`
-
-### StatisticsGenerator
-- `generate_statistics(original_docs: List[str], chunks: List[EnrichedChunk]) -> Dict`
-- `calculate_token_distribution(chunks: List[EnrichedChunk]) -> Dict`
-
-### Orchestrator
-- `run(input_file: str, output_file: str)`
-- `process_documents(docs: List[Dict]) -> List[EnrichedChunk]`
-- `summarize_chunks(chunks: List[EnrichedChunk]) -> List[str]`
-- `validate_and_report(original_docs: List[str], chunks: List[EnrichedChunk])`
-
-## 4. Scalability Considerations
-
-- Implement comprehensive multiprocessing for all CPU-bound tasks
-- Use async/await for I/O-bound operations (e.g., API calls for summarization)
-- Implement a fast token counting proxy
-- Use generators for memory-efficient processing of large datasets
-- Implement progress bars and summary statistics for user feedback
-- Use batch processing for large datasets that don't fit in memory
-
-### Token Counting Proxy
-
-Implement a fast token counting proxy that provides a good approximation without the computational cost of tiktoken. This method splits on whitespace and punctuation, and adjusts for common subword tokenization patterns.
-
-### Multiprocessing Implementation
-
-Use Python's \`multiprocessing\` module to parallelize CPU-bound tasks. The \`Orchestrator\` class will manage the distribution of work across available CPU cores.
-
-### Asynchronous Summarization
-
-Implement asynchronous processing for API calls to Claude 3 Haiku for summary generation. This allows for concurrent API calls, significantly reducing the overall time for summarization.
-
-## 5. CLI Approach for Main Orchestrator
-
-Implement a command-line interface for the main orchestrator, allowing users to specify input and output files, as well as optional parameters like maximum tokens per chunk and summary length.
-
-## 6. Validator Integration with Orchestrator
-
-The validator is integrated directly into the Orchestrator's workflow. It performs various checks after processing and provides a detailed report to the user.
-
-## 7. Summary Generator Output
-
-The StatisticsGenerator provides comprehensive statistics about the chunking process, including:
-- Original document count and token count
-- Unique URLs processed
-- Total chunks generated
-- Token count statistics (total, average, min, max)
-- Heading counts (H1, H2)
-- Number of chunks with code blocks
-- Identified issues (e.g., chunks outside the desired token range)
-
-## 8. Progress Tracking and User Feedback
-
-Implement progress bars using the \`tqdm\` library to provide real-time feedback on:
-- Document processing progress
-- Summary generation progress
-
-Display summary statistics and validation results at the end of the process.
-
-## 9. Error Handling and Logging
-
-Implement comprehensive error handling and logging throughout the pipeline to catch and report any issues during processing.
-
-## 10. Extensibility
-
-Design the system with extensibility in mind, allowing for easy addition of new features or modifications to existing components without major refactoring.
-
-This approach provides a scalable, efficient, and user-friendly solution for processing and chunking Supabase documentation. It leverages multiprocessing for CPU-bound tasks, asynchronous programming for I/O-bound operations, and provides clear progress indicators and summary statistics to the user. The modular design allows for easy modifications and extensions as needed, making it capable of handling large volumes of documentation efficiently.
-
-## 11. Target Chunk Structure
-
-Each chunk will be structured as follows:
+## 2. Target Chunk Structure
 
 ```json
 {
@@ -372,67 +217,137 @@ Each chunk will be structured as follows:
   "h3": "Tertiary heading (H3) text, if applicable",
   "content": "Full content of the chunk, including lower-level headings and all markdown formatting",
   "token_count": 950,
-  "summary": "Brief summary generated by Claude 3 Haiku"
+  "summary": "Brief summary generated by Google Gemini 1.5 Flash"
 }
 ```
-- chunk_id: A unique identifier for the chunk (e.g., UUID)
-- source_url: The URL of the original document
-- h1, h2, h3: The text of the nearest preceding headings of each level
-- content: The full markdown content of the chunk
-- token_count: The approximate number of tokens in the content
-- summary: A brief summary of the chunk's content
+
+## 3. Updated End-to-End Approach
+
+### Input Processing
+- Load JSON data from FireCrawl
+- Implement error handling for malformed JSON or missing required fields
+
+### Document Parsing and Chunking
+- Parse markdown content using a robust Markdown parser (e.g., Python-Markdown)
+- Identify H1, H2, and H3 headings
+- Detect code blocks and other special content (e.g., tables, lists)
+- Generate chunks based on heading hierarchy
+- Implement a sliding window approach for chunking to ensure context preservation
+- Split large chunks while respecting content boundaries and code blocks
+- Enrich chunks with metadata (source URL, headings, etc.)
+- Calculate token count using tiktoken
+- Generate unique chunk IDs (UUIDs)
+
+### Summarization
+- Generate summaries for each chunk using Google Gemini 1.5 Flash
+- Implement batch processing for API calls
+- Use a rate limiter to avoid exceeding API limits
+- Implement retry logic for failed API calls
+
+### Validation and Reporting
+- Check for lost H1 and H2 headings
+- Perform smart token count validation
+- Generate and display summary statistics
+
+### Output Generation
+- Structure chunks and summaries into JSON format
+- Save output file
+
+## 4. Components, Functions, and Methods
+
+### InputProcessor
+- `load_json(file_path: str) -> Dict`
+- `validate_input(data: Dict) -> bool`
+
+### ChunkerAndEnricher
+- `parse_markdown(content: str) -> ParsedDocument`
+- `identify_document_structure(parsed_doc: ParsedDocument) -> DocumentStructure`
+- `generate_and_enrich_chunks(doc_structure: DocumentStructure, metadata: Dict) -> List[EnrichedChunk]`
+- `calculate_token_count(text: str) -> int`
+- `generate_chunk_id() -> str`
+
+### Summarizer
+- `batch_summarize(chunks: List[EnrichedChunk]) -> List[str]`
+- `retry_api_call(func: Callable, max_retries: int, backoff_factor: float) -> Any`
+
+### Validator
+- `validate_headings_preserved(original_doc: str, chunks: List[EnrichedChunk]) -> bool`
+- `validate_token_counts(original_doc: str, chunks: List[EnrichedChunk]) -> bool`
+- `generate_validation_report(original_doc: str, chunks: List[EnrichedChunk]) -> Dict`
+
+### StatisticsGenerator
+- `generate_statistics(original_docs: List[str], chunks: List[EnrichedChunk]) -> Dict`
+
+### Orchestrator
+- `run(input_file: str, output_file: str)`
+- `process_document(doc: Dict) -> List[EnrichedChunk]`
+- `summarize_chunks(chunks: List[EnrichedChunk]) -> List[str]`
+- `validate_and_report(original_doc: str, chunks: List[EnrichedChunk])`
+
+## 5. Scalability Considerations
+
+- Implement comprehensive multiprocessing for CPU-bound tasks
+- Use async/await for I/O-bound operations (e.g., API calls for summarization)
+- Use generators for memory-efficient processing of large datasets
+- Implement progress bars and summary statistics for user feedback
+- Use batch processing for large datasets that don't fit in memory
+
+### Multiprocessing Implementation
+Use Python's `multiprocessing` module to parallelize CPU-bound tasks. The `Orchestrator` class will manage the distribution of work across available CPU cores.
+
+### Asynchronous Summarization
+Implement asynchronous processing for batch API calls to Google Gemini 1.5 Flash for summary generation. This allows for concurrent API calls, significantly reducing the overall time for summarization.
+
+## 6. CLI Approach for Main Orchestrator
+Implement a command-line interface for the main orchestrator, allowing users to specify input and output files, as well as optional parameters like maximum tokens per chunk and summary length.
+
+## 7. Validator Integration with Orchestrator
+The validator is integrated directly into the Orchestrator's workflow. It performs checks after processing each document and provides a detailed report to the user.
+
+## 8. Summary Generator Output
+The StatisticsGenerator provides comprehensive statistics about the chunking process, including:
+
+- Original document count and token count
+- Unique URLs processed
+- Total chunks generated
+- Token count statistics (total, average, min, max)
+- Heading counts (H1, H2)
+- Number of chunks with code blocks
+- Identified issues (e.g., chunks outside the desired token range)
+
+## 9. Progress Tracking and User Feedback
+Implement progress bars using the `tqdm` library to provide real-time feedback on:
+
+- Document processing progress
+- Summary generation progress
+
+Display summary statistics and validation results at the end of the process.
+
+## 10. Error Handling and Logging
+Implement comprehensive error handling and logging throughout the pipeline to catch and report any issues during processing.
+
+## 11. Extensibility
+Design the system with extensibility in mind, allowing for easy addition of new features or modifications to existing components without major refactoring.
 
 ## 12. Handling Edge Cases and Varying Document Structures
 
-To handle edge cases and documents with different structures, we'll implement the following strategies:
+### Inconsistent Heading Hierarchy:
+- If a document doesn't start with an H1, use the document title or first heading as H1
+- If H2 appears before H1, treat it as an H1 until a true H1 is encountered
+- Handle missing intermediate levels (e.g., H1 followed directly by H3)
 
-1. **Inconsistent Heading Hierarchy**:
-   - If a document doesn't start with an H1, use the document title or first heading as H1
-   - If H2 appears before H1, treat it as an H1 until a true H1 is encountered
-   - Handle missing intermediate levels (e.g., H1 followed directly by H3)
+### No Clear Headings:
+- For documents with no clear heading structure, create chunks based on paragraph breaks or a maximum token count
+- Use the document title or first sentence as the H1 for all chunks
 
-2. **No Clear Headings**:
-   - For documents with no clear heading structure, create chunks based on paragraph breaks or a maximum token count
-   - Use the document title or first sentence as the H1 for all chunks
+### Very Short Documents:
+- If a document is shorter than the minimum chunk size, keep it as a single chunk
+- Add a note in the metadata indicating it's a full document
 
-3. **Very Short Documents**:
-   - If a document is shorter than the minimum chunk size, keep it as a single chunk
-   - Add a note in the metadata indicating it's a full document
+### Very Long Sections:
+- If content between headings exceeds the maximum chunk size, split it into multiple chunks
+- Maintain the same heading information for all resulting chunks, but add a part number (e.g., "Part 1", "Part 2")
 
-4. **Very Long Sections**:
-   - If content between headings exceeds the maximum chunk size, split it into multiple chunks
-   - Maintain the same heading information for all resulting chunks, but add a part number (e.g., "Part 1", "Part 2")
-
-5. **Complex Nested Structures**:
-   - Handle nested lists, tables, and other complex markdown structures by keeping them intact within chunks
-   - If a complex structure exceeds the maximum chunk size, split at the highest possible level to maintain coherence
-
-6. **Code Blocks**:
-   - Never split within a code block
-   - If a code block exceeds the maximum chunk size, keep it as a single oversized chunk and flag it in the metadata
-
-7. **Non-Standard Markdown**:
-   - Implement a fallback parsing method for documents that don't follow standard markdown conventions
-   - This could involve splitting based on line breaks and common formatting patterns
-
-8. **Handling Special Characters and Unicode**:
-   - Ensure the parser and token counter can handle special characters, emojis, and various Unicode scripts
-   - Implement proper escaping and encoding in the output JSON
-
-9. **Metadata Inconsistencies**:
-   - If expected metadata (e.g., source URL) is missing, use placeholder values and flag in the chunk metadata
-
-10. **Varying Content Types**:
-    - Be prepared to handle different types of content that might appear in the documentation (e.g., warnings, notes, examples)
-    - Develop specific rules for chunking these special content types if necessary
-
-Implementation Details:
-
-- Enhance the \`MarkdownParser\` class to detect and handle these edge cases
-- Implement a \`ChunkStrategy\` interface with multiple implementations for different document structures
-- Use a \`ChunkStrategyFactory\` to select the appropriate strategy based on document analysis
-- Add metadata fields to the chunk structure to flag special handling or potential issues
-- Implement comprehensive logging to track how edge cases are handled
-- Extend the \`Validator\` to check for and report on unusual chunk structures or content
-
-By implementing these strategies, the chunking process will be more robust and capable of handling a wide variety of document structures and edge cases while still producing consistent and useful chunks for further processing.
+### Code Blocks:
+- Never split within a code block
+- If a code block exceeds the maximum chunk size, keep it as a single oversized chunk and flag it in the metadata
