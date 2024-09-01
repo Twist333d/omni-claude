@@ -1,4 +1,4 @@
-Chunk ID: 09ade26d-2029-4c18-97cb-5206838466be_part1
+Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part1
 Source URL: https://supabase.com/docs/reference/python/initializing
 Metadata: {
   "Header 1": "",
@@ -87,7 +87,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 09ade26d-2029-4c18-97cb-5206838466be_part2
+Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part2
 Source URL: https://supabase.com/docs/reference/python/initializing
 Metadata: {
   "Header 1": "",
@@ -170,7 +170,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 09ade26d-2029-4c18-97cb-5206838466be_part3
+Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part3
 Source URL: https://supabase.com/docs/reference/python/initializing
 Metadata: {
   "Header 1": "",
@@ -302,7 +302,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 09ade26d-2029-4c18-97cb-5206838466be_part4
+Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part4
 Source URL: https://supabase.com/docs/reference/python/initializing
 Metadata: {
   "Header 1": "",
@@ -404,7 +404,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 09ade26d-2029-4c18-97cb-5206838466be_part5
+Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part5
 Source URL: https://supabase.com/docs/reference/python/initializing
 Metadata: {
   "Header 1": "",
@@ -498,7 +498,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 09ade26d-2029-4c18-97cb-5206838466be_part6
+Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part6
 Source URL: https://supabase.com/docs/reference/python/initializing
 Metadata: {
   "Header 1": "",
@@ -586,7 +586,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 09ade26d-2029-4c18-97cb-5206838466be_part7
+Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part7
 Source URL: https://supabase.com/docs/reference/python/initializing
 Metadata: {
   "Header 1": "",
@@ -676,7 +676,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 09ade26d-2029-4c18-97cb-5206838466be_part8
+Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part8
 Source URL: https://supabase.com/docs/reference/python/initializing
 Metadata: {
   "Header 1": "",
@@ -763,7 +763,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 09ade26d-2029-4c18-97cb-5206838466be_part9
+Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part9
 Source URL: https://supabase.com/docs/reference/python/initializing
 Metadata: {
   "Header 1": "",
@@ -847,7 +847,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 09ade26d-2029-4c18-97cb-5206838466be_part10
+Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part10
 Source URL: https://supabase.com/docs/reference/python/initializing
 Metadata: {
   "Header 1": "",
@@ -923,7 +923,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 09ade26d-2029-4c18-97cb-5206838466be_part11
+Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part11
 Source URL: https://supabase.com/docs/reference/python/initializing
 Metadata: {
   "Header 1": "",
@@ -988,7 +988,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 09ade26d-2029-4c18-97cb-5206838466be_part12
+Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part12
 Source URL: https://supabase.com/docs/reference/python/initializing
 Metadata: {
   "Header 1": "",
@@ -1099,7 +1099,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 09ade26d-2029-4c18-97cb-5206838466be_part13
+Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part13
 Source URL: https://supabase.com/docs/reference/python/initializing
 Metadata: {
   "Header 1": "",
@@ -1147,7 +1147,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5d69ad66-98f2-4dec-9f8c-63dab0063ca3_part1
+Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part1
 Source URL: https://supabase.com/docs/reference/python/auth-signup
 Metadata: {
   "Header 1": "",
@@ -1236,7 +1236,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5d69ad66-98f2-4dec-9f8c-63dab0063ca3_part2
+Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part2
 Source URL: https://supabase.com/docs/reference/python/auth-signup
 Metadata: {
   "Header 1": "",
@@ -1319,7 +1319,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5d69ad66-98f2-4dec-9f8c-63dab0063ca3_part3
+Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part3
 Source URL: https://supabase.com/docs/reference/python/auth-signup
 Metadata: {
   "Header 1": "",
@@ -1451,7 +1451,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5d69ad66-98f2-4dec-9f8c-63dab0063ca3_part4
+Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part4
 Source URL: https://supabase.com/docs/reference/python/auth-signup
 Metadata: {
   "Header 1": "",
@@ -1553,7 +1553,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5d69ad66-98f2-4dec-9f8c-63dab0063ca3_part5
+Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part5
 Source URL: https://supabase.com/docs/reference/python/auth-signup
 Metadata: {
   "Header 1": "",
@@ -1647,7 +1647,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5d69ad66-98f2-4dec-9f8c-63dab0063ca3_part6
+Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part6
 Source URL: https://supabase.com/docs/reference/python/auth-signup
 Metadata: {
   "Header 1": "",
@@ -1735,7 +1735,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5d69ad66-98f2-4dec-9f8c-63dab0063ca3_part7
+Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part7
 Source URL: https://supabase.com/docs/reference/python/auth-signup
 Metadata: {
   "Header 1": "",
@@ -1825,7 +1825,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5d69ad66-98f2-4dec-9f8c-63dab0063ca3_part8
+Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part8
 Source URL: https://supabase.com/docs/reference/python/auth-signup
 Metadata: {
   "Header 1": "",
@@ -1912,7 +1912,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5d69ad66-98f2-4dec-9f8c-63dab0063ca3_part9
+Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part9
 Source URL: https://supabase.com/docs/reference/python/auth-signup
 Metadata: {
   "Header 1": "",
@@ -1996,7 +1996,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5d69ad66-98f2-4dec-9f8c-63dab0063ca3_part10
+Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part10
 Source URL: https://supabase.com/docs/reference/python/auth-signup
 Metadata: {
   "Header 1": "",
@@ -2072,7 +2072,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5d69ad66-98f2-4dec-9f8c-63dab0063ca3_part11
+Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part11
 Source URL: https://supabase.com/docs/reference/python/auth-signup
 Metadata: {
   "Header 1": "",
@@ -2137,7 +2137,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5d69ad66-98f2-4dec-9f8c-63dab0063ca3_part12
+Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part12
 Source URL: https://supabase.com/docs/reference/python/auth-signup
 Metadata: {
   "Header 1": "",
@@ -2248,7 +2248,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5d69ad66-98f2-4dec-9f8c-63dab0063ca3_part13
+Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part13
 Source URL: https://supabase.com/docs/reference/python/auth-signup
 Metadata: {
   "Header 1": "",
@@ -2296,7 +2296,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 82592276-bf92-43a3-98fc-a064640b8bb6_part1
+Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part1
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
 Metadata: {
   "Header 1": "",
@@ -2385,7 +2385,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 82592276-bf92-43a3-98fc-a064640b8bb6_part2
+Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part2
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
 Metadata: {
   "Header 1": "",
@@ -2468,7 +2468,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 82592276-bf92-43a3-98fc-a064640b8bb6_part3
+Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part3
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
 Metadata: {
   "Header 1": "",
@@ -2600,7 +2600,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 82592276-bf92-43a3-98fc-a064640b8bb6_part4
+Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part4
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
 Metadata: {
   "Header 1": "",
@@ -2702,7 +2702,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 82592276-bf92-43a3-98fc-a064640b8bb6_part5
+Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part5
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
 Metadata: {
   "Header 1": "",
@@ -2796,7 +2796,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 82592276-bf92-43a3-98fc-a064640b8bb6_part6
+Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part6
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
 Metadata: {
   "Header 1": "",
@@ -2884,7 +2884,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 82592276-bf92-43a3-98fc-a064640b8bb6_part7
+Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part7
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
 Metadata: {
   "Header 1": "",
@@ -2974,7 +2974,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 82592276-bf92-43a3-98fc-a064640b8bb6_part8
+Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part8
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
 Metadata: {
   "Header 1": "",
@@ -3061,7 +3061,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 82592276-bf92-43a3-98fc-a064640b8bb6_part9
+Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part9
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
 Metadata: {
   "Header 1": "",
@@ -3145,7 +3145,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 82592276-bf92-43a3-98fc-a064640b8bb6_part10
+Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part10
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
 Metadata: {
   "Header 1": "",
@@ -3221,7 +3221,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 82592276-bf92-43a3-98fc-a064640b8bb6_part11
+Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part11
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
 Metadata: {
   "Header 1": "",
@@ -3286,7 +3286,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 82592276-bf92-43a3-98fc-a064640b8bb6_part12
+Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part12
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
 Metadata: {
   "Header 1": "",
@@ -3397,7 +3397,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 82592276-bf92-43a3-98fc-a064640b8bb6_part13
+Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part13
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
 Metadata: {
   "Header 1": "",
@@ -3445,7 +3445,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7f3c8a36-5c6d-4059-9b18-6a44f40718ab_part1
+Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part1
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
 Metadata: {
   "Header 1": "",
@@ -3534,7 +3534,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7f3c8a36-5c6d-4059-9b18-6a44f40718ab_part2
+Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part2
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
 Metadata: {
   "Header 1": "",
@@ -3617,7 +3617,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7f3c8a36-5c6d-4059-9b18-6a44f40718ab_part3
+Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part3
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
 Metadata: {
   "Header 1": "",
@@ -3749,7 +3749,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7f3c8a36-5c6d-4059-9b18-6a44f40718ab_part4
+Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part4
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
 Metadata: {
   "Header 1": "",
@@ -3851,7 +3851,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7f3c8a36-5c6d-4059-9b18-6a44f40718ab_part5
+Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part5
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
 Metadata: {
   "Header 1": "",
@@ -3945,7 +3945,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7f3c8a36-5c6d-4059-9b18-6a44f40718ab_part6
+Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part6
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
 Metadata: {
   "Header 1": "",
@@ -4033,7 +4033,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7f3c8a36-5c6d-4059-9b18-6a44f40718ab_part7
+Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part7
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
 Metadata: {
   "Header 1": "",
@@ -4123,7 +4123,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7f3c8a36-5c6d-4059-9b18-6a44f40718ab_part8
+Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part8
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
 Metadata: {
   "Header 1": "",
@@ -4210,7 +4210,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7f3c8a36-5c6d-4059-9b18-6a44f40718ab_part9
+Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part9
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
 Metadata: {
   "Header 1": "",
@@ -4294,7 +4294,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7f3c8a36-5c6d-4059-9b18-6a44f40718ab_part10
+Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part10
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
 Metadata: {
   "Header 1": "",
@@ -4370,7 +4370,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7f3c8a36-5c6d-4059-9b18-6a44f40718ab_part11
+Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part11
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
 Metadata: {
   "Header 1": "",
@@ -4435,7 +4435,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7f3c8a36-5c6d-4059-9b18-6a44f40718ab_part12
+Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part12
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
 Metadata: {
   "Header 1": "",
@@ -4546,7 +4546,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7f3c8a36-5c6d-4059-9b18-6a44f40718ab_part13
+Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part13
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
 Metadata: {
   "Header 1": "",
@@ -4594,7 +4594,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b684d859-0e18-4cab-b3b1-8c3e38183238_part1
+Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part1
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
 Metadata: {
   "Header 1": "",
@@ -4683,7 +4683,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b684d859-0e18-4cab-b3b1-8c3e38183238_part2
+Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part2
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
 Metadata: {
   "Header 1": "",
@@ -4766,7 +4766,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b684d859-0e18-4cab-b3b1-8c3e38183238_part3
+Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part3
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
 Metadata: {
   "Header 1": "",
@@ -4898,7 +4898,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b684d859-0e18-4cab-b3b1-8c3e38183238_part4
+Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part4
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
 Metadata: {
   "Header 1": "",
@@ -5000,7 +5000,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b684d859-0e18-4cab-b3b1-8c3e38183238_part5
+Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part5
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
 Metadata: {
   "Header 1": "",
@@ -5094,7 +5094,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b684d859-0e18-4cab-b3b1-8c3e38183238_part6
+Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part6
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
 Metadata: {
   "Header 1": "",
@@ -5182,7 +5182,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b684d859-0e18-4cab-b3b1-8c3e38183238_part7
+Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part7
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
 Metadata: {
   "Header 1": "",
@@ -5272,7 +5272,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b684d859-0e18-4cab-b3b1-8c3e38183238_part8
+Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part8
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
 Metadata: {
   "Header 1": "",
@@ -5359,7 +5359,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b684d859-0e18-4cab-b3b1-8c3e38183238_part9
+Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part9
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
 Metadata: {
   "Header 1": "",
@@ -5443,7 +5443,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b684d859-0e18-4cab-b3b1-8c3e38183238_part10
+Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part10
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
 Metadata: {
   "Header 1": "",
@@ -5519,7 +5519,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b684d859-0e18-4cab-b3b1-8c3e38183238_part11
+Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part11
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
 Metadata: {
   "Header 1": "",
@@ -5584,7 +5584,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b684d859-0e18-4cab-b3b1-8c3e38183238_part12
+Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part12
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
 Metadata: {
   "Header 1": "",
@@ -5695,7 +5695,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b684d859-0e18-4cab-b3b1-8c3e38183238_part13
+Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part13
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
 Metadata: {
   "Header 1": "",
@@ -5743,7 +5743,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f1e516f1-e97a-49af-bac6-6594b1b7af4d_part1
+Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part1
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
 Metadata: {
   "Header 1": "",
@@ -5832,7 +5832,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f1e516f1-e97a-49af-bac6-6594b1b7af4d_part2
+Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part2
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
 Metadata: {
   "Header 1": "",
@@ -5915,7 +5915,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f1e516f1-e97a-49af-bac6-6594b1b7af4d_part3
+Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part3
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
 Metadata: {
   "Header 1": "",
@@ -6047,7 +6047,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f1e516f1-e97a-49af-bac6-6594b1b7af4d_part4
+Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part4
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
 Metadata: {
   "Header 1": "",
@@ -6149,7 +6149,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f1e516f1-e97a-49af-bac6-6594b1b7af4d_part5
+Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part5
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
 Metadata: {
   "Header 1": "",
@@ -6243,7 +6243,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f1e516f1-e97a-49af-bac6-6594b1b7af4d_part6
+Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part6
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
 Metadata: {
   "Header 1": "",
@@ -6331,7 +6331,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f1e516f1-e97a-49af-bac6-6594b1b7af4d_part7
+Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part7
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
 Metadata: {
   "Header 1": "",
@@ -6421,7 +6421,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f1e516f1-e97a-49af-bac6-6594b1b7af4d_part8
+Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part8
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
 Metadata: {
   "Header 1": "",
@@ -6508,7 +6508,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f1e516f1-e97a-49af-bac6-6594b1b7af4d_part9
+Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part9
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
 Metadata: {
   "Header 1": "",
@@ -6592,7 +6592,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f1e516f1-e97a-49af-bac6-6594b1b7af4d_part10
+Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part10
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
 Metadata: {
   "Header 1": "",
@@ -6668,7 +6668,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f1e516f1-e97a-49af-bac6-6594b1b7af4d_part11
+Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part11
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
 Metadata: {
   "Header 1": "",
@@ -6733,7 +6733,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f1e516f1-e97a-49af-bac6-6594b1b7af4d_part12
+Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part12
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
 Metadata: {
   "Header 1": "",
@@ -6844,7 +6844,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f1e516f1-e97a-49af-bac6-6594b1b7af4d_part13
+Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part13
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
 Metadata: {
   "Header 1": "",
@@ -6892,7 +6892,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c4f03752-5d4e-4eae-a9c2-295eb63d4032_part1
+Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part1
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
 Metadata: {
   "Header 1": "",
@@ -6981,7 +6981,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c4f03752-5d4e-4eae-a9c2-295eb63d4032_part2
+Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part2
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
 Metadata: {
   "Header 1": "",
@@ -7064,7 +7064,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c4f03752-5d4e-4eae-a9c2-295eb63d4032_part3
+Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part3
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
 Metadata: {
   "Header 1": "",
@@ -7196,7 +7196,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c4f03752-5d4e-4eae-a9c2-295eb63d4032_part4
+Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part4
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
 Metadata: {
   "Header 1": "",
@@ -7298,7 +7298,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c4f03752-5d4e-4eae-a9c2-295eb63d4032_part5
+Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part5
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
 Metadata: {
   "Header 1": "",
@@ -7392,7 +7392,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c4f03752-5d4e-4eae-a9c2-295eb63d4032_part6
+Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part6
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
 Metadata: {
   "Header 1": "",
@@ -7480,7 +7480,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c4f03752-5d4e-4eae-a9c2-295eb63d4032_part7
+Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part7
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
 Metadata: {
   "Header 1": "",
@@ -7570,7 +7570,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c4f03752-5d4e-4eae-a9c2-295eb63d4032_part8
+Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part8
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
 Metadata: {
   "Header 1": "",
@@ -7657,7 +7657,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c4f03752-5d4e-4eae-a9c2-295eb63d4032_part9
+Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part9
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
 Metadata: {
   "Header 1": "",
@@ -7741,7 +7741,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c4f03752-5d4e-4eae-a9c2-295eb63d4032_part10
+Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part10
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
 Metadata: {
   "Header 1": "",
@@ -7817,7 +7817,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c4f03752-5d4e-4eae-a9c2-295eb63d4032_part11
+Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part11
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
 Metadata: {
   "Header 1": "",
@@ -7882,7 +7882,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c4f03752-5d4e-4eae-a9c2-295eb63d4032_part12
+Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part12
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
 Metadata: {
   "Header 1": "",
@@ -7993,7 +7993,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c4f03752-5d4e-4eae-a9c2-295eb63d4032_part13
+Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part13
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
 Metadata: {
   "Header 1": "",
@@ -8041,7 +8041,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 80e605e0-e5b1-4320-a51e-9caea69fdad7_part1
+Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part1
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
 Metadata: {
   "Header 1": "",
@@ -8130,7 +8130,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 80e605e0-e5b1-4320-a51e-9caea69fdad7_part2
+Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part2
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
 Metadata: {
   "Header 1": "",
@@ -8213,7 +8213,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 80e605e0-e5b1-4320-a51e-9caea69fdad7_part3
+Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part3
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
 Metadata: {
   "Header 1": "",
@@ -8345,7 +8345,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 80e605e0-e5b1-4320-a51e-9caea69fdad7_part4
+Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part4
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
 Metadata: {
   "Header 1": "",
@@ -8447,7 +8447,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 80e605e0-e5b1-4320-a51e-9caea69fdad7_part5
+Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part5
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
 Metadata: {
   "Header 1": "",
@@ -8541,7 +8541,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 80e605e0-e5b1-4320-a51e-9caea69fdad7_part6
+Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part6
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
 Metadata: {
   "Header 1": "",
@@ -8629,7 +8629,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 80e605e0-e5b1-4320-a51e-9caea69fdad7_part7
+Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part7
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
 Metadata: {
   "Header 1": "",
@@ -8719,7 +8719,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 80e605e0-e5b1-4320-a51e-9caea69fdad7_part8
+Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part8
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
 Metadata: {
   "Header 1": "",
@@ -8806,7 +8806,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 80e605e0-e5b1-4320-a51e-9caea69fdad7_part9
+Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part9
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
 Metadata: {
   "Header 1": "",
@@ -8890,7 +8890,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 80e605e0-e5b1-4320-a51e-9caea69fdad7_part10
+Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part10
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
 Metadata: {
   "Header 1": "",
@@ -8966,7 +8966,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 80e605e0-e5b1-4320-a51e-9caea69fdad7_part11
+Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part11
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
 Metadata: {
   "Header 1": "",
@@ -9031,7 +9031,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 80e605e0-e5b1-4320-a51e-9caea69fdad7_part12
+Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part12
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
 Metadata: {
   "Header 1": "",
@@ -9142,7 +9142,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 80e605e0-e5b1-4320-a51e-9caea69fdad7_part13
+Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part13
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
 Metadata: {
   "Header 1": "",
@@ -9190,7 +9190,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 16108ddb-1243-4ae1-a6a4-b950af162f12_part1
+Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part1
 Source URL: https://supabase.com/docs/reference/python/auth-signout
 Metadata: {
   "Header 1": "",
@@ -9279,7 +9279,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 16108ddb-1243-4ae1-a6a4-b950af162f12_part2
+Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part2
 Source URL: https://supabase.com/docs/reference/python/auth-signout
 Metadata: {
   "Header 1": "",
@@ -9362,7 +9362,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 16108ddb-1243-4ae1-a6a4-b950af162f12_part3
+Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part3
 Source URL: https://supabase.com/docs/reference/python/auth-signout
 Metadata: {
   "Header 1": "",
@@ -9494,7 +9494,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 16108ddb-1243-4ae1-a6a4-b950af162f12_part4
+Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part4
 Source URL: https://supabase.com/docs/reference/python/auth-signout
 Metadata: {
   "Header 1": "",
@@ -9596,7 +9596,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 16108ddb-1243-4ae1-a6a4-b950af162f12_part5
+Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part5
 Source URL: https://supabase.com/docs/reference/python/auth-signout
 Metadata: {
   "Header 1": "",
@@ -9690,7 +9690,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 16108ddb-1243-4ae1-a6a4-b950af162f12_part6
+Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part6
 Source URL: https://supabase.com/docs/reference/python/auth-signout
 Metadata: {
   "Header 1": "",
@@ -9778,7 +9778,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 16108ddb-1243-4ae1-a6a4-b950af162f12_part7
+Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part7
 Source URL: https://supabase.com/docs/reference/python/auth-signout
 Metadata: {
   "Header 1": "",
@@ -9868,7 +9868,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 16108ddb-1243-4ae1-a6a4-b950af162f12_part8
+Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part8
 Source URL: https://supabase.com/docs/reference/python/auth-signout
 Metadata: {
   "Header 1": "",
@@ -9955,7 +9955,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 16108ddb-1243-4ae1-a6a4-b950af162f12_part9
+Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part9
 Source URL: https://supabase.com/docs/reference/python/auth-signout
 Metadata: {
   "Header 1": "",
@@ -10039,7 +10039,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 16108ddb-1243-4ae1-a6a4-b950af162f12_part10
+Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part10
 Source URL: https://supabase.com/docs/reference/python/auth-signout
 Metadata: {
   "Header 1": "",
@@ -10115,7 +10115,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 16108ddb-1243-4ae1-a6a4-b950af162f12_part11
+Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part11
 Source URL: https://supabase.com/docs/reference/python/auth-signout
 Metadata: {
   "Header 1": "",
@@ -10180,7 +10180,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 16108ddb-1243-4ae1-a6a4-b950af162f12_part12
+Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part12
 Source URL: https://supabase.com/docs/reference/python/auth-signout
 Metadata: {
   "Header 1": "",
@@ -10291,7 +10291,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 16108ddb-1243-4ae1-a6a4-b950af162f12_part13
+Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part13
 Source URL: https://supabase.com/docs/reference/python/auth-signout
 Metadata: {
   "Header 1": "",
@@ -10339,7 +10339,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 8619fbb7-ba2a-4776-bb91-594eb8784513_part1
+Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part1
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
 Metadata: {
   "Header 1": "",
@@ -10428,7 +10428,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 8619fbb7-ba2a-4776-bb91-594eb8784513_part2
+Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part2
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
 Metadata: {
   "Header 1": "",
@@ -10511,7 +10511,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 8619fbb7-ba2a-4776-bb91-594eb8784513_part3
+Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part3
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
 Metadata: {
   "Header 1": "",
@@ -10643,7 +10643,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 8619fbb7-ba2a-4776-bb91-594eb8784513_part4
+Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part4
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
 Metadata: {
   "Header 1": "",
@@ -10745,7 +10745,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 8619fbb7-ba2a-4776-bb91-594eb8784513_part5
+Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part5
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
 Metadata: {
   "Header 1": "",
@@ -10839,7 +10839,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 8619fbb7-ba2a-4776-bb91-594eb8784513_part6
+Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part6
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
 Metadata: {
   "Header 1": "",
@@ -10927,7 +10927,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 8619fbb7-ba2a-4776-bb91-594eb8784513_part7
+Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part7
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
 Metadata: {
   "Header 1": "",
@@ -11017,7 +11017,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 8619fbb7-ba2a-4776-bb91-594eb8784513_part8
+Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part8
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
 Metadata: {
   "Header 1": "",
@@ -11104,7 +11104,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 8619fbb7-ba2a-4776-bb91-594eb8784513_part9
+Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part9
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
 Metadata: {
   "Header 1": "",
@@ -11188,7 +11188,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 8619fbb7-ba2a-4776-bb91-594eb8784513_part10
+Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part10
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
 Metadata: {
   "Header 1": "",
@@ -11264,7 +11264,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 8619fbb7-ba2a-4776-bb91-594eb8784513_part11
+Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part11
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
 Metadata: {
   "Header 1": "",
@@ -11329,7 +11329,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 8619fbb7-ba2a-4776-bb91-594eb8784513_part12
+Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part12
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
 Metadata: {
   "Header 1": "",
@@ -11440,7 +11440,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 8619fbb7-ba2a-4776-bb91-594eb8784513_part13
+Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part13
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
 Metadata: {
   "Header 1": "",
@@ -11488,7 +11488,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 17d453e3-2462-423c-917b-7c6e353da4d7_part1
+Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part1
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
 Metadata: {
   "Header 1": "",
@@ -11577,7 +11577,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 17d453e3-2462-423c-917b-7c6e353da4d7_part2
+Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part2
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
 Metadata: {
   "Header 1": "",
@@ -11660,7 +11660,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 17d453e3-2462-423c-917b-7c6e353da4d7_part3
+Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part3
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
 Metadata: {
   "Header 1": "",
@@ -11792,7 +11792,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 17d453e3-2462-423c-917b-7c6e353da4d7_part4
+Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part4
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
 Metadata: {
   "Header 1": "",
@@ -11894,7 +11894,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 17d453e3-2462-423c-917b-7c6e353da4d7_part5
+Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part5
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
 Metadata: {
   "Header 1": "",
@@ -11988,7 +11988,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 17d453e3-2462-423c-917b-7c6e353da4d7_part6
+Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part6
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
 Metadata: {
   "Header 1": "",
@@ -12076,7 +12076,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 17d453e3-2462-423c-917b-7c6e353da4d7_part7
+Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part7
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
 Metadata: {
   "Header 1": "",
@@ -12166,7 +12166,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 17d453e3-2462-423c-917b-7c6e353da4d7_part8
+Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part8
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
 Metadata: {
   "Header 1": "",
@@ -12253,7 +12253,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 17d453e3-2462-423c-917b-7c6e353da4d7_part9
+Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part9
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
 Metadata: {
   "Header 1": "",
@@ -12337,7 +12337,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 17d453e3-2462-423c-917b-7c6e353da4d7_part10
+Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part10
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
 Metadata: {
   "Header 1": "",
@@ -12413,7 +12413,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 17d453e3-2462-423c-917b-7c6e353da4d7_part11
+Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part11
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
 Metadata: {
   "Header 1": "",
@@ -12478,7 +12478,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 17d453e3-2462-423c-917b-7c6e353da4d7_part12
+Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part12
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
 Metadata: {
   "Header 1": "",
@@ -12589,7 +12589,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 17d453e3-2462-423c-917b-7c6e353da4d7_part13
+Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part13
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
 Metadata: {
   "Header 1": "",
@@ -12637,7 +12637,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3566d747-6ef2-49bd-8ebf-d23ef24e01b3_part1
+Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part1
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
 Metadata: {
   "Header 1": "",
@@ -12726,7 +12726,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3566d747-6ef2-49bd-8ebf-d23ef24e01b3_part2
+Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part2
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
 Metadata: {
   "Header 1": "",
@@ -12809,7 +12809,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3566d747-6ef2-49bd-8ebf-d23ef24e01b3_part3
+Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part3
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
 Metadata: {
   "Header 1": "",
@@ -12941,7 +12941,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3566d747-6ef2-49bd-8ebf-d23ef24e01b3_part4
+Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part4
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
 Metadata: {
   "Header 1": "",
@@ -13043,7 +13043,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3566d747-6ef2-49bd-8ebf-d23ef24e01b3_part5
+Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part5
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
 Metadata: {
   "Header 1": "",
@@ -13137,7 +13137,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3566d747-6ef2-49bd-8ebf-d23ef24e01b3_part6
+Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part6
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
 Metadata: {
   "Header 1": "",
@@ -13225,7 +13225,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3566d747-6ef2-49bd-8ebf-d23ef24e01b3_part7
+Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part7
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
 Metadata: {
   "Header 1": "",
@@ -13315,7 +13315,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3566d747-6ef2-49bd-8ebf-d23ef24e01b3_part8
+Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part8
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
 Metadata: {
   "Header 1": "",
@@ -13402,7 +13402,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3566d747-6ef2-49bd-8ebf-d23ef24e01b3_part9
+Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part9
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
 Metadata: {
   "Header 1": "",
@@ -13486,7 +13486,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3566d747-6ef2-49bd-8ebf-d23ef24e01b3_part10
+Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part10
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
 Metadata: {
   "Header 1": "",
@@ -13562,7 +13562,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3566d747-6ef2-49bd-8ebf-d23ef24e01b3_part11
+Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part11
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
 Metadata: {
   "Header 1": "",
@@ -13627,7 +13627,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3566d747-6ef2-49bd-8ebf-d23ef24e01b3_part12
+Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part12
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
 Metadata: {
   "Header 1": "",
@@ -13738,7 +13738,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3566d747-6ef2-49bd-8ebf-d23ef24e01b3_part13
+Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part13
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
 Metadata: {
   "Header 1": "",
@@ -13786,7 +13786,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6960d1a1-8e84-4cf3-b540-259693f0204b_part1
+Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part1
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
 Metadata: {
   "Header 1": "",
@@ -13875,7 +13875,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6960d1a1-8e84-4cf3-b540-259693f0204b_part2
+Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part2
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
 Metadata: {
   "Header 1": "",
@@ -13958,7 +13958,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6960d1a1-8e84-4cf3-b540-259693f0204b_part3
+Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part3
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
 Metadata: {
   "Header 1": "",
@@ -14090,7 +14090,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6960d1a1-8e84-4cf3-b540-259693f0204b_part4
+Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part4
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
 Metadata: {
   "Header 1": "",
@@ -14192,7 +14192,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6960d1a1-8e84-4cf3-b540-259693f0204b_part5
+Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part5
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
 Metadata: {
   "Header 1": "",
@@ -14286,7 +14286,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6960d1a1-8e84-4cf3-b540-259693f0204b_part6
+Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part6
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
 Metadata: {
   "Header 1": "",
@@ -14374,7 +14374,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6960d1a1-8e84-4cf3-b540-259693f0204b_part7
+Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part7
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
 Metadata: {
   "Header 1": "",
@@ -14464,7 +14464,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6960d1a1-8e84-4cf3-b540-259693f0204b_part8
+Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part8
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
 Metadata: {
   "Header 1": "",
@@ -14551,7 +14551,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6960d1a1-8e84-4cf3-b540-259693f0204b_part9
+Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part9
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
 Metadata: {
   "Header 1": "",
@@ -14635,7 +14635,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6960d1a1-8e84-4cf3-b540-259693f0204b_part10
+Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part10
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
 Metadata: {
   "Header 1": "",
@@ -14711,7 +14711,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6960d1a1-8e84-4cf3-b540-259693f0204b_part11
+Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part11
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
 Metadata: {
   "Header 1": "",
@@ -14776,7 +14776,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6960d1a1-8e84-4cf3-b540-259693f0204b_part12
+Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part12
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
 Metadata: {
   "Header 1": "",
@@ -14887,7 +14887,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6960d1a1-8e84-4cf3-b540-259693f0204b_part13
+Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part13
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
 Metadata: {
   "Header 1": "",
@@ -14935,7 +14935,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f4e11d19-1ea0-4d95-8dbc-cf9d3134008d_part1
+Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part1
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
 Metadata: {
   "Header 1": "",
@@ -15025,7 +15025,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f4e11d19-1ea0-4d95-8dbc-cf9d3134008d_part2
+Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part2
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
 Metadata: {
   "Header 1": "",
@@ -15110,7 +15110,7 @@ Notes
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f4e11d19-1ea0-4d95-8dbc-cf9d3134008d_part3
+Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part3
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
 Metadata: {
   "Header 1": "",
@@ -15259,7 +15259,7 @@ Column contains every element in a value
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f4e11d19-1ea0-4d95-8dbc-cf9d3134008d_part4
+Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part4
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
 Metadata: {
   "Header 1": "",
@@ -15369,7 +15369,7 @@ With a common element
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f4e11d19-1ea0-4d95-8dbc-cf9d3134008d_part5
+Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part5
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
 Metadata: {
   "Header 1": "",
@@ -15464,7 +15464,7 @@ Using modifiers
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f4e11d19-1ea0-4d95-8dbc-cf9d3134008d_part6
+Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part6
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
 Metadata: {
   "Header 1": "",
@@ -15568,7 +15568,7 @@ The format of the output, can be `"text"` (default) or `"json"`.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f4e11d19-1ea0-4d95-8dbc-cf9d3134008d_part7
+Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part7
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
 Metadata: {
   "Header 1": "",
@@ -15657,7 +15657,7 @@ Sign in a user through OTP
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f4e11d19-1ea0-4d95-8dbc-cf9d3134008d_part8
+Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part8
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
 Metadata: {
   "Header 1": "",
@@ -15738,7 +15738,7 @@ Retrieve a session
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f4e11d19-1ea0-4d95-8dbc-cf9d3134008d_part9
+Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part9
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
 Metadata: {
   "Header 1": "",
@@ -15826,7 +15826,7 @@ first.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f4e11d19-1ea0-4d95-8dbc-cf9d3134008d_part10
+Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part10
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
 Metadata: {
   "Header 1": "",
@@ -15888,7 +15888,7 @@ Removes a channel
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f4e11d19-1ea0-4d95-8dbc-cf9d3134008d_part11
+Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part11
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
 Metadata: {
   "Header 1": "",
@@ -16004,7 +16004,7 @@ List files in a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f4e11d19-1ea0-4d95-8dbc-cf9d3134008d_part12
+Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part12
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
 Metadata: {
   "Header 1": "",
@@ -16070,7 +16070,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0d4a7f6e-a2ab-4186-a1ed-6aa683d075e7_part1
+Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part1
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
 Metadata: {
   "Header 1": "",
@@ -16159,7 +16159,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0d4a7f6e-a2ab-4186-a1ed-6aa683d075e7_part2
+Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part2
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
 Metadata: {
   "Header 1": "",
@@ -16242,7 +16242,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0d4a7f6e-a2ab-4186-a1ed-6aa683d075e7_part3
+Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part3
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
 Metadata: {
   "Header 1": "",
@@ -16374,7 +16374,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0d4a7f6e-a2ab-4186-a1ed-6aa683d075e7_part4
+Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part4
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
 Metadata: {
   "Header 1": "",
@@ -16476,7 +16476,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0d4a7f6e-a2ab-4186-a1ed-6aa683d075e7_part5
+Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part5
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
 Metadata: {
   "Header 1": "",
@@ -16570,7 +16570,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0d4a7f6e-a2ab-4186-a1ed-6aa683d075e7_part6
+Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part6
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
 Metadata: {
   "Header 1": "",
@@ -16658,7 +16658,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0d4a7f6e-a2ab-4186-a1ed-6aa683d075e7_part7
+Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part7
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
 Metadata: {
   "Header 1": "",
@@ -16748,7 +16748,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0d4a7f6e-a2ab-4186-a1ed-6aa683d075e7_part8
+Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part8
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
 Metadata: {
   "Header 1": "",
@@ -16835,7 +16835,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0d4a7f6e-a2ab-4186-a1ed-6aa683d075e7_part9
+Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part9
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
 Metadata: {
   "Header 1": "",
@@ -16919,7 +16919,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0d4a7f6e-a2ab-4186-a1ed-6aa683d075e7_part10
+Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part10
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
 Metadata: {
   "Header 1": "",
@@ -16995,7 +16995,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0d4a7f6e-a2ab-4186-a1ed-6aa683d075e7_part11
+Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part11
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
 Metadata: {
   "Header 1": "",
@@ -17060,7 +17060,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0d4a7f6e-a2ab-4186-a1ed-6aa683d075e7_part12
+Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part12
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
 Metadata: {
   "Header 1": "",
@@ -17171,7 +17171,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0d4a7f6e-a2ab-4186-a1ed-6aa683d075e7_part13
+Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part13
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
 Metadata: {
   "Header 1": "",
@@ -17219,7 +17219,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6f544570-cdaf-44de-b99f-96ffdb644dca_part1
+Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part1
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
 Metadata: {
   "Header 1": "",
@@ -17308,7 +17308,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6f544570-cdaf-44de-b99f-96ffdb644dca_part2
+Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part2
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
 Metadata: {
   "Header 1": "",
@@ -17391,7 +17391,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6f544570-cdaf-44de-b99f-96ffdb644dca_part3
+Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part3
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
 Metadata: {
   "Header 1": "",
@@ -17523,7 +17523,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6f544570-cdaf-44de-b99f-96ffdb644dca_part4
+Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part4
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
 Metadata: {
   "Header 1": "",
@@ -17625,7 +17625,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6f544570-cdaf-44de-b99f-96ffdb644dca_part5
+Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part5
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
 Metadata: {
   "Header 1": "",
@@ -17719,7 +17719,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6f544570-cdaf-44de-b99f-96ffdb644dca_part6
+Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part6
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
 Metadata: {
   "Header 1": "",
@@ -17807,7 +17807,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6f544570-cdaf-44de-b99f-96ffdb644dca_part7
+Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part7
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
 Metadata: {
   "Header 1": "",
@@ -17897,7 +17897,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6f544570-cdaf-44de-b99f-96ffdb644dca_part8
+Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part8
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
 Metadata: {
   "Header 1": "",
@@ -17984,7 +17984,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6f544570-cdaf-44de-b99f-96ffdb644dca_part9
+Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part9
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
 Metadata: {
   "Header 1": "",
@@ -18068,7 +18068,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6f544570-cdaf-44de-b99f-96ffdb644dca_part10
+Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part10
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
 Metadata: {
   "Header 1": "",
@@ -18144,7 +18144,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6f544570-cdaf-44de-b99f-96ffdb644dca_part11
+Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part11
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
 Metadata: {
   "Header 1": "",
@@ -18209,7 +18209,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6f544570-cdaf-44de-b99f-96ffdb644dca_part12
+Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part12
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
 Metadata: {
   "Header 1": "",
@@ -18320,7 +18320,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6f544570-cdaf-44de-b99f-96ffdb644dca_part13
+Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part13
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
 Metadata: {
   "Header 1": "",
@@ -18368,7 +18368,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 99c8e448-4897-4667-a9e0-930a4584ea25_part1
+Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part1
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
 Metadata: {
   "Header 1": "",
@@ -18457,7 +18457,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 99c8e448-4897-4667-a9e0-930a4584ea25_part2
+Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part2
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
 Metadata: {
   "Header 1": "",
@@ -18540,7 +18540,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 99c8e448-4897-4667-a9e0-930a4584ea25_part3
+Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part3
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
 Metadata: {
   "Header 1": "",
@@ -18672,7 +18672,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 99c8e448-4897-4667-a9e0-930a4584ea25_part4
+Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part4
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
 Metadata: {
   "Header 1": "",
@@ -18774,7 +18774,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 99c8e448-4897-4667-a9e0-930a4584ea25_part5
+Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part5
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
 Metadata: {
   "Header 1": "",
@@ -18868,7 +18868,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 99c8e448-4897-4667-a9e0-930a4584ea25_part6
+Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part6
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
 Metadata: {
   "Header 1": "",
@@ -18956,7 +18956,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 99c8e448-4897-4667-a9e0-930a4584ea25_part7
+Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part7
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
 Metadata: {
   "Header 1": "",
@@ -19046,7 +19046,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 99c8e448-4897-4667-a9e0-930a4584ea25_part8
+Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part8
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
 Metadata: {
   "Header 1": "",
@@ -19133,7 +19133,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 99c8e448-4897-4667-a9e0-930a4584ea25_part9
+Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part9
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
 Metadata: {
   "Header 1": "",
@@ -19217,7 +19217,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 99c8e448-4897-4667-a9e0-930a4584ea25_part10
+Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part10
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
 Metadata: {
   "Header 1": "",
@@ -19293,7 +19293,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 99c8e448-4897-4667-a9e0-930a4584ea25_part11
+Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part11
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
 Metadata: {
   "Header 1": "",
@@ -19358,7 +19358,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 99c8e448-4897-4667-a9e0-930a4584ea25_part12
+Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part12
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
 Metadata: {
   "Header 1": "",
@@ -19469,7 +19469,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 99c8e448-4897-4667-a9e0-930a4584ea25_part13
+Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part13
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
 Metadata: {
   "Header 1": "",
@@ -19517,7 +19517,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 85935d32-9d42-47a3-8da2-ecc7033fcafe_part1
+Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part1
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
 Metadata: {
   "Header 1": "",
@@ -19606,7 +19606,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 85935d32-9d42-47a3-8da2-ecc7033fcafe_part2
+Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part2
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
 Metadata: {
   "Header 1": "",
@@ -19689,7 +19689,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 85935d32-9d42-47a3-8da2-ecc7033fcafe_part3
+Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part3
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
 Metadata: {
   "Header 1": "",
@@ -19821,7 +19821,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 85935d32-9d42-47a3-8da2-ecc7033fcafe_part4
+Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part4
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
 Metadata: {
   "Header 1": "",
@@ -19923,7 +19923,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 85935d32-9d42-47a3-8da2-ecc7033fcafe_part5
+Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part5
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
 Metadata: {
   "Header 1": "",
@@ -20017,7 +20017,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 85935d32-9d42-47a3-8da2-ecc7033fcafe_part6
+Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part6
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
 Metadata: {
   "Header 1": "",
@@ -20105,7 +20105,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 85935d32-9d42-47a3-8da2-ecc7033fcafe_part7
+Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part7
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
 Metadata: {
   "Header 1": "",
@@ -20195,7 +20195,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 85935d32-9d42-47a3-8da2-ecc7033fcafe_part8
+Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part8
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
 Metadata: {
   "Header 1": "",
@@ -20282,7 +20282,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 85935d32-9d42-47a3-8da2-ecc7033fcafe_part9
+Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part9
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
 Metadata: {
   "Header 1": "",
@@ -20366,7 +20366,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 85935d32-9d42-47a3-8da2-ecc7033fcafe_part10
+Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part10
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
 Metadata: {
   "Header 1": "",
@@ -20442,7 +20442,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 85935d32-9d42-47a3-8da2-ecc7033fcafe_part11
+Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part11
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
 Metadata: {
   "Header 1": "",
@@ -20507,7 +20507,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 85935d32-9d42-47a3-8da2-ecc7033fcafe_part12
+Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part12
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
 Metadata: {
   "Header 1": "",
@@ -20618,7 +20618,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 85935d32-9d42-47a3-8da2-ecc7033fcafe_part13
+Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part13
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
 Metadata: {
   "Header 1": "",
@@ -20666,7 +20666,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c3abdeac-a8b6-4e8c-8465-1f6c44dd5f32_part1
+Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part1
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
 Metadata: {
   "Header 1": "",
@@ -20755,7 +20755,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c3abdeac-a8b6-4e8c-8465-1f6c44dd5f32_part2
+Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part2
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
 Metadata: {
   "Header 1": "",
@@ -20838,7 +20838,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c3abdeac-a8b6-4e8c-8465-1f6c44dd5f32_part3
+Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part3
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
 Metadata: {
   "Header 1": "",
@@ -20970,7 +20970,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c3abdeac-a8b6-4e8c-8465-1f6c44dd5f32_part4
+Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part4
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
 Metadata: {
   "Header 1": "",
@@ -21072,7 +21072,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c3abdeac-a8b6-4e8c-8465-1f6c44dd5f32_part5
+Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part5
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
 Metadata: {
   "Header 1": "",
@@ -21166,7 +21166,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c3abdeac-a8b6-4e8c-8465-1f6c44dd5f32_part6
+Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part6
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
 Metadata: {
   "Header 1": "",
@@ -21254,7 +21254,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c3abdeac-a8b6-4e8c-8465-1f6c44dd5f32_part7
+Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part7
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
 Metadata: {
   "Header 1": "",
@@ -21344,7 +21344,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c3abdeac-a8b6-4e8c-8465-1f6c44dd5f32_part8
+Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part8
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
 Metadata: {
   "Header 1": "",
@@ -21431,7 +21431,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c3abdeac-a8b6-4e8c-8465-1f6c44dd5f32_part9
+Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part9
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
 Metadata: {
   "Header 1": "",
@@ -21515,7 +21515,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c3abdeac-a8b6-4e8c-8465-1f6c44dd5f32_part10
+Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part10
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
 Metadata: {
   "Header 1": "",
@@ -21591,7 +21591,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c3abdeac-a8b6-4e8c-8465-1f6c44dd5f32_part11
+Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part11
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
 Metadata: {
   "Header 1": "",
@@ -21656,7 +21656,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c3abdeac-a8b6-4e8c-8465-1f6c44dd5f32_part12
+Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part12
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
 Metadata: {
   "Header 1": "",
@@ -21767,7 +21767,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c3abdeac-a8b6-4e8c-8465-1f6c44dd5f32_part13
+Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part13
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
 Metadata: {
   "Header 1": "",
@@ -21815,7 +21815,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 237b2dac-80aa-44ce-9853-16ec38ffdb8c_part1
+Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part1
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
 Metadata: {
   "Header 1": "",
@@ -21904,7 +21904,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 237b2dac-80aa-44ce-9853-16ec38ffdb8c_part2
+Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part2
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
 Metadata: {
   "Header 1": "",
@@ -21987,7 +21987,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 237b2dac-80aa-44ce-9853-16ec38ffdb8c_part3
+Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part3
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
 Metadata: {
   "Header 1": "",
@@ -22119,7 +22119,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 237b2dac-80aa-44ce-9853-16ec38ffdb8c_part4
+Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part4
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
 Metadata: {
   "Header 1": "",
@@ -22221,7 +22221,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 237b2dac-80aa-44ce-9853-16ec38ffdb8c_part5
+Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part5
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
 Metadata: {
   "Header 1": "",
@@ -22315,7 +22315,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 237b2dac-80aa-44ce-9853-16ec38ffdb8c_part6
+Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part6
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
 Metadata: {
   "Header 1": "",
@@ -22403,7 +22403,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 237b2dac-80aa-44ce-9853-16ec38ffdb8c_part7
+Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part7
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
 Metadata: {
   "Header 1": "",
@@ -22493,7 +22493,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 237b2dac-80aa-44ce-9853-16ec38ffdb8c_part8
+Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part8
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
 Metadata: {
   "Header 1": "",
@@ -22580,7 +22580,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 237b2dac-80aa-44ce-9853-16ec38ffdb8c_part9
+Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part9
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
 Metadata: {
   "Header 1": "",
@@ -22664,7 +22664,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 237b2dac-80aa-44ce-9853-16ec38ffdb8c_part10
+Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part10
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
 Metadata: {
   "Header 1": "",
@@ -22740,7 +22740,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 237b2dac-80aa-44ce-9853-16ec38ffdb8c_part11
+Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part11
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
 Metadata: {
   "Header 1": "",
@@ -22805,7 +22805,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 237b2dac-80aa-44ce-9853-16ec38ffdb8c_part12
+Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part12
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
 Metadata: {
   "Header 1": "",
@@ -22916,7 +22916,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 237b2dac-80aa-44ce-9853-16ec38ffdb8c_part13
+Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part13
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
 Metadata: {
   "Header 1": "",
@@ -22964,7 +22964,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b8860348-b85d-44aa-8e34-56546f985286_part1
+Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part1
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
 Metadata: {
   "Header 1": "",
@@ -23053,7 +23053,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b8860348-b85d-44aa-8e34-56546f985286_part2
+Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part2
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
 Metadata: {
   "Header 1": "",
@@ -23136,7 +23136,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b8860348-b85d-44aa-8e34-56546f985286_part3
+Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part3
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
 Metadata: {
   "Header 1": "",
@@ -23268,7 +23268,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b8860348-b85d-44aa-8e34-56546f985286_part4
+Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part4
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
 Metadata: {
   "Header 1": "",
@@ -23370,7 +23370,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b8860348-b85d-44aa-8e34-56546f985286_part5
+Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part5
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
 Metadata: {
   "Header 1": "",
@@ -23464,7 +23464,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b8860348-b85d-44aa-8e34-56546f985286_part6
+Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part6
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
 Metadata: {
   "Header 1": "",
@@ -23552,7 +23552,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b8860348-b85d-44aa-8e34-56546f985286_part7
+Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part7
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
 Metadata: {
   "Header 1": "",
@@ -23642,7 +23642,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b8860348-b85d-44aa-8e34-56546f985286_part8
+Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part8
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
 Metadata: {
   "Header 1": "",
@@ -23729,7 +23729,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b8860348-b85d-44aa-8e34-56546f985286_part9
+Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part9
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
 Metadata: {
   "Header 1": "",
@@ -23813,7 +23813,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b8860348-b85d-44aa-8e34-56546f985286_part10
+Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part10
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
 Metadata: {
   "Header 1": "",
@@ -23889,7 +23889,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b8860348-b85d-44aa-8e34-56546f985286_part11
+Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part11
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
 Metadata: {
   "Header 1": "",
@@ -23954,7 +23954,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b8860348-b85d-44aa-8e34-56546f985286_part12
+Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part12
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
 Metadata: {
   "Header 1": "",
@@ -24065,7 +24065,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b8860348-b85d-44aa-8e34-56546f985286_part13
+Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part13
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
 Metadata: {
   "Header 1": "",
@@ -24113,7 +24113,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 72239f82-21ce-4830-8321-b869fcde87a9_part1
+Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part1
 Source URL: https://supabase.com/docs/reference/python/select
 Metadata: {
   "Header 1": "",
@@ -24202,7 +24202,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 72239f82-21ce-4830-8321-b869fcde87a9_part2
+Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part2
 Source URL: https://supabase.com/docs/reference/python/select
 Metadata: {
   "Header 1": "",
@@ -24285,7 +24285,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 72239f82-21ce-4830-8321-b869fcde87a9_part3
+Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part3
 Source URL: https://supabase.com/docs/reference/python/select
 Metadata: {
   "Header 1": "",
@@ -24417,7 +24417,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 72239f82-21ce-4830-8321-b869fcde87a9_part4
+Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part4
 Source URL: https://supabase.com/docs/reference/python/select
 Metadata: {
   "Header 1": "",
@@ -24519,7 +24519,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 72239f82-21ce-4830-8321-b869fcde87a9_part5
+Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part5
 Source URL: https://supabase.com/docs/reference/python/select
 Metadata: {
   "Header 1": "",
@@ -24613,7 +24613,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 72239f82-21ce-4830-8321-b869fcde87a9_part6
+Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part6
 Source URL: https://supabase.com/docs/reference/python/select
 Metadata: {
   "Header 1": "",
@@ -24701,7 +24701,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 72239f82-21ce-4830-8321-b869fcde87a9_part7
+Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part7
 Source URL: https://supabase.com/docs/reference/python/select
 Metadata: {
   "Header 1": "",
@@ -24791,7 +24791,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 72239f82-21ce-4830-8321-b869fcde87a9_part8
+Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part8
 Source URL: https://supabase.com/docs/reference/python/select
 Metadata: {
   "Header 1": "",
@@ -24878,7 +24878,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 72239f82-21ce-4830-8321-b869fcde87a9_part9
+Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part9
 Source URL: https://supabase.com/docs/reference/python/select
 Metadata: {
   "Header 1": "",
@@ -24962,7 +24962,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 72239f82-21ce-4830-8321-b869fcde87a9_part10
+Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part10
 Source URL: https://supabase.com/docs/reference/python/select
 Metadata: {
   "Header 1": "",
@@ -25038,7 +25038,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 72239f82-21ce-4830-8321-b869fcde87a9_part11
+Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part11
 Source URL: https://supabase.com/docs/reference/python/select
 Metadata: {
   "Header 1": "",
@@ -25103,7 +25103,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 72239f82-21ce-4830-8321-b869fcde87a9_part12
+Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part12
 Source URL: https://supabase.com/docs/reference/python/select
 Metadata: {
   "Header 1": "",
@@ -25214,7 +25214,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 72239f82-21ce-4830-8321-b869fcde87a9_part13
+Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part13
 Source URL: https://supabase.com/docs/reference/python/select
 Metadata: {
   "Header 1": "",
@@ -25262,7 +25262,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7446e94a-ea65-4625-9099-f9a4e15db8a5_part1
+Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part1
 Source URL: https://supabase.com/docs/reference/python/insert
 Metadata: {
   "Header 1": "",
@@ -25351,7 +25351,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7446e94a-ea65-4625-9099-f9a4e15db8a5_part2
+Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part2
 Source URL: https://supabase.com/docs/reference/python/insert
 Metadata: {
   "Header 1": "",
@@ -25434,7 +25434,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7446e94a-ea65-4625-9099-f9a4e15db8a5_part3
+Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part3
 Source URL: https://supabase.com/docs/reference/python/insert
 Metadata: {
   "Header 1": "",
@@ -25566,7 +25566,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7446e94a-ea65-4625-9099-f9a4e15db8a5_part4
+Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part4
 Source URL: https://supabase.com/docs/reference/python/insert
 Metadata: {
   "Header 1": "",
@@ -25668,7 +25668,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7446e94a-ea65-4625-9099-f9a4e15db8a5_part5
+Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part5
 Source URL: https://supabase.com/docs/reference/python/insert
 Metadata: {
   "Header 1": "",
@@ -25762,7 +25762,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7446e94a-ea65-4625-9099-f9a4e15db8a5_part6
+Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part6
 Source URL: https://supabase.com/docs/reference/python/insert
 Metadata: {
   "Header 1": "",
@@ -25850,7 +25850,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7446e94a-ea65-4625-9099-f9a4e15db8a5_part7
+Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part7
 Source URL: https://supabase.com/docs/reference/python/insert
 Metadata: {
   "Header 1": "",
@@ -25940,7 +25940,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7446e94a-ea65-4625-9099-f9a4e15db8a5_part8
+Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part8
 Source URL: https://supabase.com/docs/reference/python/insert
 Metadata: {
   "Header 1": "",
@@ -26027,7 +26027,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7446e94a-ea65-4625-9099-f9a4e15db8a5_part9
+Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part9
 Source URL: https://supabase.com/docs/reference/python/insert
 Metadata: {
   "Header 1": "",
@@ -26111,7 +26111,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7446e94a-ea65-4625-9099-f9a4e15db8a5_part10
+Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part10
 Source URL: https://supabase.com/docs/reference/python/insert
 Metadata: {
   "Header 1": "",
@@ -26187,7 +26187,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7446e94a-ea65-4625-9099-f9a4e15db8a5_part11
+Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part11
 Source URL: https://supabase.com/docs/reference/python/insert
 Metadata: {
   "Header 1": "",
@@ -26252,7 +26252,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7446e94a-ea65-4625-9099-f9a4e15db8a5_part12
+Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part12
 Source URL: https://supabase.com/docs/reference/python/insert
 Metadata: {
   "Header 1": "",
@@ -26363,7 +26363,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 7446e94a-ea65-4625-9099-f9a4e15db8a5_part13
+Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part13
 Source URL: https://supabase.com/docs/reference/python/insert
 Metadata: {
   "Header 1": "",
@@ -26411,7 +26411,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ee2051e4-84b1-4ed5-b9ed-fc33005e0e20_part1
+Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part1
 Source URL: https://supabase.com/docs/reference/python/update
 Metadata: {
   "Header 1": "",
@@ -26500,7 +26500,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ee2051e4-84b1-4ed5-b9ed-fc33005e0e20_part2
+Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part2
 Source URL: https://supabase.com/docs/reference/python/update
 Metadata: {
   "Header 1": "",
@@ -26583,7 +26583,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ee2051e4-84b1-4ed5-b9ed-fc33005e0e20_part3
+Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part3
 Source URL: https://supabase.com/docs/reference/python/update
 Metadata: {
   "Header 1": "",
@@ -26715,7 +26715,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ee2051e4-84b1-4ed5-b9ed-fc33005e0e20_part4
+Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part4
 Source URL: https://supabase.com/docs/reference/python/update
 Metadata: {
   "Header 1": "",
@@ -26817,7 +26817,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ee2051e4-84b1-4ed5-b9ed-fc33005e0e20_part5
+Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part5
 Source URL: https://supabase.com/docs/reference/python/update
 Metadata: {
   "Header 1": "",
@@ -26911,7 +26911,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ee2051e4-84b1-4ed5-b9ed-fc33005e0e20_part6
+Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part6
 Source URL: https://supabase.com/docs/reference/python/update
 Metadata: {
   "Header 1": "",
@@ -26999,7 +26999,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ee2051e4-84b1-4ed5-b9ed-fc33005e0e20_part7
+Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part7
 Source URL: https://supabase.com/docs/reference/python/update
 Metadata: {
   "Header 1": "",
@@ -27089,7 +27089,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ee2051e4-84b1-4ed5-b9ed-fc33005e0e20_part8
+Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part8
 Source URL: https://supabase.com/docs/reference/python/update
 Metadata: {
   "Header 1": "",
@@ -27176,7 +27176,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ee2051e4-84b1-4ed5-b9ed-fc33005e0e20_part9
+Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part9
 Source URL: https://supabase.com/docs/reference/python/update
 Metadata: {
   "Header 1": "",
@@ -27260,7 +27260,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ee2051e4-84b1-4ed5-b9ed-fc33005e0e20_part10
+Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part10
 Source URL: https://supabase.com/docs/reference/python/update
 Metadata: {
   "Header 1": "",
@@ -27336,7 +27336,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ee2051e4-84b1-4ed5-b9ed-fc33005e0e20_part11
+Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part11
 Source URL: https://supabase.com/docs/reference/python/update
 Metadata: {
   "Header 1": "",
@@ -27401,7 +27401,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ee2051e4-84b1-4ed5-b9ed-fc33005e0e20_part12
+Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part12
 Source URL: https://supabase.com/docs/reference/python/update
 Metadata: {
   "Header 1": "",
@@ -27512,7 +27512,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ee2051e4-84b1-4ed5-b9ed-fc33005e0e20_part13
+Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part13
 Source URL: https://supabase.com/docs/reference/python/update
 Metadata: {
   "Header 1": "",
@@ -27560,7 +27560,7 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 27b8154d-9cc7-4254-9040-3bdb2d022f70_part1
+Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part1
 Source URL: https://supabase.com/docs/reference/python/upsert
 Metadata: {
   "Header 1": "",
@@ -27649,7 +27649,7 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 27b8154d-9cc7-4254-9040-3bdb2d022f70_part2
+Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part2
 Source URL: https://supabase.com/docs/reference/python/upsert
 Metadata: {
   "Header 1": "",
@@ -27732,7 +27732,7 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 27b8154d-9cc7-4254-9040-3bdb2d022f70_part3
+Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part3
 Source URL: https://supabase.com/docs/reference/python/upsert
 Metadata: {
   "Header 1": "",
@@ -27864,7 +27864,7 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 27b8154d-9cc7-4254-9040-3bdb2d022f70_part4
+Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part4
 Source URL: https://supabase.com/docs/reference/python/upsert
 Metadata: {
   "Header 1": "",
@@ -27966,7 +27966,7 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 27b8154d-9cc7-4254-9040-3bdb2d022f70_part5
+Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part5
 Source URL: https://supabase.com/docs/reference/python/upsert
 Metadata: {
   "Header 1": "",
@@ -28060,7 +28060,7 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 27b8154d-9cc7-4254-9040-3bdb2d022f70_part6
+Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part6
 Source URL: https://supabase.com/docs/reference/python/upsert
 Metadata: {
   "Header 1": "",
@@ -28148,7 +28148,7 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 27b8154d-9cc7-4254-9040-3bdb2d022f70_part7
+Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part7
 Source URL: https://supabase.com/docs/reference/python/upsert
 Metadata: {
   "Header 1": "",
@@ -28238,7 +28238,7 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 27b8154d-9cc7-4254-9040-3bdb2d022f70_part8
+Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part8
 Source URL: https://supabase.com/docs/reference/python/upsert
 Metadata: {
   "Header 1": "",
@@ -28325,7 +28325,7 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 27b8154d-9cc7-4254-9040-3bdb2d022f70_part9
+Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part9
 Source URL: https://supabase.com/docs/reference/python/upsert
 Metadata: {
   "Header 1": "",
@@ -28409,7 +28409,7 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 27b8154d-9cc7-4254-9040-3bdb2d022f70_part10
+Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part10
 Source URL: https://supabase.com/docs/reference/python/upsert
 Metadata: {
   "Header 1": "",
@@ -28485,7 +28485,7 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 27b8154d-9cc7-4254-9040-3bdb2d022f70_part11
+Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part11
 Source URL: https://supabase.com/docs/reference/python/upsert
 Metadata: {
   "Header 1": "",
@@ -28550,7 +28550,7 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 27b8154d-9cc7-4254-9040-3bdb2d022f70_part12
+Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part12
 Source URL: https://supabase.com/docs/reference/python/upsert
 Metadata: {
   "Header 1": "",
@@ -28661,7 +28661,7 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 27b8154d-9cc7-4254-9040-3bdb2d022f70_part13
+Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part13
 Source URL: https://supabase.com/docs/reference/python/upsert
 Metadata: {
   "Header 1": "",
