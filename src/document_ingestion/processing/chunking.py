@@ -72,6 +72,7 @@ class CustomMarkdownParser:
         self.max_tokens = max_tokens
         self.soft_limit = soft_limit
         self.tokenizer = tiktoken.get_encoding("cl100k_base")
+        self.current_h1 = ""
 
     def parse_markdown(self, content: str, source_url: str) -> List[Dict[str, Any]]:
         sections = self._split_into_sections(content)
@@ -81,9 +82,9 @@ class CustomMarkdownParser:
         return chunks
 
     def _split_into_sections(self, content: str) -> List[str]:
-        pattern = r'(^|\n)([^\n]+)\n(-+|=+)\n'
+        pattern = r'(^|\n)([^\n]+)\n(=+|-+)\n'
         sections = re.split(pattern, content, flags=re.MULTILINE)
-        return [''.join(sections[i:i + 4]) for i in range(1, len(sections), 4)]
+        return [''.join(sections[i:i+4]) for i in range(1, len(sections), 4)]
 
     def _process_section(self, section: str, source_url: str) -> List[Dict[str, Any]]:
         lines = section.split('\n')
@@ -91,17 +92,27 @@ class CustomMarkdownParser:
         underline = lines[1].strip()
         content = '\n'.join(lines[2:])
 
-        header_level = 'H1' if '=' in underline else 'H2'
+        if '=' in underline:
+            self.current_h1 = title
+            header_level = 'H1'
+        else:
+            header_level = 'H2'
 
         chunks = []
-        current_chunk = {"content": f"{title}\n{underline}\n\n",
-                         "headers": {header_level: title}, "source_url": source_url}
+        current_chunk = {
+            "source_url": source_url,
+            "headers": {"H1": self.current_h1, header_level: title},
+            "content": f"{title}\n{underline}\n\n"
+        }
 
         for part in self._split_content(content):
             if self._should_split_chunk(current_chunk, part):
                 chunks.append(self._finalize_chunk(current_chunk))
-                current_chunk = {"content": f"{title}\n{underline}\n\n{part}",
-                                 "headers": {header_level: title}, "source_url": source_url}
+                current_chunk = {
+                    "source_url": source_url,
+                    "headers": {"H1": self.current_h1, header_level: title},
+                    "content": f"{title}\n{underline}\n\n{part}"
+                }
             else:
                 current_chunk["content"] += part
 
