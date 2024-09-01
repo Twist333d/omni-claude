@@ -54,102 +54,106 @@ class InputProcessor:
                 return False
         return True
 
+class DocumentNode:
+    def __init__(self, level, content):
+        self.level = level
+        self.content = content
+        self.children = []
+
+class DocumentTree:
+    def __init__(self):
+        self.root = DocumentNode(0, "Root")
+        self.current_node = self.root
+
 
 class CustomMarkdownParser:
     def __init__(self, max_tokens: int = 1000):
         self.max_tokens = max_tokens
         self.tokenizer = tiktoken.get_encoding("cl100k_base")
+        self.document_tree = DocumentTree()
 
     def parse_markdown(self, content: str, source_url: str) -> List[Dict[str, Any]]:
         lines = content.split('\n')
         chunks = []
-        current_chunk = {"content": "", "headers": {"H1": "", "H2": ""}, "source_url": source_url}
+        current_chunk = {"content": "", "headers": {"H1": "", "H2": "", "H3": ""}, "source_url": source_url}
 
-        i = 0
-        while i < len(lines):
-            line = lines[i].strip()
+        for i, line in enumerate(lines):
+            line = line.strip()
+            header_level = self._get_header_level(line, lines, i)
 
-            # Check for H1
-            if i < len(lines) - 1 and set(lines[i + 1]) == {'='}:
+            if header_level:
                 if current_chunk["content"]:
                     chunks.append(self._finalize_chunk(current_chunk))
-                current_chunk = {"content": line + '\n' + lines[i + 1] + '\n', "headers": {"H1": line, "H2": ""},
-                                 "source_url": source_url}
-                i += 2
-                continue
-
-            # Check for H2
-            if i < len(lines) - 1 and set(lines[i + 1]) == {'-'}:
-                if current_chunk["content"]:
-                    chunks.append(self._finalize_chunk(current_chunk))
-                current_chunk = {"content": line + '\n' + lines[i + 1] + '\n',
-                                 "headers": {"H1": current_chunk["headers"]["H1"], "H2": line},
-                                 "source_url": source_url}
-                i += 2
-                continue
-
-            # Check for H3
-            if line.startswith('### '):
-                if current_chunk["content"]:
-                    chunks.append(self._finalize_chunk(current_chunk))
-                current_chunk = {"content": line + '\n', "headers": current_chunk["headers"], "source_url": source_url}
-                i += 1
-                continue
-
-            # Handle code blocks
-            if line.startswith('```'):
-                code_block = [line]
-                i += 1
-                while i < len(lines) and not lines[i].strip().startswith('```'):
-                    code_block.append(lines[i])
-                    i += 1
-                if i < len(lines):
-                    code_block.append(lines[i])
-                current_chunk["content"] += '\n'.join(code_block) + '\n'
-                i += 1
-                continue
-
-            # Add line to current chunk
-            current_chunk["content"] += line + '\n'
-            i += 1
+                current_chunk = {"content": line + '\n', "headers": self._update_headers(header_level, line), "source_url": source_url}
+                self._add_to_document_tree(header_level, line)
+            elif line.startswith('`'):
+                code_block = self._extract_code_block(lines, i)
+                current_chunk["content"] += code_block
+                i += len(code_block.split('\n')) - 1
+            else:
+                current_chunk["content"] += line + '\n'
 
         if current_chunk["content"]:
             chunks.append(self._finalize_chunk(current_chunk))
 
         return chunks
 
+    def _get_header_level(self, line: str, lines: List[str], index: int) -> int:
+        if line.startswith('# '):
+            return 1
+        elif line.startswith('## '):
+            return 2
+        elif line.startswith('### '):
+            return 3
+        elif index < len(lines) - 1:
+            next_line = lines[index + 1].strip()
+            if set(next_line) == {'='}:
+                return 1
+            elif set(next_line) == {'-'}:
+                return 2
+        return 0
+
+    def _update_headers(self, level: int, content: str) -> Dict[str, str]:
+        headers = {"H1": "", "H2": "", "H3": ""}
+        content = content.lstrip('#').strip()
+        if level == 1:
+            headers["H1"] = content
+        elif level == 2:
+            headers["H2"] = content
+        elif level == 3:
+            headers["H3"] = content
+        return headers
+
+    def _add_to_document_tree(self, level: int, content: str):
+        while self.document_tree.current_node.level >= level:
+            self.document_tree.current_node = self.document_tree.current_node.parent
+        new_node = DocumentNode(level, content)
+        new_node.parent = self.document_tree.current_node
+        self.document_tree.current_node.children.append(new_node)
+        self.document_tree.current_node = new_node
+
+    def _extract_code_block(self, lines: List[str], start_index: int) -> str:
+        code_block = [lines[start_index]]
+        for line in lines[start_index + 1:]:
+            code_block.append(line)
+            if line.strip().startswith('`'):
+                break
+        return '\n'.join(code_block)
+
     def _finalize_chunk(self, chunk: Dict[str, Any]) -> Dict[str, Any]:
         chunk["chunk_id"] = str(uuid.uuid4())
         chunk["token_count"] = len(self.tokenizer.encode(chunk["content"]))
         chunk["has_code_block"] = '```' in chunk["content"]
+        chunk["document_position"] = self._get_document_position()
         return chunk
 
-    def _split_oversized_chunk(self, chunk: Dict[str, Any]) -> List[Dict[str, Any]]:
-        lines = chunk["content"].split('\n')
-        sub_chunks = []
-        current_sub_chunk = chunk.copy()
-        current_sub_chunk["content"] = ""
-        current_sub_chunk["token_count"] = 0
-
-        for line in lines:
-            line_tokens = len(self.tokenizer.encode(line))
-            if current_sub_chunk["token_count"] + line_tokens > self.max_tokens:
-                if current_sub_chunk["content"]:
-                    sub_chunks.append(current_sub_chunk)
-                    current_sub_chunk = chunk.copy()
-                    current_sub_chunk["content"] = ""
-                    current_sub_chunk["token_count"] = 0
-
-            current_sub_chunk["content"] += line + '\n'
-            current_sub_chunk["token_count"] += line_tokens
-
-        if current_sub_chunk["content"]:
-            sub_chunks.append(current_sub_chunk)
-
-        for i, sub_chunk in enumerate(sub_chunks):
-            sub_chunk["chunk_id"] = f"{chunk['chunk_id']}_part{i + 1}"
-
-        return sub_chunks
+    def _get_document_position(self) -> List[int]:
+        position = []
+        node = self.document_tree.current_node
+        while node != self.document_tree.root:
+            position.insert(0, node.parent.children.index(node))
+            node = node.parent
+        return position
 
 class Chunker:
     def __init__(self, max_tokens: int = 1000):
@@ -182,7 +186,6 @@ class Summarizer:
     async def retry_api_call(self, func, max_retries: int = 3, backoff_factor: float = 1.5):
         """Retry an API call with exponential backoff."""
         pass
-
 
 class Validator:
     def __init__(self, max_tokens: int = 1000, token_threshold: float = 0.02):
@@ -245,7 +248,6 @@ class Validator:
         return {
             "consistent_urls": all(chunk['source_url'] == source_url for chunk in chunks)
         }
-
 
 class StatisticsGenerator:
     def __init__(self):
@@ -317,7 +319,6 @@ class StatisticsGenerator:
             "avg_chunks_per_h1": round(
                 sum(self.chunks_per_h1) / len(self.chunks_per_h1)) if self.chunks_per_h1 else 0
         }
-
 
 class Orchestrator:
     def __init__(self, input_file: str, output_file: str, max_tokens: int = 1000):
