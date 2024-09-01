@@ -223,14 +223,13 @@ to 0.71)
   "chunk_id": "unique_identifier",
   "source_url": "https://supabase.com/docs/path/to/page",
   "content": "Full content of the chunk, including markdown formatting",
-  "metadata": {
+  "headers": {
     "Header 1": "Main heading (H1) text",
     "Header 2": "Subheading (H2) text",
-    "Header 3": "Tertiary heading (H3) text, if applicable"
   },
-  "token_count": 950
+  "token_count": 950,
+  'summary' : 'to be filled later'
 }
-
 ```
 
 ## 3. Updated End-to-End Approach
