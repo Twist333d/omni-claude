@@ -4,7 +4,7 @@ from tqdm import tqdm
 import tiktoken
 
 def test_chunker(input_file: str, max_tokens: int = 1000):
-    from src.document_ingestion.processing.chunking_new import InputProcessor, Chunker
+    from src.document_ingestion.processing.chunking import InputProcessor, Chunker
 
     processor = InputProcessor(input_file)
     chunker = Chunker(max_tokens=max_tokens)

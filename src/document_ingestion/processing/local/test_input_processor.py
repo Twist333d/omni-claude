@@ -2,7 +2,7 @@
 
 import os
 from src.utils.config import RAW_DATA_DIR
-from src.document_ingestion.processing.chunking_new import InputProcessor
+from src.document_ingestion.processing.chunking import InputProcessor
 
 def test_input_processor():
     file_name = "supabase.com_docs__20240826_212435.json"
