@@ -62,7 +62,6 @@ class Chunker:
             headers_to_split_on=[
                 ("#", "Header 1"),
                 ("##", "Header 2"),
-                ("###", "Header 3"),
             ]
         )
         self.tokenizer = tiktoken.get_encoding("cl100k_base")
@@ -72,19 +71,9 @@ class Chunker:
         chunks = []
 
         for split in splits:
-            headers = {
-                level: text for level, text in split.metadata.items() if text
-            }
+            chunk = self._create_chunk(split, source_url)
 
-            chunk = {
-                "chunk_id": str(uuid.uuid4()),
-                "source_url": source_url,
-                "content": split.page_content,
-                "headers": headers,
-                "token_count": len(self.tokenizer.encode(split.page_content))
-            }
-
-            if chunk["token_count"] > self.max_tokens:
+            if self._is_oversized(chunk):
                 sub_chunks = self._split_oversized_chunk(chunk)
                 chunks.extend(sub_chunks)
             else:
@@ -92,25 +81,51 @@ class Chunker:
 
         return chunks
 
+    def _create_chunk(self, split: Any, source_url: str) -> Dict[str, Any]:
+        content = split.page_content
+        metadata = {
+            "Header 1": split.metadata.get("Header 1", ""),
+            "Header 2": split.metadata.get("Header 2", ""),
+        }
+
+        # Check for code blocks
+        code_blocks = self._extract_code_blocks(content)
+        has_code_block = len(code_blocks) > 0
+        oversized_code_block = any(
+            len(self.tokenizer.encode(block)) > self.max_tokens for block in code_blocks)
+
+        return {
+            "chunk_id": str(uuid.uuid4()),
+            "source_url": source_url,
+            "content": content,
+            "metadata": metadata,
+            "token_count": len(self.tokenizer.encode(content)),
+            "has_code_block": has_code_block,
+            "oversized_code_block": oversized_code_block
+        }
+
+    def _is_oversized(self, chunk: Dict[str, Any]) -> bool:
+        return chunk["token_count"] > self.max_tokens
+
     def _split_oversized_chunk(self, chunk: Dict[str, Any]) -> List[Dict[str, Any]]:
         content = chunk["content"]
         sub_chunks = []
         current_chunk = chunk.copy()
         current_chunk["content"] = ""
         current_chunk["token_count"] = 0
-        sentences = content.split(". ")
 
-        for sentence in sentences:
-            sentence_tokens = len(self.tokenizer.encode(sentence))
-            if current_chunk["token_count"] + sentence_tokens > self.max_tokens:
+        for line in content.split("\n"):
+            line_tokens = len(self.tokenizer.encode(line))
+
+            if current_chunk["token_count"] + line_tokens > self.max_tokens:
                 if current_chunk["content"]:
                     sub_chunks.append(current_chunk)
                     current_chunk = chunk.copy()
                     current_chunk["content"] = ""
                     current_chunk["token_count"] = 0
 
-            current_chunk["content"] += sentence + ". "
-            current_chunk["token_count"] += sentence_tokens
+            current_chunk["content"] += line + "\n"
+            current_chunk["token_count"] += line_tokens
 
         if current_chunk["content"]:
             sub_chunks.append(current_chunk)
@@ -119,6 +134,23 @@ class Chunker:
             sub_chunk["chunk_id"] = f"{chunk['chunk_id']}_part{i + 1}"
 
         return sub_chunks
+
+    def _extract_code_blocks(self, content: str) -> List[str]:
+        code_blocks = []
+        lines = content.split("\n")
+        in_code_block = False
+        current_block = []
+
+        for line in lines:
+            if line.strip().startswith("```"):
+                if in_code_block:
+                    code_blocks.append("\n".join(current_block))
+                    current_block = []
+                in_code_block = not in_code_block
+            elif in_code_block:
+                current_block.append(line)
+
+        return code_blocks
 
 class Summarizer:
     """Handles generating summaries for chunks using Google Gemini 1.5 Flash."""
