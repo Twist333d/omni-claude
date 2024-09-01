@@ -349,6 +349,9 @@ class Orchestrator:
             self.stats_generator.process_document(doc['markdown'], chunks)
 
         statistics = self.stats_generator.generate_statistics()
+        validation_report = self._aggregate_validation_reports(validation_reports)
+
+        self.print_results(statistics, validation_report)
 
         output = {
             "metadata": {
@@ -402,6 +405,25 @@ class Orchestrator:
             }
         }
         return aggregated
+
+    def print_results(self, statistics, validation_report):
+        print("\n--- Statistics ---")
+        print(f"Total documents: {statistics['document_stats']['total_documents']}")
+        print(f"Average document size: {statistics['document_stats']['avg_document_size']} tokens")
+        print(f"Total chunks: {statistics['chunk_stats']['total_chunks']}")
+        print(f"Average chunk size: {statistics['chunk_stats']['avg_chunk_size']} tokens")
+        print(f"Chunks with code blocks: {statistics['chunk_stats']['chunks_with_code_blocks']}")
+        print(f"Total H1 headings: {statistics['heading_stats']['total_h1']}")
+        print(f"Total H2 headings: {statistics['heading_stats']['total_h2']}")
+        print(f"Total H3 headings: {statistics['heading_stats']['total_h3']}")
+
+        print("\n--- Validation Report ---")
+        print(
+            f"All headings preserved: {validation_report['heading_preservation']['all_headings_preserved']}")
+        print(
+            f"Content within threshold: {validation_report['content_preservation']['within_threshold']}")
+        print(f"Oversized chunks: {validation_report['chunk_size_validation']['oversized_chunks']}")
+        print(f"URLs consistent: {validation_report['url_consistency']['consistent_urls']}")
 
 
 if __name__ == "__main__":
