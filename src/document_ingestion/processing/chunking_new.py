@@ -55,104 +55,118 @@ class InputProcessor:
         return True
 
 
-class Chunker:
+class CustomMarkdownParser:
     def __init__(self, max_tokens: int = 1000):
         self.max_tokens = max_tokens
-        self.markdown_splitter = MarkdownHeaderTextSplitter(
-            headers_to_split_on=[
-                ("===", "Header 1"),
-                ("---", "Header 2"),
-            ],
-            strip_headers=True,
-        )
         self.tokenizer = tiktoken.get_encoding("cl100k_base")
 
-    def parse_markdown(self, markdown_content: str, source_url: str) -> List[Dict[str, Any]]:
-        splits = self.markdown_splitter.split_text(markdown_content)
+    def parse_markdown(self, content: str, source_url: str) -> List[Dict[str, Any]]:
+        lines = content.split('\n')
         chunks = []
+        current_chunk = {"content": "", "headers": {"H1": "", "H2": ""}, "source_url": source_url}
 
-        for split in splits:
-            chunk = self._create_chunk(split, source_url)
+        i = 0
+        while i < len(lines):
+            line = lines[i].strip()
 
-            if self._is_oversized(chunk):
-                sub_chunks = self._split_oversized_chunk(chunk)
-                chunks.extend(sub_chunks)
-            else:
-                chunks.append(chunk)
+            # Check for H1
+            if i < len(lines) - 1 and set(lines[i + 1]) == {'='}:
+                if current_chunk["content"]:
+                    chunks.append(self._finalize_chunk(current_chunk))
+                current_chunk = {"content": line + '\n' + lines[i + 1] + '\n', "headers": {"H1": line, "H2": ""},
+                                 "source_url": source_url}
+                i += 2
+                continue
+
+            # Check for H2
+            if i < len(lines) - 1 and set(lines[i + 1]) == {'-'}:
+                if current_chunk["content"]:
+                    chunks.append(self._finalize_chunk(current_chunk))
+                current_chunk = {"content": line + '\n' + lines[i + 1] + '\n',
+                                 "headers": {"H1": current_chunk["headers"]["H1"], "H2": line},
+                                 "source_url": source_url}
+                i += 2
+                continue
+
+            # Check for H3
+            if line.startswith('### '):
+                if current_chunk["content"]:
+                    chunks.append(self._finalize_chunk(current_chunk))
+                current_chunk = {"content": line + '\n', "headers": current_chunk["headers"], "source_url": source_url}
+                i += 1
+                continue
+
+            # Handle code blocks
+            if line.startswith('```'):
+                code_block = [line]
+                i += 1
+                while i < len(lines) and not lines[i].strip().startswith('```'):
+                    code_block.append(lines[i])
+                    i += 1
+                if i < len(lines):
+                    code_block.append(lines[i])
+                current_chunk["content"] += '\n'.join(code_block) + '\n'
+                i += 1
+                continue
+
+            # Add line to current chunk
+            current_chunk["content"] += line + '\n'
+            i += 1
+
+        if current_chunk["content"]:
+            chunks.append(self._finalize_chunk(current_chunk))
 
         return chunks
 
-    def _create_chunk(self, split: Any, source_url: str) -> Dict[str, Any]:
-        content = split.page_content
-        logger.info(f"Debug printing of split metadata: {split.metadata}")
-        headers = {
-            "Header 1": split.metadata.get("Header 1", "H1 not found"),
-            "Header 2": split.metadata.get("Header 2", "H2 not found"),
-        }
-
-        # Check for code blocks
-        code_blocks = self._extract_code_blocks(content)
-        has_code_block = len(code_blocks) > 0
-        oversized_code_block = any(
-            len(self.tokenizer.encode(block)) > self.max_tokens for block in code_blocks)
-
-        return {
-            "chunk_id": str(uuid.uuid4()),
-            "source_url": source_url,
-            "content": content,
-            "headers": headers,
-            "token_count": len(self.tokenizer.encode(content)),
-            "has_code_block": has_code_block,
-            "oversized_code_block": oversized_code_block
-        }
-
-    def _is_oversized(self, chunk: Dict[str, Any]) -> bool:
-        return chunk["token_count"] > self.max_tokens
+    def _finalize_chunk(self, chunk: Dict[str, Any]) -> Dict[str, Any]:
+        chunk["chunk_id"] = str(uuid.uuid4())
+        chunk["token_count"] = len(self.tokenizer.encode(chunk["content"]))
+        chunk["has_code_block"] = '```' in chunk["content"]
+        return chunk
 
     def _split_oversized_chunk(self, chunk: Dict[str, Any]) -> List[Dict[str, Any]]:
-        content = chunk["content"]
+        lines = chunk["content"].split('\n')
         sub_chunks = []
-        current_chunk = chunk.copy()
-        current_chunk["content"] = ""
-        current_chunk["token_count"] = 0
+        current_sub_chunk = chunk.copy()
+        current_sub_chunk["content"] = ""
+        current_sub_chunk["token_count"] = 0
 
-        for line in content.split("\n"):
+        for line in lines:
             line_tokens = len(self.tokenizer.encode(line))
+            if current_sub_chunk["token_count"] + line_tokens > self.max_tokens:
+                if current_sub_chunk["content"]:
+                    sub_chunks.append(current_sub_chunk)
+                    current_sub_chunk = chunk.copy()
+                    current_sub_chunk["content"] = ""
+                    current_sub_chunk["token_count"] = 0
 
-            if current_chunk["token_count"] + line_tokens > self.max_tokens:
-                if current_chunk["content"]:
-                    sub_chunks.append(current_chunk)
-                    current_chunk = chunk.copy()
-                    current_chunk["content"] = ""
-                    current_chunk["token_count"] = 0
+            current_sub_chunk["content"] += line + '\n'
+            current_sub_chunk["token_count"] += line_tokens
 
-            current_chunk["content"] += line + "\n"
-            current_chunk["token_count"] += line_tokens
-
-        if current_chunk["content"]:
-            sub_chunks.append(current_chunk)
+        if current_sub_chunk["content"]:
+            sub_chunks.append(current_sub_chunk)
 
         for i, sub_chunk in enumerate(sub_chunks):
             sub_chunk["chunk_id"] = f"{chunk['chunk_id']}_part{i + 1}"
 
         return sub_chunks
 
-    def _extract_code_blocks(self, content: str) -> List[str]:
-        code_blocks = []
-        lines = content.split("\n")
-        in_code_block = False
-        current_block = []
+class Chunker:
+    def __init__(self, max_tokens: int = 1000):
+        self.parser = CustomMarkdownParser(max_tokens)
 
-        for line in lines:
-            if line.strip().startswith("```"):
-                if in_code_block:
-                    code_blocks.append("\n".join(current_block))
-                    current_block = []
-                in_code_block = not in_code_block
-            elif in_code_block:
-                current_block.append(line)
+    def parse_markdown(self, markdown_content: str, source_url: str) -> List[Dict[str, Any]]:
+        chunks = self.parser.parse_markdown(markdown_content, source_url)
+        final_chunks = []
 
-        return code_blocks
+        for chunk in chunks:
+            if chunk["token_count"] > self.parser.max_tokens:
+                sub_chunks = self.parser._split_oversized_chunk(chunk)
+                final_chunks.extend(sub_chunks)
+            else:
+                final_chunks.append(chunk)
+
+        return final_chunks
 
 class Summarizer:
     """Handles generating summaries for chunks using Google Gemini 1.5 Flash."""

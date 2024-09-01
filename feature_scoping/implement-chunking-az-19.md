@@ -209,8 +209,7 @@ to 0.71)
 
 1. Load JSON data from FireCrawl
 2. Extract and parse markdown content for each page
-3. Identify document structure (headings, code blocks, special content)
-4. Generate and enrich chunks based on heading hierarchy and content
+4. Generate chunks based on heading hierarchy and content
 5. Calculate token counts using tiktoken
 6. Generate summaries using Google Gemini 1.5 Flash (batch mode)
 7. Validate chunks and generate report
@@ -228,7 +227,7 @@ to 0.71)
     "Header 2": "Subheading (H2) text",
   },
   "token_count": 950,
-  'summary' : 'to be filled later'
+  'summary' : 'to be filled later',
 }
 ```
 
@@ -238,12 +237,11 @@ to 0.71)
 - Load JSON data from FireCrawl
 - Implement error handling for malformed JSON or missing required fields
 
-### Document Parsing and Chunking
+### Document Parsing and Chunking  (DONE & TESTED)
 - Utilize the markdown library to convert Markdown to HTML for easier line-by-line processing.
 - Implement line-by-line parsing logic as described in Section 2.
 - Generate and manage chunks based on heading hierarchy and token limits.
 - Handle code blocks as single units, flagging oversized ones.
-- Enrich chunks with metadata.
 
 ### Summarization
 - Generate summaries for each chunk using Google Gemini 1.5 Flash
