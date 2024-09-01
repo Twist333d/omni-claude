@@ -34,7 +34,7 @@ def test_chunker(input_file: str, max_tokens: int = 1000):
             for chunk in all_chunks:
                 f.write(f"Chunk ID: {chunk['chunk_id']}\n")
                 f.write(f"Source URL: {chunk['source_url']}\n")
-                f.write(f"Metadata: {json.dumps(chunk['metadata'], indent=2)}\n")
+                f.write(f"Headers: {json.dumps(chunk['headers'], indent=2)}\n")
                 f.write(f"Token Count: {chunk['token_count']}\n")
                 f.write(f"Has Code Block: {chunk['has_code_block']}\n")
                 f.write(f"Oversized Code Block: {chunk['oversized_code_block']}\n")

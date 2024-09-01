@@ -60,9 +60,10 @@ class Chunker:
         self.max_tokens = max_tokens
         self.markdown_splitter = MarkdownHeaderTextSplitter(
             headers_to_split_on=[
-                ("#", "Header 1"),
-                ("##", "Header 2"),
-            ]
+                ("===", "Header 1"),
+                ("---", "Header 2"),
+            ],
+            strip_headers=True,
         )
         self.tokenizer = tiktoken.get_encoding("cl100k_base")
 
@@ -83,9 +84,10 @@ class Chunker:
 
     def _create_chunk(self, split: Any, source_url: str) -> Dict[str, Any]:
         content = split.page_content
-        metadata = {
-            "Header 1": split.metadata.get("Header 1", ""),
-            "Header 2": split.metadata.get("Header 2", ""),
+        logger.info(f"Debug printing of split metadata: {split.metadata}")
+        headers = {
+            "Header 1": split.metadata.get("Header 1", "H1 not found"),
+            "Header 2": split.metadata.get("Header 2", "H2 not found"),
         }
 
         # Check for code blocks
@@ -98,7 +100,7 @@ class Chunker:
             "chunk_id": str(uuid.uuid4()),
             "source_url": source_url,
             "content": content,
-            "metadata": metadata,
+            "headers": headers,
             "token_count": len(self.tokenizer.encode(content)),
             "has_code_block": has_code_block,
             "oversized_code_block": oversized_code_block

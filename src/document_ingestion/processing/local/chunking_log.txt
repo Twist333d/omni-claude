@@ -1,8 +1,8 @@
-Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part1
+Chunk ID: fa84bdb5-5755-467b-8d85-2065334d29d5_part1
 Source URL: https://supabase.com/docs/reference/python/initializing
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -87,11 +87,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part2
+Chunk ID: fa84bdb5-5755-467b-8d85-2065334d29d5_part2
 Source URL: https://supabase.com/docs/reference/python/initializing
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -170,11 +170,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part3
+Chunk ID: fa84bdb5-5755-467b-8d85-2065334d29d5_part3
 Source URL: https://supabase.com/docs/reference/python/initializing
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -302,11 +302,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part4
+Chunk ID: fa84bdb5-5755-467b-8d85-2065334d29d5_part4
 Source URL: https://supabase.com/docs/reference/python/initializing
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -404,11 +404,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part5
+Chunk ID: fa84bdb5-5755-467b-8d85-2065334d29d5_part5
 Source URL: https://supabase.com/docs/reference/python/initializing
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -498,11 +498,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part6
+Chunk ID: fa84bdb5-5755-467b-8d85-2065334d29d5_part6
 Source URL: https://supabase.com/docs/reference/python/initializing
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -586,11 +586,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part7
+Chunk ID: fa84bdb5-5755-467b-8d85-2065334d29d5_part7
 Source URL: https://supabase.com/docs/reference/python/initializing
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -676,11 +676,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part8
+Chunk ID: fa84bdb5-5755-467b-8d85-2065334d29d5_part8
 Source URL: https://supabase.com/docs/reference/python/initializing
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -763,11 +763,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part9
+Chunk ID: fa84bdb5-5755-467b-8d85-2065334d29d5_part9
 Source URL: https://supabase.com/docs/reference/python/initializing
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -847,11 +847,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part10
+Chunk ID: fa84bdb5-5755-467b-8d85-2065334d29d5_part10
 Source URL: https://supabase.com/docs/reference/python/initializing
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -923,11 +923,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part11
+Chunk ID: fa84bdb5-5755-467b-8d85-2065334d29d5_part11
 Source URL: https://supabase.com/docs/reference/python/initializing
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -988,11 +988,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part12
+Chunk ID: fa84bdb5-5755-467b-8d85-2065334d29d5_part12
 Source URL: https://supabase.com/docs/reference/python/initializing
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -1099,11 +1099,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: f8cb4860-81a8-454d-ab97-d7edbdadcb6f_part13
+Chunk ID: fa84bdb5-5755-467b-8d85-2065334d29d5_part13
 Source URL: https://supabase.com/docs/reference/python/initializing
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -1147,11 +1147,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part1
+Chunk ID: ac7d4dc6-691b-4632-a906-a7c80b91fd87_part1
 Source URL: https://supabase.com/docs/reference/python/auth-signup
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -1236,11 +1236,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part2
+Chunk ID: ac7d4dc6-691b-4632-a906-a7c80b91fd87_part2
 Source URL: https://supabase.com/docs/reference/python/auth-signup
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -1319,11 +1319,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part3
+Chunk ID: ac7d4dc6-691b-4632-a906-a7c80b91fd87_part3
 Source URL: https://supabase.com/docs/reference/python/auth-signup
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -1451,11 +1451,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part4
+Chunk ID: ac7d4dc6-691b-4632-a906-a7c80b91fd87_part4
 Source URL: https://supabase.com/docs/reference/python/auth-signup
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -1553,11 +1553,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part5
+Chunk ID: ac7d4dc6-691b-4632-a906-a7c80b91fd87_part5
 Source URL: https://supabase.com/docs/reference/python/auth-signup
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -1647,11 +1647,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part6
+Chunk ID: ac7d4dc6-691b-4632-a906-a7c80b91fd87_part6
 Source URL: https://supabase.com/docs/reference/python/auth-signup
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -1735,11 +1735,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part7
+Chunk ID: ac7d4dc6-691b-4632-a906-a7c80b91fd87_part7
 Source URL: https://supabase.com/docs/reference/python/auth-signup
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -1825,11 +1825,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part8
+Chunk ID: ac7d4dc6-691b-4632-a906-a7c80b91fd87_part8
 Source URL: https://supabase.com/docs/reference/python/auth-signup
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -1912,11 +1912,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part9
+Chunk ID: ac7d4dc6-691b-4632-a906-a7c80b91fd87_part9
 Source URL: https://supabase.com/docs/reference/python/auth-signup
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -1996,11 +1996,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part10
+Chunk ID: ac7d4dc6-691b-4632-a906-a7c80b91fd87_part10
 Source URL: https://supabase.com/docs/reference/python/auth-signup
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -2072,11 +2072,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part11
+Chunk ID: ac7d4dc6-691b-4632-a906-a7c80b91fd87_part11
 Source URL: https://supabase.com/docs/reference/python/auth-signup
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -2137,11 +2137,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part12
+Chunk ID: ac7d4dc6-691b-4632-a906-a7c80b91fd87_part12
 Source URL: https://supabase.com/docs/reference/python/auth-signup
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -2248,11 +2248,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 214f909c-f34b-4ff5-8cb8-42a230a16657_part13
+Chunk ID: ac7d4dc6-691b-4632-a906-a7c80b91fd87_part13
 Source URL: https://supabase.com/docs/reference/python/auth-signup
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -2296,11 +2296,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part1
+Chunk ID: 39d3897d-224c-4586-8270-2911ebb02179_part1
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -2385,11 +2385,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part2
+Chunk ID: 39d3897d-224c-4586-8270-2911ebb02179_part2
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -2468,11 +2468,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part3
+Chunk ID: 39d3897d-224c-4586-8270-2911ebb02179_part3
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -2600,11 +2600,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part4
+Chunk ID: 39d3897d-224c-4586-8270-2911ebb02179_part4
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -2702,11 +2702,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part5
+Chunk ID: 39d3897d-224c-4586-8270-2911ebb02179_part5
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -2796,11 +2796,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part6
+Chunk ID: 39d3897d-224c-4586-8270-2911ebb02179_part6
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -2884,11 +2884,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part7
+Chunk ID: 39d3897d-224c-4586-8270-2911ebb02179_part7
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -2974,11 +2974,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part8
+Chunk ID: 39d3897d-224c-4586-8270-2911ebb02179_part8
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -3061,11 +3061,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part9
+Chunk ID: 39d3897d-224c-4586-8270-2911ebb02179_part9
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -3145,11 +3145,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part10
+Chunk ID: 39d3897d-224c-4586-8270-2911ebb02179_part10
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -3221,11 +3221,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part11
+Chunk ID: 39d3897d-224c-4586-8270-2911ebb02179_part11
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -3286,11 +3286,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part12
+Chunk ID: 39d3897d-224c-4586-8270-2911ebb02179_part12
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -3397,11 +3397,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 0df35079-dd5e-4b36-b4cd-9c20111b8c4d_part13
+Chunk ID: 39d3897d-224c-4586-8270-2911ebb02179_part13
 Source URL: https://supabase.com/docs/reference/python/auth-signinanonymously
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -3445,11 +3445,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part1
+Chunk ID: 66c7f554-1fd0-4d2b-97cb-6338038cd0bd_part1
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -3534,11 +3534,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part2
+Chunk ID: 66c7f554-1fd0-4d2b-97cb-6338038cd0bd_part2
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -3617,11 +3617,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part3
+Chunk ID: 66c7f554-1fd0-4d2b-97cb-6338038cd0bd_part3
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -3749,11 +3749,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part4
+Chunk ID: 66c7f554-1fd0-4d2b-97cb-6338038cd0bd_part4
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -3851,11 +3851,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part5
+Chunk ID: 66c7f554-1fd0-4d2b-97cb-6338038cd0bd_part5
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -3945,11 +3945,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part6
+Chunk ID: 66c7f554-1fd0-4d2b-97cb-6338038cd0bd_part6
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -4033,11 +4033,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part7
+Chunk ID: 66c7f554-1fd0-4d2b-97cb-6338038cd0bd_part7
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -4123,11 +4123,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part8
+Chunk ID: 66c7f554-1fd0-4d2b-97cb-6338038cd0bd_part8
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -4210,11 +4210,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part9
+Chunk ID: 66c7f554-1fd0-4d2b-97cb-6338038cd0bd_part9
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -4294,11 +4294,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part10
+Chunk ID: 66c7f554-1fd0-4d2b-97cb-6338038cd0bd_part10
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -4370,11 +4370,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part11
+Chunk ID: 66c7f554-1fd0-4d2b-97cb-6338038cd0bd_part11
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -4435,11 +4435,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part12
+Chunk ID: 66c7f554-1fd0-4d2b-97cb-6338038cd0bd_part12
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -4546,11 +4546,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: c23cb2bd-f270-42ee-8004-5deae8e9e1e3_part13
+Chunk ID: 66c7f554-1fd0-4d2b-97cb-6338038cd0bd_part13
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithpassword
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -4594,11 +4594,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part1
+Chunk ID: 0da26ba2-45d3-46b7-b371-8accd0d201bd_part1
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -4683,11 +4683,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part2
+Chunk ID: 0da26ba2-45d3-46b7-b371-8accd0d201bd_part2
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -4766,11 +4766,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part3
+Chunk ID: 0da26ba2-45d3-46b7-b371-8accd0d201bd_part3
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -4898,11 +4898,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part4
+Chunk ID: 0da26ba2-45d3-46b7-b371-8accd0d201bd_part4
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -5000,11 +5000,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part5
+Chunk ID: 0da26ba2-45d3-46b7-b371-8accd0d201bd_part5
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -5094,11 +5094,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part6
+Chunk ID: 0da26ba2-45d3-46b7-b371-8accd0d201bd_part6
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -5182,11 +5182,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part7
+Chunk ID: 0da26ba2-45d3-46b7-b371-8accd0d201bd_part7
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -5272,11 +5272,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part8
+Chunk ID: 0da26ba2-45d3-46b7-b371-8accd0d201bd_part8
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -5359,11 +5359,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part9
+Chunk ID: 0da26ba2-45d3-46b7-b371-8accd0d201bd_part9
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -5443,11 +5443,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part10
+Chunk ID: 0da26ba2-45d3-46b7-b371-8accd0d201bd_part10
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -5519,11 +5519,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part11
+Chunk ID: 0da26ba2-45d3-46b7-b371-8accd0d201bd_part11
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -5584,11 +5584,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part12
+Chunk ID: 0da26ba2-45d3-46b7-b371-8accd0d201bd_part12
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -5695,11 +5695,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 58d783d4-8ba7-461f-97e0-ababbfe8bfb6_part13
+Chunk ID: 0da26ba2-45d3-46b7-b371-8accd0d201bd_part13
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -5743,11 +5743,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part1
+Chunk ID: ff718389-8f1e-4c51-afeb-48a9a984aa65_part1
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -5832,11 +5832,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part2
+Chunk ID: ff718389-8f1e-4c51-afeb-48a9a984aa65_part2
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -5915,11 +5915,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part3
+Chunk ID: ff718389-8f1e-4c51-afeb-48a9a984aa65_part3
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -6047,11 +6047,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part4
+Chunk ID: ff718389-8f1e-4c51-afeb-48a9a984aa65_part4
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -6149,11 +6149,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part5
+Chunk ID: ff718389-8f1e-4c51-afeb-48a9a984aa65_part5
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -6243,11 +6243,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part6
+Chunk ID: ff718389-8f1e-4c51-afeb-48a9a984aa65_part6
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -6331,11 +6331,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part7
+Chunk ID: ff718389-8f1e-4c51-afeb-48a9a984aa65_part7
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -6421,11 +6421,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part8
+Chunk ID: ff718389-8f1e-4c51-afeb-48a9a984aa65_part8
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -6508,11 +6508,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part9
+Chunk ID: ff718389-8f1e-4c51-afeb-48a9a984aa65_part9
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -6592,11 +6592,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part10
+Chunk ID: ff718389-8f1e-4c51-afeb-48a9a984aa65_part10
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -6668,11 +6668,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part11
+Chunk ID: ff718389-8f1e-4c51-afeb-48a9a984aa65_part11
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -6733,11 +6733,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part12
+Chunk ID: ff718389-8f1e-4c51-afeb-48a9a984aa65_part12
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -6844,11 +6844,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e7a23a26-3282-4619-bbcd-1f0cb89a3ca0_part13
+Chunk ID: ff718389-8f1e-4c51-afeb-48a9a984aa65_part13
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithoauth
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -6892,11 +6892,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part1
+Chunk ID: 81807d36-3f25-4110-b6f7-35c6ed1e18b8_part1
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -6981,11 +6981,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part2
+Chunk ID: 81807d36-3f25-4110-b6f7-35c6ed1e18b8_part2
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -7064,11 +7064,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part3
+Chunk ID: 81807d36-3f25-4110-b6f7-35c6ed1e18b8_part3
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -7196,11 +7196,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part4
+Chunk ID: 81807d36-3f25-4110-b6f7-35c6ed1e18b8_part4
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -7298,11 +7298,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part5
+Chunk ID: 81807d36-3f25-4110-b6f7-35c6ed1e18b8_part5
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -7392,11 +7392,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part6
+Chunk ID: 81807d36-3f25-4110-b6f7-35c6ed1e18b8_part6
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -7480,11 +7480,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part7
+Chunk ID: 81807d36-3f25-4110-b6f7-35c6ed1e18b8_part7
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -7570,11 +7570,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part8
+Chunk ID: 81807d36-3f25-4110-b6f7-35c6ed1e18b8_part8
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -7657,11 +7657,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part9
+Chunk ID: 81807d36-3f25-4110-b6f7-35c6ed1e18b8_part9
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -7741,11 +7741,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part10
+Chunk ID: 81807d36-3f25-4110-b6f7-35c6ed1e18b8_part10
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -7817,11 +7817,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part11
+Chunk ID: 81807d36-3f25-4110-b6f7-35c6ed1e18b8_part11
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -7882,11 +7882,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part12
+Chunk ID: 81807d36-3f25-4110-b6f7-35c6ed1e18b8_part12
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -7993,11 +7993,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 5ca1d42a-f294-492f-bf24-fd5c967570b9_part13
+Chunk ID: 81807d36-3f25-4110-b6f7-35c6ed1e18b8_part13
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithidtoken
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -8041,11 +8041,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part1
+Chunk ID: 99a91fcf-033b-4080-a38c-a95f9e06b8fe_part1
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -8130,11 +8130,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part2
+Chunk ID: 99a91fcf-033b-4080-a38c-a95f9e06b8fe_part2
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -8213,11 +8213,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part3
+Chunk ID: 99a91fcf-033b-4080-a38c-a95f9e06b8fe_part3
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -8345,11 +8345,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part4
+Chunk ID: 99a91fcf-033b-4080-a38c-a95f9e06b8fe_part4
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -8447,11 +8447,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part5
+Chunk ID: 99a91fcf-033b-4080-a38c-a95f9e06b8fe_part5
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -8541,11 +8541,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part6
+Chunk ID: 99a91fcf-033b-4080-a38c-a95f9e06b8fe_part6
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -8629,11 +8629,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part7
+Chunk ID: 99a91fcf-033b-4080-a38c-a95f9e06b8fe_part7
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -8719,11 +8719,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part8
+Chunk ID: 99a91fcf-033b-4080-a38c-a95f9e06b8fe_part8
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -8806,11 +8806,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part9
+Chunk ID: 99a91fcf-033b-4080-a38c-a95f9e06b8fe_part9
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -8890,11 +8890,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part10
+Chunk ID: 99a91fcf-033b-4080-a38c-a95f9e06b8fe_part10
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -8966,11 +8966,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part11
+Chunk ID: 99a91fcf-033b-4080-a38c-a95f9e06b8fe_part11
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -9031,11 +9031,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part12
+Chunk ID: 99a91fcf-033b-4080-a38c-a95f9e06b8fe_part12
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -9142,11 +9142,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 19b262a2-7632-429d-bf89-2e22348fb4ab_part13
+Chunk ID: 99a91fcf-033b-4080-a38c-a95f9e06b8fe_part13
 Source URL: https://supabase.com/docs/reference/python/auth-signinwithsso
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -9190,11 +9190,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part1
+Chunk ID: 78d9661c-80a1-435f-a77b-e7c183d09e54_part1
 Source URL: https://supabase.com/docs/reference/python/auth-signout
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -9279,11 +9279,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part2
+Chunk ID: 78d9661c-80a1-435f-a77b-e7c183d09e54_part2
 Source URL: https://supabase.com/docs/reference/python/auth-signout
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -9362,11 +9362,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part3
+Chunk ID: 78d9661c-80a1-435f-a77b-e7c183d09e54_part3
 Source URL: https://supabase.com/docs/reference/python/auth-signout
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -9494,11 +9494,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part4
+Chunk ID: 78d9661c-80a1-435f-a77b-e7c183d09e54_part4
 Source URL: https://supabase.com/docs/reference/python/auth-signout
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -9596,11 +9596,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part5
+Chunk ID: 78d9661c-80a1-435f-a77b-e7c183d09e54_part5
 Source URL: https://supabase.com/docs/reference/python/auth-signout
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -9690,11 +9690,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part6
+Chunk ID: 78d9661c-80a1-435f-a77b-e7c183d09e54_part6
 Source URL: https://supabase.com/docs/reference/python/auth-signout
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -9778,11 +9778,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part7
+Chunk ID: 78d9661c-80a1-435f-a77b-e7c183d09e54_part7
 Source URL: https://supabase.com/docs/reference/python/auth-signout
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -9868,11 +9868,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part8
+Chunk ID: 78d9661c-80a1-435f-a77b-e7c183d09e54_part8
 Source URL: https://supabase.com/docs/reference/python/auth-signout
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -9955,11 +9955,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part9
+Chunk ID: 78d9661c-80a1-435f-a77b-e7c183d09e54_part9
 Source URL: https://supabase.com/docs/reference/python/auth-signout
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -10039,11 +10039,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part10
+Chunk ID: 78d9661c-80a1-435f-a77b-e7c183d09e54_part10
 Source URL: https://supabase.com/docs/reference/python/auth-signout
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -10115,11 +10115,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part11
+Chunk ID: 78d9661c-80a1-435f-a77b-e7c183d09e54_part11
 Source URL: https://supabase.com/docs/reference/python/auth-signout
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -10180,11 +10180,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part12
+Chunk ID: 78d9661c-80a1-435f-a77b-e7c183d09e54_part12
 Source URL: https://supabase.com/docs/reference/python/auth-signout
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -10291,11 +10291,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1efe4349-62d5-4c1f-990f-71175b1f0a1e_part13
+Chunk ID: 78d9661c-80a1-435f-a77b-e7c183d09e54_part13
 Source URL: https://supabase.com/docs/reference/python/auth-signout
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -10339,11 +10339,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part1
+Chunk ID: 560407f6-f4cb-4bc8-98f8-6ca9d962f3d5_part1
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -10428,11 +10428,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part2
+Chunk ID: 560407f6-f4cb-4bc8-98f8-6ca9d962f3d5_part2
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -10511,11 +10511,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part3
+Chunk ID: 560407f6-f4cb-4bc8-98f8-6ca9d962f3d5_part3
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -10643,11 +10643,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part4
+Chunk ID: 560407f6-f4cb-4bc8-98f8-6ca9d962f3d5_part4
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -10745,11 +10745,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part5
+Chunk ID: 560407f6-f4cb-4bc8-98f8-6ca9d962f3d5_part5
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -10839,11 +10839,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part6
+Chunk ID: 560407f6-f4cb-4bc8-98f8-6ca9d962f3d5_part6
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -10927,11 +10927,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part7
+Chunk ID: 560407f6-f4cb-4bc8-98f8-6ca9d962f3d5_part7
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -11017,11 +11017,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part8
+Chunk ID: 560407f6-f4cb-4bc8-98f8-6ca9d962f3d5_part8
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -11104,11 +11104,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part9
+Chunk ID: 560407f6-f4cb-4bc8-98f8-6ca9d962f3d5_part9
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -11188,11 +11188,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part10
+Chunk ID: 560407f6-f4cb-4bc8-98f8-6ca9d962f3d5_part10
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -11264,11 +11264,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part11
+Chunk ID: 560407f6-f4cb-4bc8-98f8-6ca9d962f3d5_part11
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -11329,11 +11329,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part12
+Chunk ID: 560407f6-f4cb-4bc8-98f8-6ca9d962f3d5_part12
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -11440,11 +11440,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: a6e09c4c-3ba6-44c4-b605-609cc3e7565e_part13
+Chunk ID: 560407f6-f4cb-4bc8-98f8-6ca9d962f3d5_part13
 Source URL: https://supabase.com/docs/reference/python/auth-verifyotp
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -11488,11 +11488,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part1
+Chunk ID: 684b6b77-edf3-4fc8-a185-fb7e3f1863a1_part1
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -11577,11 +11577,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part2
+Chunk ID: 684b6b77-edf3-4fc8-a185-fb7e3f1863a1_part2
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -11660,11 +11660,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part3
+Chunk ID: 684b6b77-edf3-4fc8-a185-fb7e3f1863a1_part3
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -11792,11 +11792,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part4
+Chunk ID: 684b6b77-edf3-4fc8-a185-fb7e3f1863a1_part4
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -11894,11 +11894,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part5
+Chunk ID: 684b6b77-edf3-4fc8-a185-fb7e3f1863a1_part5
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -11988,11 +11988,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part6
+Chunk ID: 684b6b77-edf3-4fc8-a185-fb7e3f1863a1_part6
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -12076,11 +12076,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part7
+Chunk ID: 684b6b77-edf3-4fc8-a185-fb7e3f1863a1_part7
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -12166,11 +12166,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part8
+Chunk ID: 684b6b77-edf3-4fc8-a185-fb7e3f1863a1_part8
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -12253,11 +12253,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part9
+Chunk ID: 684b6b77-edf3-4fc8-a185-fb7e3f1863a1_part9
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -12337,11 +12337,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part10
+Chunk ID: 684b6b77-edf3-4fc8-a185-fb7e3f1863a1_part10
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -12413,11 +12413,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part11
+Chunk ID: 684b6b77-edf3-4fc8-a185-fb7e3f1863a1_part11
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -12478,11 +12478,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part12
+Chunk ID: 684b6b77-edf3-4fc8-a185-fb7e3f1863a1_part12
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -12589,11 +12589,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 425e7c19-d602-4fec-b5be-778d2fc41112_part13
+Chunk ID: 684b6b77-edf3-4fc8-a185-fb7e3f1863a1_part13
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-api
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -12637,11 +12637,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part1
+Chunk ID: 4da96046-24aa-4c3b-bde7-f6503f0ddc39_part1
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -12726,11 +12726,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part2
+Chunk ID: 4da96046-24aa-4c3b-bde7-f6503f0ddc39_part2
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -12809,11 +12809,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part3
+Chunk ID: 4da96046-24aa-4c3b-bde7-f6503f0ddc39_part3
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -12941,11 +12941,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part4
+Chunk ID: 4da96046-24aa-4c3b-bde7-f6503f0ddc39_part4
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -13043,11 +13043,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part5
+Chunk ID: 4da96046-24aa-4c3b-bde7-f6503f0ddc39_part5
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -13137,11 +13137,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part6
+Chunk ID: 4da96046-24aa-4c3b-bde7-f6503f0ddc39_part6
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -13225,11 +13225,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part7
+Chunk ID: 4da96046-24aa-4c3b-bde7-f6503f0ddc39_part7
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -13315,11 +13315,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part8
+Chunk ID: 4da96046-24aa-4c3b-bde7-f6503f0ddc39_part8
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -13402,11 +13402,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part9
+Chunk ID: 4da96046-24aa-4c3b-bde7-f6503f0ddc39_part9
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -13486,11 +13486,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part10
+Chunk ID: 4da96046-24aa-4c3b-bde7-f6503f0ddc39_part10
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -13562,11 +13562,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part11
+Chunk ID: 4da96046-24aa-4c3b-bde7-f6503f0ddc39_part11
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -13627,11 +13627,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part12
+Chunk ID: 4da96046-24aa-4c3b-bde7-f6503f0ddc39_part12
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -13738,11 +13738,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6172b631-ff68-4a04-943a-02440aa802eb_part13
+Chunk ID: 4da96046-24aa-4c3b-bde7-f6503f0ddc39_part13
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-enroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -13786,11 +13786,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part1
+Chunk ID: 7955169b-97e0-4710-9339-c237f619e5fa_part1
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -13875,11 +13875,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part2
+Chunk ID: 7955169b-97e0-4710-9339-c237f619e5fa_part2
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -13958,11 +13958,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part3
+Chunk ID: 7955169b-97e0-4710-9339-c237f619e5fa_part3
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -14090,11 +14090,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part4
+Chunk ID: 7955169b-97e0-4710-9339-c237f619e5fa_part4
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -14192,11 +14192,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part5
+Chunk ID: 7955169b-97e0-4710-9339-c237f619e5fa_part5
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -14286,11 +14286,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part6
+Chunk ID: 7955169b-97e0-4710-9339-c237f619e5fa_part6
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -14374,11 +14374,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part7
+Chunk ID: 7955169b-97e0-4710-9339-c237f619e5fa_part7
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -14464,11 +14464,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part8
+Chunk ID: 7955169b-97e0-4710-9339-c237f619e5fa_part8
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -14551,11 +14551,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part9
+Chunk ID: 7955169b-97e0-4710-9339-c237f619e5fa_part9
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -14635,11 +14635,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part10
+Chunk ID: 7955169b-97e0-4710-9339-c237f619e5fa_part10
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -14711,11 +14711,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part11
+Chunk ID: 7955169b-97e0-4710-9339-c237f619e5fa_part11
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -14776,11 +14776,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part12
+Chunk ID: 7955169b-97e0-4710-9339-c237f619e5fa_part12
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -14887,11 +14887,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cc21b9c0-3288-4e1a-83c4-53bf583bfe8f_part13
+Chunk ID: 7955169b-97e0-4710-9339-c237f619e5fa_part13
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challenge
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -14935,11 +14935,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part1
+Chunk ID: 9a81c548-f5c0-41e4-be1e-ba3a06861f37_part1
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -15025,11 +15025,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part2
+Chunk ID: 9a81c548-f5c0-41e4-be1e-ba3a06861f37_part2
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -15110,11 +15110,11 @@ Notes
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part3
+Chunk ID: 9a81c548-f5c0-41e4-be1e-ba3a06861f37_part3
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 993
 Has Code Block: False
@@ -15259,11 +15259,11 @@ Column contains every element in a value
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part4
+Chunk ID: 9a81c548-f5c0-41e4-be1e-ba3a06861f37_part4
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 993
 Has Code Block: False
@@ -15369,11 +15369,11 @@ With a common element
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part5
+Chunk ID: 9a81c548-f5c0-41e4-be1e-ba3a06861f37_part5
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 991
 Has Code Block: False
@@ -15464,11 +15464,11 @@ Using modifiers
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part6
+Chunk ID: 9a81c548-f5c0-41e4-be1e-ba3a06861f37_part6
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 981
 Has Code Block: False
@@ -15568,11 +15568,11 @@ The format of the output, can be `"text"` (default) or `"json"`.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part7
+Chunk ID: 9a81c548-f5c0-41e4-be1e-ba3a06861f37_part7
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -15657,11 +15657,11 @@ Sign in a user through OTP
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part8
+Chunk ID: 9a81c548-f5c0-41e4-be1e-ba3a06861f37_part8
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 991
 Has Code Block: False
@@ -15738,11 +15738,11 @@ Retrieve a session
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part9
+Chunk ID: 9a81c548-f5c0-41e4-be1e-ba3a06861f37_part9
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 996
 Has Code Block: False
@@ -15826,11 +15826,11 @@ first.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part10
+Chunk ID: 9a81c548-f5c0-41e4-be1e-ba3a06861f37_part10
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 996
 Has Code Block: False
@@ -15888,11 +15888,11 @@ Removes a channel
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part11
+Chunk ID: 9a81c548-f5c0-41e4-be1e-ba3a06861f37_part11
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -16004,11 +16004,11 @@ List files in a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 3023afaa-3a04-4dcc-9000-46ae2bf52e99_part12
+Chunk ID: 9a81c548-f5c0-41e4-be1e-ba3a06861f37_part12
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-verify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 562
 Has Code Block: False
@@ -16070,11 +16070,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part1
+Chunk ID: 119a96ab-4cf8-4dbd-b0c9-3bcf9bb71161_part1
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -16159,11 +16159,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part2
+Chunk ID: 119a96ab-4cf8-4dbd-b0c9-3bcf9bb71161_part2
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -16242,11 +16242,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part3
+Chunk ID: 119a96ab-4cf8-4dbd-b0c9-3bcf9bb71161_part3
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -16374,11 +16374,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part4
+Chunk ID: 119a96ab-4cf8-4dbd-b0c9-3bcf9bb71161_part4
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -16476,11 +16476,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part5
+Chunk ID: 119a96ab-4cf8-4dbd-b0c9-3bcf9bb71161_part5
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -16570,11 +16570,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part6
+Chunk ID: 119a96ab-4cf8-4dbd-b0c9-3bcf9bb71161_part6
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -16658,11 +16658,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part7
+Chunk ID: 119a96ab-4cf8-4dbd-b0c9-3bcf9bb71161_part7
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -16748,11 +16748,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part8
+Chunk ID: 119a96ab-4cf8-4dbd-b0c9-3bcf9bb71161_part8
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -16835,11 +16835,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part9
+Chunk ID: 119a96ab-4cf8-4dbd-b0c9-3bcf9bb71161_part9
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -16919,11 +16919,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part10
+Chunk ID: 119a96ab-4cf8-4dbd-b0c9-3bcf9bb71161_part10
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -16995,11 +16995,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part11
+Chunk ID: 119a96ab-4cf8-4dbd-b0c9-3bcf9bb71161_part11
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -17060,11 +17060,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part12
+Chunk ID: 119a96ab-4cf8-4dbd-b0c9-3bcf9bb71161_part12
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -17171,11 +17171,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 55cd9e84-fa60-4245-9d8e-98f7a66a6324_part13
+Chunk ID: 119a96ab-4cf8-4dbd-b0c9-3bcf9bb71161_part13
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-challengeandverify
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -17219,11 +17219,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part1
+Chunk ID: a299495d-0f69-4fd9-aca9-8d05acc0ba6f_part1
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -17308,11 +17308,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part2
+Chunk ID: a299495d-0f69-4fd9-aca9-8d05acc0ba6f_part2
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -17391,11 +17391,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part3
+Chunk ID: a299495d-0f69-4fd9-aca9-8d05acc0ba6f_part3
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -17523,11 +17523,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part4
+Chunk ID: a299495d-0f69-4fd9-aca9-8d05acc0ba6f_part4
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -17625,11 +17625,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part5
+Chunk ID: a299495d-0f69-4fd9-aca9-8d05acc0ba6f_part5
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -17719,11 +17719,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part6
+Chunk ID: a299495d-0f69-4fd9-aca9-8d05acc0ba6f_part6
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -17807,11 +17807,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part7
+Chunk ID: a299495d-0f69-4fd9-aca9-8d05acc0ba6f_part7
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -17897,11 +17897,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part8
+Chunk ID: a299495d-0f69-4fd9-aca9-8d05acc0ba6f_part8
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -17984,11 +17984,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part9
+Chunk ID: a299495d-0f69-4fd9-aca9-8d05acc0ba6f_part9
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -18068,11 +18068,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part10
+Chunk ID: a299495d-0f69-4fd9-aca9-8d05acc0ba6f_part10
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -18144,11 +18144,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part11
+Chunk ID: a299495d-0f69-4fd9-aca9-8d05acc0ba6f_part11
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -18209,11 +18209,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part12
+Chunk ID: a299495d-0f69-4fd9-aca9-8d05acc0ba6f_part12
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -18320,11 +18320,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 1f98121a-8ffa-485a-86cf-0cd6695ebcae_part13
+Chunk ID: a299495d-0f69-4fd9-aca9-8d05acc0ba6f_part13
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-unenroll
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -18368,11 +18368,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part1
+Chunk ID: 4dfd2bad-a1a0-4fa8-93e3-3d7bc1b3cba4_part1
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -18457,11 +18457,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part2
+Chunk ID: 4dfd2bad-a1a0-4fa8-93e3-3d7bc1b3cba4_part2
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -18540,11 +18540,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part3
+Chunk ID: 4dfd2bad-a1a0-4fa8-93e3-3d7bc1b3cba4_part3
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -18672,11 +18672,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part4
+Chunk ID: 4dfd2bad-a1a0-4fa8-93e3-3d7bc1b3cba4_part4
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -18774,11 +18774,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part5
+Chunk ID: 4dfd2bad-a1a0-4fa8-93e3-3d7bc1b3cba4_part5
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -18868,11 +18868,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part6
+Chunk ID: 4dfd2bad-a1a0-4fa8-93e3-3d7bc1b3cba4_part6
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -18956,11 +18956,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part7
+Chunk ID: 4dfd2bad-a1a0-4fa8-93e3-3d7bc1b3cba4_part7
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -19046,11 +19046,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part8
+Chunk ID: 4dfd2bad-a1a0-4fa8-93e3-3d7bc1b3cba4_part8
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -19133,11 +19133,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part9
+Chunk ID: 4dfd2bad-a1a0-4fa8-93e3-3d7bc1b3cba4_part9
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -19217,11 +19217,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part10
+Chunk ID: 4dfd2bad-a1a0-4fa8-93e3-3d7bc1b3cba4_part10
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -19293,11 +19293,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part11
+Chunk ID: 4dfd2bad-a1a0-4fa8-93e3-3d7bc1b3cba4_part11
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -19358,11 +19358,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part12
+Chunk ID: 4dfd2bad-a1a0-4fa8-93e3-3d7bc1b3cba4_part12
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -19469,11 +19469,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: cd366aee-14bf-4d10-9a92-99d322e54c73_part13
+Chunk ID: 4dfd2bad-a1a0-4fa8-93e3-3d7bc1b3cba4_part13
 Source URL: https://supabase.com/docs/reference/python/auth-mfa-getauthenticatorassurancelevel
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -19517,11 +19517,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part1
+Chunk ID: c4e714fd-f1c9-4d00-bcca-5207e65c23db_part1
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -19606,11 +19606,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part2
+Chunk ID: c4e714fd-f1c9-4d00-bcca-5207e65c23db_part2
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -19689,11 +19689,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part3
+Chunk ID: c4e714fd-f1c9-4d00-bcca-5207e65c23db_part3
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -19821,11 +19821,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part4
+Chunk ID: c4e714fd-f1c9-4d00-bcca-5207e65c23db_part4
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -19923,11 +19923,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part5
+Chunk ID: c4e714fd-f1c9-4d00-bcca-5207e65c23db_part5
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -20017,11 +20017,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part6
+Chunk ID: c4e714fd-f1c9-4d00-bcca-5207e65c23db_part6
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -20105,11 +20105,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part7
+Chunk ID: c4e714fd-f1c9-4d00-bcca-5207e65c23db_part7
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -20195,11 +20195,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part8
+Chunk ID: c4e714fd-f1c9-4d00-bcca-5207e65c23db_part8
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -20282,11 +20282,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part9
+Chunk ID: c4e714fd-f1c9-4d00-bcca-5207e65c23db_part9
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -20366,11 +20366,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part10
+Chunk ID: c4e714fd-f1c9-4d00-bcca-5207e65c23db_part10
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -20442,11 +20442,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part11
+Chunk ID: c4e714fd-f1c9-4d00-bcca-5207e65c23db_part11
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -20507,11 +20507,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part12
+Chunk ID: c4e714fd-f1c9-4d00-bcca-5207e65c23db_part12
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -20618,11 +20618,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: fbe0cf50-b451-401b-bb27-2ae9c6e61a0f_part13
+Chunk ID: c4e714fd-f1c9-4d00-bcca-5207e65c23db_part13
 Source URL: https://supabase.com/docs/reference/python/auth-getuser
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -20666,11 +20666,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part1
+Chunk ID: ba581152-2fe5-4693-83eb-84b4af3df53e_part1
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -20755,11 +20755,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part2
+Chunk ID: ba581152-2fe5-4693-83eb-84b4af3df53e_part2
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -20838,11 +20838,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part3
+Chunk ID: ba581152-2fe5-4693-83eb-84b4af3df53e_part3
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -20970,11 +20970,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part4
+Chunk ID: ba581152-2fe5-4693-83eb-84b4af3df53e_part4
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -21072,11 +21072,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part5
+Chunk ID: ba581152-2fe5-4693-83eb-84b4af3df53e_part5
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -21166,11 +21166,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part6
+Chunk ID: ba581152-2fe5-4693-83eb-84b4af3df53e_part6
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -21254,11 +21254,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part7
+Chunk ID: ba581152-2fe5-4693-83eb-84b4af3df53e_part7
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -21344,11 +21344,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part8
+Chunk ID: ba581152-2fe5-4693-83eb-84b4af3df53e_part8
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -21431,11 +21431,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part9
+Chunk ID: ba581152-2fe5-4693-83eb-84b4af3df53e_part9
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -21515,11 +21515,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part10
+Chunk ID: ba581152-2fe5-4693-83eb-84b4af3df53e_part10
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -21591,11 +21591,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part11
+Chunk ID: ba581152-2fe5-4693-83eb-84b4af3df53e_part11
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -21656,11 +21656,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part12
+Chunk ID: ba581152-2fe5-4693-83eb-84b4af3df53e_part12
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -21767,11 +21767,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: ef6688bf-4494-408c-a482-7af614bfd252_part13
+Chunk ID: ba581152-2fe5-4693-83eb-84b4af3df53e_part13
 Source URL: https://supabase.com/docs/reference/python/auth-getsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -21815,11 +21815,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part1
+Chunk ID: 2dbf5613-17da-4ac0-a8a6-26f4561b231e_part1
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -21904,11 +21904,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part2
+Chunk ID: 2dbf5613-17da-4ac0-a8a6-26f4561b231e_part2
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -21987,11 +21987,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part3
+Chunk ID: 2dbf5613-17da-4ac0-a8a6-26f4561b231e_part3
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -22119,11 +22119,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part4
+Chunk ID: 2dbf5613-17da-4ac0-a8a6-26f4561b231e_part4
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -22221,11 +22221,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part5
+Chunk ID: 2dbf5613-17da-4ac0-a8a6-26f4561b231e_part5
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -22315,11 +22315,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part6
+Chunk ID: 2dbf5613-17da-4ac0-a8a6-26f4561b231e_part6
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -22403,11 +22403,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part7
+Chunk ID: 2dbf5613-17da-4ac0-a8a6-26f4561b231e_part7
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -22493,11 +22493,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part8
+Chunk ID: 2dbf5613-17da-4ac0-a8a6-26f4561b231e_part8
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -22580,11 +22580,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part9
+Chunk ID: 2dbf5613-17da-4ac0-a8a6-26f4561b231e_part9
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -22664,11 +22664,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part10
+Chunk ID: 2dbf5613-17da-4ac0-a8a6-26f4561b231e_part10
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -22740,11 +22740,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part11
+Chunk ID: 2dbf5613-17da-4ac0-a8a6-26f4561b231e_part11
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -22805,11 +22805,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part12
+Chunk ID: 2dbf5613-17da-4ac0-a8a6-26f4561b231e_part12
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -22916,11 +22916,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 75269c14-1f5e-4b65-9dea-7e9deb70bfa7_part13
+Chunk ID: 2dbf5613-17da-4ac0-a8a6-26f4561b231e_part13
 Source URL: https://supabase.com/docs/reference/python/auth-setsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -22964,11 +22964,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part1
+Chunk ID: 6ea2fbfc-8394-4a8d-ac18-d55797674576_part1
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -23053,11 +23053,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part2
+Chunk ID: 6ea2fbfc-8394-4a8d-ac18-d55797674576_part2
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -23136,11 +23136,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part3
+Chunk ID: 6ea2fbfc-8394-4a8d-ac18-d55797674576_part3
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -23268,11 +23268,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part4
+Chunk ID: 6ea2fbfc-8394-4a8d-ac18-d55797674576_part4
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -23370,11 +23370,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part5
+Chunk ID: 6ea2fbfc-8394-4a8d-ac18-d55797674576_part5
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -23464,11 +23464,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part6
+Chunk ID: 6ea2fbfc-8394-4a8d-ac18-d55797674576_part6
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -23552,11 +23552,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part7
+Chunk ID: 6ea2fbfc-8394-4a8d-ac18-d55797674576_part7
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -23642,11 +23642,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part8
+Chunk ID: 6ea2fbfc-8394-4a8d-ac18-d55797674576_part8
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -23729,11 +23729,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part9
+Chunk ID: 6ea2fbfc-8394-4a8d-ac18-d55797674576_part9
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -23813,11 +23813,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part10
+Chunk ID: 6ea2fbfc-8394-4a8d-ac18-d55797674576_part10
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -23889,11 +23889,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part11
+Chunk ID: 6ea2fbfc-8394-4a8d-ac18-d55797674576_part11
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -23954,11 +23954,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part12
+Chunk ID: 6ea2fbfc-8394-4a8d-ac18-d55797674576_part12
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -24065,11 +24065,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6037a2b3-6436-41d8-8e3b-74a0a43f785c_part13
+Chunk ID: 6ea2fbfc-8394-4a8d-ac18-d55797674576_part13
 Source URL: https://supabase.com/docs/reference/python/auth-refreshsession
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -24113,11 +24113,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part1
+Chunk ID: 781068b3-895d-4499-bf97-f1f5788ecf2a_part1
 Source URL: https://supabase.com/docs/reference/python/select
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -24202,11 +24202,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part2
+Chunk ID: 781068b3-895d-4499-bf97-f1f5788ecf2a_part2
 Source URL: https://supabase.com/docs/reference/python/select
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -24285,11 +24285,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part3
+Chunk ID: 781068b3-895d-4499-bf97-f1f5788ecf2a_part3
 Source URL: https://supabase.com/docs/reference/python/select
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -24417,11 +24417,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part4
+Chunk ID: 781068b3-895d-4499-bf97-f1f5788ecf2a_part4
 Source URL: https://supabase.com/docs/reference/python/select
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -24519,11 +24519,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part5
+Chunk ID: 781068b3-895d-4499-bf97-f1f5788ecf2a_part5
 Source URL: https://supabase.com/docs/reference/python/select
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -24613,11 +24613,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part6
+Chunk ID: 781068b3-895d-4499-bf97-f1f5788ecf2a_part6
 Source URL: https://supabase.com/docs/reference/python/select
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -24701,11 +24701,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part7
+Chunk ID: 781068b3-895d-4499-bf97-f1f5788ecf2a_part7
 Source URL: https://supabase.com/docs/reference/python/select
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -24791,11 +24791,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part8
+Chunk ID: 781068b3-895d-4499-bf97-f1f5788ecf2a_part8
 Source URL: https://supabase.com/docs/reference/python/select
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -24878,11 +24878,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part9
+Chunk ID: 781068b3-895d-4499-bf97-f1f5788ecf2a_part9
 Source URL: https://supabase.com/docs/reference/python/select
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -24962,11 +24962,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part10
+Chunk ID: 781068b3-895d-4499-bf97-f1f5788ecf2a_part10
 Source URL: https://supabase.com/docs/reference/python/select
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -25038,11 +25038,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part11
+Chunk ID: 781068b3-895d-4499-bf97-f1f5788ecf2a_part11
 Source URL: https://supabase.com/docs/reference/python/select
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -25103,11 +25103,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part12
+Chunk ID: 781068b3-895d-4499-bf97-f1f5788ecf2a_part12
 Source URL: https://supabase.com/docs/reference/python/select
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -25214,11 +25214,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 6551eb11-8310-41ec-9b31-4d11e9de06e8_part13
+Chunk ID: 781068b3-895d-4499-bf97-f1f5788ecf2a_part13
 Source URL: https://supabase.com/docs/reference/python/select
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -25262,11 +25262,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part1
+Chunk ID: 1224a1f0-ef14-443e-861d-b555bc87ca23_part1
 Source URL: https://supabase.com/docs/reference/python/insert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -25351,11 +25351,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part2
+Chunk ID: 1224a1f0-ef14-443e-861d-b555bc87ca23_part2
 Source URL: https://supabase.com/docs/reference/python/insert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -25434,11 +25434,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part3
+Chunk ID: 1224a1f0-ef14-443e-861d-b555bc87ca23_part3
 Source URL: https://supabase.com/docs/reference/python/insert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -25566,11 +25566,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part4
+Chunk ID: 1224a1f0-ef14-443e-861d-b555bc87ca23_part4
 Source URL: https://supabase.com/docs/reference/python/insert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -25668,11 +25668,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part5
+Chunk ID: 1224a1f0-ef14-443e-861d-b555bc87ca23_part5
 Source URL: https://supabase.com/docs/reference/python/insert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -25762,11 +25762,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part6
+Chunk ID: 1224a1f0-ef14-443e-861d-b555bc87ca23_part6
 Source URL: https://supabase.com/docs/reference/python/insert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -25850,11 +25850,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part7
+Chunk ID: 1224a1f0-ef14-443e-861d-b555bc87ca23_part7
 Source URL: https://supabase.com/docs/reference/python/insert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -25940,11 +25940,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part8
+Chunk ID: 1224a1f0-ef14-443e-861d-b555bc87ca23_part8
 Source URL: https://supabase.com/docs/reference/python/insert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -26027,11 +26027,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part9
+Chunk ID: 1224a1f0-ef14-443e-861d-b555bc87ca23_part9
 Source URL: https://supabase.com/docs/reference/python/insert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -26111,11 +26111,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part10
+Chunk ID: 1224a1f0-ef14-443e-861d-b555bc87ca23_part10
 Source URL: https://supabase.com/docs/reference/python/insert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -26187,11 +26187,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part11
+Chunk ID: 1224a1f0-ef14-443e-861d-b555bc87ca23_part11
 Source URL: https://supabase.com/docs/reference/python/insert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -26252,11 +26252,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part12
+Chunk ID: 1224a1f0-ef14-443e-861d-b555bc87ca23_part12
 Source URL: https://supabase.com/docs/reference/python/insert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -26363,11 +26363,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: b417ca6e-c89b-4697-8ee2-37c95049b9ee_part13
+Chunk ID: 1224a1f0-ef14-443e-861d-b555bc87ca23_part13
 Source URL: https://supabase.com/docs/reference/python/insert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -26411,11 +26411,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part1
+Chunk ID: 4c9fd645-6343-419a-aa2e-58181871ec3e_part1
 Source URL: https://supabase.com/docs/reference/python/update
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -26500,11 +26500,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part2
+Chunk ID: 4c9fd645-6343-419a-aa2e-58181871ec3e_part2
 Source URL: https://supabase.com/docs/reference/python/update
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -26583,11 +26583,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part3
+Chunk ID: 4c9fd645-6343-419a-aa2e-58181871ec3e_part3
 Source URL: https://supabase.com/docs/reference/python/update
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -26715,11 +26715,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part4
+Chunk ID: 4c9fd645-6343-419a-aa2e-58181871ec3e_part4
 Source URL: https://supabase.com/docs/reference/python/update
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -26817,11 +26817,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part5
+Chunk ID: 4c9fd645-6343-419a-aa2e-58181871ec3e_part5
 Source URL: https://supabase.com/docs/reference/python/update
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -26911,11 +26911,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part6
+Chunk ID: 4c9fd645-6343-419a-aa2e-58181871ec3e_part6
 Source URL: https://supabase.com/docs/reference/python/update
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -26999,11 +26999,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part7
+Chunk ID: 4c9fd645-6343-419a-aa2e-58181871ec3e_part7
 Source URL: https://supabase.com/docs/reference/python/update
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -27089,11 +27089,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part8
+Chunk ID: 4c9fd645-6343-419a-aa2e-58181871ec3e_part8
 Source URL: https://supabase.com/docs/reference/python/update
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -27176,11 +27176,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part9
+Chunk ID: 4c9fd645-6343-419a-aa2e-58181871ec3e_part9
 Source URL: https://supabase.com/docs/reference/python/update
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -27260,11 +27260,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part10
+Chunk ID: 4c9fd645-6343-419a-aa2e-58181871ec3e_part10
 Source URL: https://supabase.com/docs/reference/python/update
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -27336,11 +27336,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part11
+Chunk ID: 4c9fd645-6343-419a-aa2e-58181871ec3e_part11
 Source URL: https://supabase.com/docs/reference/python/update
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -27401,11 +27401,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part12
+Chunk ID: 4c9fd645-6343-419a-aa2e-58181871ec3e_part12
 Source URL: https://supabase.com/docs/reference/python/update
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -27512,11 +27512,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: e5f80c1d-ed1f-4d50-83e3-c3a56648bc14_part13
+Chunk ID: 4c9fd645-6343-419a-aa2e-58181871ec3e_part13
 Source URL: https://supabase.com/docs/reference/python/update
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
@@ -27560,11 +27560,11 @@ Returns the URL for an asset in a public bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part1
+Chunk ID: e95a71c7-1362-4f94-b17e-4957619d6446_part1
 Source URL: https://supabase.com/docs/reference/python/upsert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -27649,11 +27649,11 @@ Updating your dataUpdating JSON data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part2
+Chunk ID: e95a71c7-1362-4f94-b17e-4957619d6446_part2
 Source URL: https://supabase.com/docs/reference/python/upsert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 999
 Has Code Block: False
@@ -27732,11 +27732,11 @@ Applying FiltersChainingConditional chainingFilter by values within JSON columnF
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part3
+Chunk ID: e95a71c7-1362-4f94-b17e-4957619d6446_part3
 Source URL: https://supabase.com/docs/reference/python/upsert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 994
 Has Code Block: False
@@ -27864,11 +27864,11 @@ Checking for nullness, True or False
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part4
+Chunk ID: e95a71c7-1362-4f94-b17e-4957619d6446_part4
 Source URL: https://supabase.com/docs/reference/python/upsert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 977
 Has Code Block: False
@@ -27966,11 +27966,11 @@ Less than or equal to a range
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part5
+Chunk ID: e95a71c7-1362-4f94-b17e-4957619d6446_part5
 Source URL: https://supabase.com/docs/reference/python/upsert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 983
 Has Code Block: False
@@ -28060,11 +28060,11 @@ or\_() expects you to use the raw PostgREST syntax for the filter names and valu
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part6
+Chunk ID: e95a71c7-1362-4f94-b17e-4957619d6446_part6
 Source URL: https://supabase.com/docs/reference/python/upsert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 998
 Has Code Block: False
@@ -28148,11 +28148,11 @@ With \`select()\`On a foreign table
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part7
+Chunk ID: e95a71c7-1362-4f94-b17e-4957619d6446_part7
 Source URL: https://supabase.com/docs/reference/python/upsert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 971
 Has Code Block: False
@@ -28238,11 +28238,11 @@ Sign up with an email and passwordSign up with a phone number and password (SMS)
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part8
+Chunk ID: e95a71c7-1362-4f94-b17e-4957619d6446_part8
 Source URL: https://supabase.com/docs/reference/python/upsert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 979
 Has Code Block: False
@@ -28325,11 +28325,11 @@ to do this.
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part9
+Chunk ID: e95a71c7-1362-4f94-b17e-4957619d6446_part9
 Source URL: https://supabase.com/docs/reference/python/upsert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 1000
 Has Code Block: False
@@ -28409,11 +28409,11 @@ Set the session data
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part10
+Chunk ID: e95a71c7-1362-4f94-b17e-4957619d6446_part10
 Source URL: https://supabase.com/docs/reference/python/upsert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 982
 Has Code Block: False
@@ -28485,11 +28485,11 @@ Get Authenticator Assurance Level
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part11
+Chunk ID: e95a71c7-1362-4f94-b17e-4957619d6446_part11
 Source URL: https://supabase.com/docs/reference/python/upsert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 990
 Has Code Block: False
@@ -28550,11 +28550,11 @@ Create a bucket
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part12
+Chunk ID: e95a71c7-1362-4f94-b17e-4957619d6446_part12
 Source URL: https://supabase.com/docs/reference/python/upsert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 987
 Has Code Block: False
@@ -28661,11 +28661,11 @@ Move file
 
 --------------------------------------------------------------------------------
 
-Chunk ID: 39306bba-a0ff-4530-bfa0-6e6ba1baee66_part13
+Chunk ID: e95a71c7-1362-4f94-b17e-4957619d6446_part13
 Source URL: https://supabase.com/docs/reference/python/upsert
-Metadata: {
-  "Header 1": "",
-  "Header 2": ""
+Headers: {
+  "Header 1": "H1 not found",
+  "Header 2": "H2 not found"
 }
 Token Count: 383
 Has Code Block: False
