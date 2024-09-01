@@ -245,7 +245,6 @@ to 0.71)
 - Implement retry logic for failed API calls
 
 ### Validation and Reporting
-- testing
 - Check for lost H1 and H2 headings
 - Perform smart token count validation
 - Generate and display summary statistics
