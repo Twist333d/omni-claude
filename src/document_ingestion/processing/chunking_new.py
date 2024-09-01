@@ -7,6 +7,8 @@ import asyncio
 from tqdm import tqdm
 import logging
 import os
+from langchain_text_splitters import MarkdownHeaderTextSplitter
+
 
 from src.utils.config import BASE_DIR, RAW_DATA_DIR, PROCESSED_DATA_DIR, LOG_DIR, GOOGLE_API_KEY
 from src.utils.logger import setup_logger
@@ -52,34 +54,71 @@ class InputProcessor:
                 return False
         return True
 
-class ChunkerAndEnricher:
-    """Handles parsing markdown, chunking content, and enriching chunks with metadata."""
 
+class Chunker:
     def __init__(self, max_tokens: int = 1000):
-        """Initialize the ChunkerAndEnricher with a maximum token limit per chunk."""
         self.max_tokens = max_tokens
-        self.md = Markdown()
+        self.markdown_splitter = MarkdownHeaderTextSplitter(
+            headers_to_split_on=[
+                ("#", "Header 1"),
+                ("##", "Header 2"),
+                ("###", "Header 3"),
+            ]
+        )
         self.tokenizer = tiktoken.get_encoding("cl100k_base")
 
-    def parse_markdown(self, content: str) -> str:
-        """Parse markdown content to HTML."""
-        pass
+    def parse_markdown(self, markdown_content: str, source_url: str) -> List[Dict[str, Any]]:
+        splits = self.markdown_splitter.split_text(markdown_content)
+        chunks = []
 
-    def identify_document_structure(self, parsed_doc: str) -> Dict[str, Any]:
-        """Identify headings and content structure in the parsed document."""
-        pass
+        for split in splits:
+            headers = {
+                level: text for level, text in split.metadata.items() if text
+            }
 
-    def generate_and_enrich_chunks(self, doc_structure: Dict[str, Any], metadata: Dict[str, Any]) -> List[Dict[str, Any]]:
-        """Generate chunks based on the document structure and enrich with metadata."""
-        pass
+            chunk = {
+                "chunk_id": str(uuid.uuid4()),
+                "source_url": source_url,
+                "content": split.page_content,
+                "headers": headers,
+                "token_count": len(self.tokenizer.encode(split.page_content))
+            }
 
-    def calculate_token_count(self, text: str) -> int:
-        """Calculate the number of tokens in the given text."""
-        pass
+            if chunk["token_count"] > self.max_tokens:
+                sub_chunks = self._split_oversized_chunk(chunk)
+                chunks.extend(sub_chunks)
+            else:
+                chunks.append(chunk)
 
-    def generate_chunk_id(self) -> str:
-        """Generate a unique identifier for a chunk."""
-        pass
+        return chunks
+
+    def _split_oversized_chunk(self, chunk: Dict[str, Any]) -> List[Dict[str, Any]]:
+        content = chunk["content"]
+        sub_chunks = []
+        current_chunk = chunk.copy()
+        current_chunk["content"] = ""
+        current_chunk["token_count"] = 0
+        sentences = content.split(". ")
+
+        for sentence in sentences:
+            sentence_tokens = len(self.tokenizer.encode(sentence))
+            if current_chunk["token_count"] + sentence_tokens > self.max_tokens:
+                if current_chunk["content"]:
+                    sub_chunks.append(current_chunk)
+                    current_chunk = chunk.copy()
+                    current_chunk["content"] = ""
+                    current_chunk["token_count"] = 0
+
+            current_chunk["content"] += sentence + ". "
+            current_chunk["token_count"] += sentence_tokens
+
+        if current_chunk["content"]:
+            sub_chunks.append(current_chunk)
+
+        for i, sub_chunk in enumerate(sub_chunks):
+            sub_chunk["chunk_id"] = f"{chunk['chunk_id']}_part{i + 1}"
+
+        return sub_chunks
 
 class Summarizer:
     """Handles generating summaries for chunks using Google Gemini 1.5 Flash."""
@@ -126,7 +165,7 @@ class Orchestrator:
         self.input_file = input_file
         self.output_file = output_file
         self.input_processor = InputProcessor(input_file)
-        self.chunker_and_enricher = ChunkerAndEnricher()
+        self.chunker_and_enricher = Chunker()
         self.summarizer = Summarizer(api_key)
         self.validator = Validator()
         self.statistics_generator = StatisticsGenerator()

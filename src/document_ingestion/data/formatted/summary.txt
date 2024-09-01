@@ -1,8 +1,8 @@
-Number of URLs parsed: 57
+Number of URLs parsed: 25
 
 URLs by root domain:
 
 supabase.com:
-  - https://supabase.com/docs/faq
-  - https://supabase.com/docs/reference/javascript/initializing
-  - https://supabase.com/docs/reference/javascript/auth-api
+  - https://supabase.com/docs/reference/python/initializing
+  - https://supabase.com/docs/reference/python/auth-signup
+  - https://supabase.com/docs/reference/python/auth-signinanonymously
