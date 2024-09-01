@@ -3,7 +3,7 @@ import json
 from urllib.parse import urlparse
 
 # Define the correct paths relative to the script location
-filename = 'docs.flutterflow.io__20240828_103451.json'
+filename = 'supabase.com_docs__20240826_212435.json'
 current_dir = os.path.dirname(os.path.abspath(__file__))
 INPUT_FILE = os.path.join(current_dir, '..', 'data', 'raw', filename)
 OUTPUT_DIR = os.path.join(current_dir, '..', 'data', 'formatted')
@@ -76,7 +76,8 @@ if not os.path.exists(data_file_path):
 
 # Load your data from the file
 with open(data_file_path, 'r') as f:
-    data = json.load(f)['data']  # Assuming 'data' is nested under a key in your JSON
+    json_data = json.load(f)
+    data = json_data['data']  # 'data' is a top-level key in your JSON
 
 # Analyze content structure
 analyze_content_structure(data)
