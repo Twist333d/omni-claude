@@ -219,16 +219,15 @@ to 0.71)
 
 ```json
 {
-  "chunk_id": "unique_identifier",
-  "source_url": "https://supabase.com/docs/path/to/page",
-  "content": "Full content of the chunk, including markdown formatting",
-  "headers": {
-    "Header 1": "Main heading (H1) text",
-    "Header 2": "Subheading (H2) text",
-  },
-  "token_count": 950,
-  'summary' : 'to be filled later',
-}
+      "source_url": "https://supabase.com/docs/reference/python/initializing",
+      "headers": {
+        "H1": ""
+      },
+      "content": "\nPython Client Library=====================\n\nsupabase-py[View on GitHub](https://github.com/supabase/supabase-py)\n\nThis reference documents every object and method available in Supabase's Python library, [supabase-py](https://github.com/supabase/supabase-py)\n. You can use supabase-py to interact with your Postgres database, listen to database changes, invoke Deno Edge Functions, build login and user management functionality, and manage large files.\n\n* * *\n",
+      "chunk_id": "c6b5fde8-d48b-43e8-a77f-04035d1a61f7",
+      "token_count": 113,
+      "has_code_block": false
+    },
 ```
 
 ## 3. Updated End-to-End Approach
