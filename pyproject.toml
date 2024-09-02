@@ -16,11 +16,11 @@ colorama = "^0.4.6"
 requests = "^2.32.3"
 tiktoken = "^0.7.0"
 markdown = "^3.7"
-llama-index = "^0.11.2"
 mistune = "^3.0.2"
 langchain = "^0.2.15"
 langchain-text-splitters = "^0.2.2"
 google-cloud-aiplatform = "^1.64.0"
+llama-index = "^0.11.3"
 
 
 [build-system]

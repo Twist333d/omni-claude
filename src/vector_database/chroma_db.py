@@ -115,13 +115,6 @@ class VectorDB:
         logger.info(f"Peeked at {limit} documents in the collection.")
         return sample
 
-    def create_index(self):
-        """
-        Create or recreate the index for faster queries.
-        """
-        self.collection.create_index()
-        logger.info("Created index for the collection.")
-
     def reset(self):
         """
         Reset the entire collection, removing all data.
