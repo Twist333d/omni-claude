@@ -11,6 +11,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
       - name: Generate PR Description
         run: |
           echo "## Automated PR Description" > pr_body.md
@@ -19,9 +20,18 @@ jobs:
           echo "" >> pr_body.md
           echo "### Files changed:" >> pr_body.md
           git diff --name-status origin/${{ github.base_ref }}..origin/${{ github.head_ref }} >> pr_body.md
+
+      - name: Read Generated PR Description
+        id: pr_body
+        run: echo "::set-output name=content::$(cat pr_body.md)"
+
       - name: Update PR
         uses: tzkhan/pr-update-action@v2
         with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          body-path: "pr_body.md"
-          body-update-action: "append"
+          repo-token: ${{ github.token }}
+          base-branch-regex: '.*'
+          head-branch-regex: '.*'
+          body-template: |
+            ${{ steps.pr_body.outputs.content }}
+          body-update-action: "suffix"
+          body-newline-count: 2
