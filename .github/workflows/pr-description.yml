@@ -19,7 +19,7 @@ jobs:
         run: |
           echo "## Automated PR Description" > pr_body.md
           echo "### Commits in this PR:" >> pr_body.md
-          git log --format="- **%h** %s%n  %b" origin/${{ github.base_ref }}..origin/${{ github.head_ref }} | sed '/^$/N;/^\n$/D' >> pr_body.md
+          git log --format="- **%h** %s%n%w(0,2,2)%b" origin/${{ github.base_ref }}..origin/${{ github.head_ref }} | sed '/^\s*$/d' >> pr_body.md
 
       - name: Read PR Body
         id: pr_body

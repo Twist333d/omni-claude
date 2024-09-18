@@ -25,6 +25,3 @@
 
 ## Additional Notes
 [Add any additional information that might be helpful for reviewers]
-
-<!-- The section below will be automatically populated by the GitHub Action -->
-## Automated PR Description
