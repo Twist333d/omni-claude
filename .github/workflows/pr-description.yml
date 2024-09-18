@@ -15,19 +15,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Read PR Template
-        id: pr_template
-        run: |
-          if [ -f .github/pull_request_template.md ]; then
-            template=$(cat .github/pull_request_template.md)
-            template="${template//'%'/'%25'}"
-            template="${template//$'\n'/'%0A'}"
-            template="${template//$'\r'/'%0D'}"
-            echo "content=$template" >> $GITHUB_OUTPUT
-          else
-            echo "content=" >> $GITHUB_OUTPUT
-          fi
-
       - name: Generate Automated PR Description
         run: |
           echo "## Automated PR Description" > pr_body.md
@@ -43,17 +30,6 @@ jobs:
           body="${body//$'\r'/'%0D'}"
           echo "content=$body" >> $GITHUB_OUTPUT
 
-      - name: Combine Template and Automated Description
-        id: combined_body
-        run: |
-          combined="${{ steps.pr_template.outputs.content }}
-
-          ${{ steps.auto_pr_body.outputs.content }}"
-          combined="${combined//'%'/'%25'}"
-          combined="${combined//$'\n'/'%0A'}"
-          combined="${combined//$'\r'/'%0D'}"
-          echo "content=$combined" >> $GITHUB_OUTPUT
-
       - name: Update PR
         uses: tzkhan/pr-update-action@v2
         with:
@@ -61,5 +37,6 @@ jobs:
           base-branch-regex: '.*'
           head-branch-regex: '.*'
           body-template: |
-            ${{ steps.combined_body.outputs.content }}
-          body-update-action: "replace"
+            ${{ steps.auto_pr_body.outputs.content }}
+          body-update-action: "suffix"
+          body-newline-count: 2
