@@ -1,4 +1,4 @@
-name: Pull Request Description
+name: Update PR Description
 
 on:
   pull_request:
@@ -13,12 +13,15 @@ jobs:
           fetch-depth: 0
       - name: Generate PR Description
         run: |
-          echo "## Changes in this PR:" > pr_body.md
+          echo "## Automated PR Description" > pr_body.md
+          echo "### Commits in this PR:" >> pr_body.md
+          git log --format="- %s (%h)" origin/${{ github.base_ref }}..origin/${{ github.head_ref }} >> pr_body.md
           echo "" >> pr_body.md
-          git log --format="- %s" origin/${{ github.base_ref }}..origin/${{ github.head_ref }} >> pr_body.md
+          echo "### Files changed:" >> pr_body.md
+          git diff --name-status origin/${{ github.base_ref }}..origin/${{ github.head_ref }} >> pr_body.md
       - name: Update PR
         uses: tzkhan/pr-update-action@v2
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           body-path: "pr_body.md"
-          body-if-empty: true
+          body-update-action: "append"
