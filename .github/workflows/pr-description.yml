@@ -19,7 +19,9 @@ jobs:
         run: |
           echo "## Automated PR Description" > pr_body.md
           echo "### Commits in this PR:" >> pr_body.md
-          git log --format="- **%h** %s%n%w(0,2,2)%b" origin/${{ github.base_ref }}..origin/${{ github.head_ref }} | sed '/^\s*$/d' >> pr_body.md
+          git log --format="- **%h** %s%n  %b" origin/${{ github.base_ref }}..origin/${{ github.head_ref }} | sed '/^\s*$/d' >> pr_body.md
+
+
 
       - name: Read PR Body
         id: pr_body
@@ -28,7 +30,9 @@ jobs:
           body="${body//'%'/'%25'}"
           body="${body//$'\n'/'%0A'}"
           body="${body//$'\r'/'%0D'}"
-          echo "content=$body" >> $GITHUB_OUTPUT
+          echo "content<<EOF" >> $GITHUB_OUTPUT
+          echo "$body" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Update PR
         uses: tzkhan/pr-update-action@v2
