@@ -16,7 +16,7 @@ This is necessary to enable the following:
 
 ### Summary
 Performance of a RAG system is typically measured by:
-- end-to-end performance (i.e. how good does the overal system perform?)
+- end-to-end performance (i.e. how good does the overall system perform?)
 - retrieval performance (i.e. how relevant are retrieved results?)
 
 ### Approaches
