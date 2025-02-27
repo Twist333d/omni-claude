@@ -7,15 +7,16 @@ from sse_starlette.sse import EventSourceResponse
 from src.api.dependencies import ContentServiceDep, UserIdDep
 from src.api.routes import CURRENT_API_VERSION, Routes
 from src.api.v0.schemas.base_schemas import ErrorCode, ErrorResponse
-from src.core._exceptions import CrawlerError, NonRetryableError
+from src.core._exceptions import CrawlerError, EntityNotFoundError, NonRetryableError
 from src.infra.logger import get_logger
 from src.models.content_models import (
     AddContentSourceRequest,
     AddContentSourceResponse,
     DataSourceStatusResponse,
+    DeleteSourceResponse,
     SourceEvent,
-    SourceOverview,
-    SourceSummary,
+    SourceListItemDTO,
+    UserSourceSettingsRequest,
 )
 
 logger = get_logger()
@@ -43,6 +44,7 @@ async def add_source(
     Args:
         request: Content source details
         content_service: Injected content service
+        user_id: User ID of the user adding the source, extracted from the JWT token
 
     Returns:
         AddContentSourceResponse: Created content source details
@@ -109,67 +111,63 @@ async def get_source_status(source_id: UUID, content_service: ContentServiceDep)
 
 @router.get(
     Routes.V0.Sources.SOURCES,
-    response_model=list[SourceOverview],
+    response_model=list[SourceListItemDTO],
     responses={
-        200: {"model": list[SourceOverview]},
+        200: {"model": list[SourceListItemDTO]},
         500: {"model": ErrorResponse, "description": "Internal server error"},
     },
     status_code=status.HTTP_200_OK,
 )
-async def get_sources(content_service: ContentServiceDep, user_id: UserIdDep) -> list[SourceSummary]:
+async def get_sources(content_service: ContentServiceDep, user_id: UserIdDep) -> list[SourceListItemDTO]:
     """Returns a list of all sources that a user has."""
     try:
-        return await content_service.get_sources(user_id=user_id)
+        return await content_service.get_sources_list(user_id=user_id)
     except Exception as e:
         raise HTTPException(
             status_code=500,
             detail=ErrorResponse(
                 code=ErrorCode.SERVER_ERROR,
-                detail="An error occured while trying to get the list of sources. We are working on it already.",
+                detail="An error occurred while trying to get the list of sources. We are working on it already.",
             ),
         ) from e
 
 
-# @router.patch(
-#     Routes.V0.Sources.SOURCES,
-#     response_model=UpdateSourcesResponse,
-#     responses={
-#         200: {"model": UpdateSourcesResponse},
-#         400: {"model": ErrorResponse},
-#         404: {"model": ErrorResponse},
-#         500: {"model": ErrorResponse},
-#     },
-#     status_code=status.HTTP_200_OK,
-# )
-# async def update_sources(request: UpdateSourcesRequest, content_service: ContentServiceDep) -> UpdateSourcesResponse:
-#     """Updates a source."""
-#     try:
-#         return await content_service.update_sources(request)
-#     # How do we handle 400 and 404? What are those?
-#     except Exception as e:
-#         raise HTTPException(
-#             status_code=500,
-#             detail="An error occured while trying to update the source. We are working on it already.",
-#         ) from e
+@router.patch(
+    Routes.V0.Sources.SOURCE_SETTINGS,
+    response_model=UserSourceSettingsRequest,
+    responses={
+        200: {"model": UserSourceSettingsRequest},
+        400: {"model": ErrorResponse},
+        500: {"model": ErrorResponse},
+    },
+    status_code=status.HTTP_200_OK,
+)
+async def update_source_preference(
+    source_id: UUID, preference: UserSourceSettingsRequest, user_id: UserIdDep, content_service: ContentServiceDep
+) -> UserSourceSettingsRequest:
+    """Updates a source preference by ID."""
+    try:
+        return await content_service.update_source_active_state(
+            user_id=user_id, source_id=source_id, is_active=preference.is_active
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=ErrorResponse(code=ErrorCode.SERVER_ERROR, detail=str(e))) from e
 
 
-# @router.delete(
-#     Routes.V0.Sources.SOURCES,
-#     response_model=DeleteSourcesResponse,
-#     responses={
-#         200: {"model": DeleteSourcesResponse},  # successfully deleted
-#         404: {"model": ErrorResponse},  # Source not found
-#         500: {"model": ErrorResponse},  # Internal error
-#     },
-#     status_code=status.HTTP_200_OK,
-# )
-# async def delete_sources(request: DeleteSourcesRequest, content_service: ContentServiceDep) -> DeleteSourcesResponse:
-#     """Deletes a source."""
-#     try:
-#         return await content_service.delete_sources(request)
-#     # How do we handle 404?
-#     except Exception as e:
-#         raise HTTPException(
-#             status_code=500,
-#             detail="An error occured while trying to delete the source. We are working on it already.",
-#         ) from e
+@router.delete(
+    Routes.V0.Sources.SOURCES,
+    responses={
+        200: {"model": DeleteSourceResponse},
+        404: {"model": ErrorResponse, "description": "Source not found"},
+        500: {"model": ErrorResponse, "description": "Internal server error"},
+    },
+    status_code=status.HTTP_200_OK,
+)
+async def delete_source(source_id: UUID, content_service: ContentServiceDep) -> DeleteSourceResponse:
+    """Deletes a source by ID."""
+    try:
+        return await content_service.delete_source(source_id=source_id)
+    except EntityNotFoundError as e:
+        raise HTTPException(status_code=404, detail=ErrorResponse(code=ErrorCode.NOT_FOUND, detail=str(e))) from e
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=ErrorResponse(code=ErrorCode.SERVER_ERROR, detail=str(e))) from e

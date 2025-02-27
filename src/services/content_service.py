@@ -24,8 +24,9 @@ from src.models.content_models import (
     DataSourceStatusResponse,
     FireCrawlSourceMetadata,
     SourceEvent,
-    SourceOverview,
+    SourceListItemDTO,
     SourceStage,
+    UserSourceSettingsRequest,
 )
 from src.models.firecrawl_models import CrawlRequest
 from src.models.job_models import CrawlJobDetails, Job, JobStatus, JobType, ProcessingJobDetails
@@ -141,8 +142,14 @@ class ContentService:
             request_id=request.request_id,
         )
 
+        # Save the data source
         await self.data_service.save_datasource(data_source=data_source)
         logger.info(f"Data source {data_source.source_id} created successfully")
+
+        # Create default source settings (inactive by default)
+        default_settings = UserSourceSettingsRequest(user_id=user_id, source_id=data_source.source_id, is_active=False)
+        await self.data_service.save_user_source_preference(settings=default_settings)
+        logger.info(f"Default settings created for source {data_source.source_id}")
 
         return data_source
 
@@ -389,13 +396,71 @@ class ContentService:
             logger.exception(f"Failed to stream source {source_id} events: {e}")
             raise
 
-    async def get_sources(self, user_id: UUID) -> list[SourceOverview]:
-        """Build a list of SourceOverview objects from a list of SourceSummary objects."""
-        sources = await self.data_service.list_source_summaries(user_id=user_id)
-        if len(sources) == 0:
-            logger.debug(f"No sources found for user {user_id}")
+    async def get_sources_list(self, user_id: UUID, include_deleted: bool = False) -> list[SourceListItemDTO]:
+        """Builds a list of SourceListItemDTO objects from a list of SourceSummary objects.
+
+        Args:
+            user_id: ID of the user
+            include_deleted: Whether to include soft-deleted sources (default: False)
+
+        Returns:
+            List of SourceListItemDTO objects
+        """
+        # Get all sources for this user
+        sources = await DataSource.get_by_user_id(user_id)
+
+        # If no sources, return empty list
+        if not sources:
             return []
 
+        # Get all summaries in one query
+        try:
+            all_summaries = await self.data_service.list_source_summaries(user_id=user_id)
+            # Convert to mapping for easy lookup
+            summary_map = {s.source_id: s for s in all_summaries} if all_summaries else {}
+        except Exception as e:
+            logger.error(f"Error fetching source summaries: {str(e)}")
+            summary_map = {}  # Use empty dict if summaries fetch fails
+
+        # Get all preferences in one batch
+        try:
+            all_settings = await self.data_service.get_user_source_settings(user_id)
+            # Convert to mapping for easy lookup
+            settings_map = {setting.source_id: setting for setting in all_settings} if all_settings else {}
+        except Exception as e:
+            logger.error(f"Error fetching user preferences: {str(e)}")
+            settings_map = {}  # Use empty dict if preferences fetch fails
+
+        # Assemble DTOs
         return [
-            SourceOverview(source_id=source.source_id, is_active=True, summary=source.summary) for source in sources
+            SourceListItemDTO.from_models(
+                source=source,
+                summary=summary_map.get(source.source_id),
+                settings=settings_map.get(source.source_id),
+            )
+            for source in sources
         ]
+
+    async def update_source_active_state(self, user_id: UUID, source_id: UUID, is_active: bool):
+        """Updates the active state of a source."""
+        # Get existing settings (we know they exist because we create them with the source)
+        settings = await self.data_service.get_user_source_settings(user_id=user_id, source_id=source_id)
+
+        # Update the is_active flag
+        settings.is_active = is_active
+
+        # Save updated settings
+        await self.data_service.save_user_source_settings(settings=settings)
+        return settings
+
+    async def delete_source(self, source_id: UUID, hard_delete: bool = False) -> None:
+        """Deletes a source by ID.
+
+        By default, this performs a soft delete (marking the source as deleted).
+        If hard_delete=True is specified, it will permanently remove the record.
+
+        Args:
+            source_id: ID of the source to delete
+            hard_delete: Whether to perform a hard delete (default: False)
+        """
+        await self.data_service.delete_datasource(source_id=source_id, hard_delete=hard_delete)

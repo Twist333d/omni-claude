@@ -19,6 +19,7 @@ from src.models.content_models import (
     DataSource,
     Document,
     SourceSummary,
+    UserSourceSettingsRequest,
 )
 from src.models.job_models import Job
 from src.models.vector_models import VectorCollection
@@ -108,9 +109,16 @@ class DataService:
 
         return [Document.model_validate(document) for document in saved_documents]
 
-    async def list_datasources(self) -> list[DataSource]:
-        """List all data sources."""
-        results = await self.repository.find(DataSource)
+    async def list_datasources(self, include_deleted: bool = False) -> list[DataSource]:
+        """List all data sources.
+
+        Args:
+            include_deleted: Whether to include soft-deleted sources (default: False)
+
+        Returns:
+            List of data sources
+        """
+        results = await self.repository.find(DataSource, include_deleted=include_deleted)
         return results
 
     async def retrieve_datasource(self, source_id: UUID) -> DataSource:
@@ -252,3 +260,36 @@ class DataService:
         """Return a list of all source summaries for a user."""
         result = await self.repository.find(SourceSummary, filters={"user_id": user_id})
         return result
+
+    async def get_user_source_settings(
+        self, user_id: UUID, source_id: UUID | None = None
+    ) -> UserSourceSettingsRequest | list[UserSourceSettingsRequest] | None:
+        """Returns a list of all user source settings for a user."""
+        if source_id is None:
+            result = await self.repository.find(UserSourceSettingsRequest, filters={"user_id": user_id})
+        else:
+            result = await self.repository.find_by_id(
+                UserSourceSettingsRequest, filters={"user_id": user_id, "source_id": source_id}
+            )
+        return result
+
+    async def save_user_source_settings(self, settings: UserSourceSettingsRequest) -> UserSourceSettingsRequest:
+        """Save a user source settings."""
+        result = await self.repository.save(settings)
+        return UserSourceSettingsRequest.model_validate(result)
+
+    async def delete_datasource(self, source_id: UUID, hard_delete: bool = False) -> None:
+        """Delete a data source by ID.
+
+        By default, this performs a soft delete by setting is_deleted=True.
+        If hard_delete=True is specified, it will permanently remove the record.
+
+        Args:
+            source_id: ID of the source to delete
+            hard_delete: Whether to perform a hard delete (default: False)
+        """
+        try:
+            await self.repository.delete(DataSource, source_id, hard_delete=hard_delete)
+        except EntityNotFoundError as e:
+            logger.error(f"Data source not found: {source_id}", exc_info=True)
+            raise EntityNotFoundError(f"Data source {source_id} not found") from e
