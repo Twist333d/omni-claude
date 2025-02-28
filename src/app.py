@@ -6,9 +6,14 @@ import sentry_sdk
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import ValidationError
 
 from src.api.config.cors_config import get_cors_config
-from src.api.handlers.error_handlers import global_exception_handler, non_retryable_exception_handler
+from src.api.handlers.error_handlers import (
+    global_exception_handler,
+    non_retryable_exception_handler,
+    validation_error_handler,
+)
 from src.api.middleware.rate_limit import HealthCheckRateLimit
 from src.api.system.health import router as health_router
 from src.api.system.sentry_debug import router as sentry_debug_router
@@ -75,6 +80,7 @@ def create_app() -> FastAPI:
     # Add exception handlers
     app.add_exception_handler(Exception, global_exception_handler)
     app.add_exception_handler(Exception, non_retryable_exception_handler)
+    app.add_exception_handler(ValidationError, validation_error_handler)
 
     return app
 

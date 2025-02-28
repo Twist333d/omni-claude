@@ -40,7 +40,9 @@ class NonRetryableError(KollektivError):
 # General errors
 ## User-input
 class ValidationError(NonRetryableError):
-    """Raised when input validation fails."""
+    """Custom validation error raised when some form of input validation fails.
+    Raised only when I am not using Pydantic models as a wrapper.
+    """
 
     pass
 

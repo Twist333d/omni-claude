@@ -8,9 +8,14 @@ from arq import ArqRedis
 from pydantic import ValidationError
 
 from src.api.v0.schemas.webhook_schemas import FireCrawlEventType, FireCrawlWebhookEvent, WebhookProvider
-from src.core._exceptions import CrawlerError, EntityNotFoundError, JobNotFoundError, NonRetryableError
+from src.core._exceptions import (
+    CrawlerError,
+    EntityNotFoundError,
+    JobNotFoundError,
+    NonRetryableError,
+    SupabaseAPIError,
+)
 from src.core.content.crawler import FireCrawler
-from src.infra.decorators import generic_error_handler
 from src.infra.events.channels import Channels
 from src.infra.events.event_publisher import EventPublisher
 from src.infra.external.redis_manager import RedisManager
@@ -55,9 +60,8 @@ class ContentService:
         self.event_publisher = event_publisher
         self.arq_redis_pool = arq_redis_pool
 
-    @generic_error_handler
     async def add_source(self, request: AddContentSourceRequest, user_id: UUID) -> AddContentSourceResponse:
-        """POST /sources entrypoint.
+        """Orchestrates the entire process of adding a new content source in a transaction pattern with proper error handling.
 
         Args:
             request: Validated request containing source configuration
@@ -69,18 +73,31 @@ class ContentService:
         Raises:
             CrawlerError: If crawler fails to start
         """
-        source = None
-        job = None
+        logger.info(f"Starting to add source for request {request.request_id}")
         try:
-            logger.info(f"Starting to add source for request {request.request_id}")
+            # Step 1. Start with local operations
+            try:
+                request_db = AddContentSourceRequestDB.from_api_to_db(request)
+            except ValidationError as e:
+                logger.exception(f"Failed to convert request to DB model: {e}")
+                raise NonRetryableError(str(e)) from e
 
-            # Send a crawl request to firecrawl
-            response = await self.crawler.start_crawl(request=CrawlRequest(**request.request_config.model_dump()))
-            await self._save_user_request(AddContentSourceRequestDB.from_api_to_db(request))
-            source = await self._create_and_save_datasource(request=request, user_id=user_id)
-            logger.debug("STEP 1. Crawl started")
+            # Step 2. Save to db first
+            try:
+                await self.data_service.save_user_request(request=request_db)
+                source = await self._create_and_save_datasource(request=request, user_id=user_id)
+            except SupabaseAPIError as e:
+                logger.exception(f"Failed to save user request: {e}")
+                raise NonRetryableError(str(e)) from e
 
-            # Publish event
+            # Step 3. Send a crawl request to firecrawl
+            try:
+                response = await self.crawler.start_crawl(request=CrawlRequest(**request.request_config.model_dump()))
+            except CrawlerError as e:
+                logger.exception(f"Failed to start crawl: {e}")
+                raise NonRetryableError(str(e)) from e
+
+            # Step 4. Non critcial - publish event
             await self.event_publisher.publish_event(
                 channel=Channels.content_processing_channel(source.source_id),
                 message=ContentProcessingEvent(

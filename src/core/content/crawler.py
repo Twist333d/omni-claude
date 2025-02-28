@@ -250,10 +250,10 @@ class FireCrawler:
             return batch_data, next_url
         except (httpx.ConnectError, httpx.TimeoutError) as err:
             logger.exception(f"Network error fetching results from {next_url}: {err}")
-            raise
+            raise CrawlerError(f"Network error fetching results from {next_url}: {err}") from err
         except httpx.HTTPStatusError as err:
             if err.response.status_code in {502, 503, 504}:  # Retryable status codes
                 logger.warning(f"Retryable HTTP error: {err}")
-                raise
+                raise RetryableCrawlerError(message=str(err), operation="fetch_results", cause=err) from err
             logger.error(f"Non-retryable HTTP error: {err}")
-            raise
+            raise CrawlerError(f"Non-retryable HTTP error: {err}") from err

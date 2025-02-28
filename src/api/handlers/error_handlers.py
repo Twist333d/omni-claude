@@ -1,5 +1,6 @@
 from fastapi import Request
 from fastapi.responses import JSONResponse
+from pydantic import ValidationError
 
 from src.api.v0.schemas.base_schemas import ErrorCode, ErrorResponse
 from src.infra.logger import get_logger
@@ -28,4 +29,13 @@ async def non_retryable_exception_handler(request: Request, exc: Exception) -> J
             code=ErrorCode.SERVER_ERROR,
             detail=f"An internal error occurred while processing your request: {error_message}.",
         ),
+    )
+
+
+async def validation_error_handler(request: Request, exc: ValidationError) -> JSONResponse:
+    """Catches and logs all Pydantiv validation errors globally."""
+    logger.error(f"Validation error at {request.url.path}: {exc}", exc_info=True)
+    return JSONResponse(
+        status_code=422,
+        content=ErrorResponse(code=ErrorCode.CLIENT_ERROR, detail=str(exc)),
     )

@@ -1,7 +1,7 @@
 from typing import Any, TypeVar
 from uuid import UUID
 
-from src.domain.exceptions import RetryableDatabaseError
+from src.core._exceptions import RetryableDatabaseError
 from src.infra.decorators import supabase_operation, tenacity_retry_wrapper
 from src.infra.external.supabase_manager import SupabaseManager
 from src.infra.logger import get_logger
