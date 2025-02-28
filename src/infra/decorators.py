@@ -134,6 +134,10 @@ def supabase_operation(func: Callable[P, Coroutine[Any, Any, RT]]) -> Callable[P
 
         except PostgrestAPIError as e:
             error_code = e.code
+            error_details = repr(e)  # Get full error details for better debugging
+
+            # Log the full error details for debugging
+            logger.debug(f"PostgrestAPIError details: {error_details}")
 
             # Connection/resource errors are retryable
             if error_code:
@@ -144,25 +148,36 @@ def supabase_operation(func: Callable[P, Coroutine[Any, Any, RT]]) -> Callable[P
                     or error_code == "57014"  # query canceled
                 ):
                     logger.warning(
-                        "Retryable database error",
-                        extra={"operation": func.__name__, "error_code": error_code, "error": str(e)},
+                        f"Retryable database error: {error_details}",
+                        extra={"operation": func.__name__, "error_code": error_code, "error": error_details},
                     )
-                    raise RetryableDatabaseError(message=str(e), operation=func.__name__, cause=e) from e
+                    raise RetryableDatabaseError(message=error_details, operation=func.__name__, cause=e) from e
 
                 else:
                     # All other Postgres errors
                     logger.error(
-                        "Database error", extra={"operation": func.__name__, "error_code": error_code, "error": str(e)}
+                        f"Database error: {error_details}",
+                        extra={"operation": func.__name__, "error_code": error_code, "error": error_details},
                     )
-                    raise SupabaseAPIError(error_message=str(e), operation=func.__name__, cause=e) from e
+                    raise SupabaseAPIError(error_message=error_details, operation=func.__name__, cause=e) from e
             else:
-                raise SupabaseAPIError(error_message=str(e), operation=func.__name__, cause=e) from e
+                logger.error(
+                    f"Database error (no code): {error_details}",
+                    extra={"operation": func.__name__, "error": error_details},
+                )
+                raise SupabaseAPIError(error_message=error_details, operation=func.__name__, cause=e) from e
 
         except ValidationError as e:
-            logger.error("Validation error", extra={"operation": func.__name__, "errors": e.errors()})
+            logger.error(f"Validation error: {repr(e)}", extra={"operation": func.__name__, "errors": e.errors()})
             raise SupabaseAPIError(
-                error_message=str(e), operation=func.__name__, details={"validation_errors": e.errors()}, cause=e
+                error_message=repr(e),
+                operation=func.__name__,
+                details={"validation_errors": e.errors()},
+                cause=e,
             ) from e
+        except Exception as e:
+            logger.error(f"Unexpected error: {str(e)}", extra={"operation": func.__name__, "error": str(e)})
+            raise SupabaseAPIError(error_message=str(e), operation=func.__name__, cause=e) from e
 
     return async_wrapper
 

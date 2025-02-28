@@ -236,6 +236,7 @@ class DataRepository:
         logger.debug(f"Executing query with filters: {processed_filters}")
 
         result = await query.execute()
+        # Unpack API response
         return [model_class.model_validate(item) for item in result.data]
 
     @tenacity_retry_wrapper(exceptions=(RetryableDatabaseError,))

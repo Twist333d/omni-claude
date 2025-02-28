@@ -111,16 +111,17 @@ class DataService:
 
         return [Document.model_validate(document) for document in saved_documents]
 
-    async def list_datasources(self, include_deleted: bool = False) -> list[DataSource]:
+    async def list_datasources(self, user_id: UUID, include_deleted: bool = False) -> list[DataSource]:
         """List all data sources.
 
         Args:
+            user_id: ID of the user
             include_deleted: Whether to include soft-deleted sources (default: False)
 
         Returns:
             List of data sources
         """
-        results = await self.repository.find(DataSource, include_deleted=include_deleted)
+        results = await self.repository.find(DataSource, filters={"user_id": user_id}, include_deleted=include_deleted)
         return results
 
     async def retrieve_datasource(self, source_id: UUID) -> DataSource:
@@ -258,9 +259,16 @@ class DataService:
         result = await self.repository.find_by_id(DataSource, source_id)
         return result
 
-    async def list_source_summaries(self, user_id: UUID) -> list[SourceSummary]:
-        """Return a list of all source summaries for a user."""
-        result = await self.repository.find(SourceSummary, filters={"user_id": user_id})
+    async def list_source_summaries(self, source_ids: list[UUID]) -> list[SourceSummary]:
+        """Return a list of source summaries, linked to sources with the given IDs.
+
+        Args:
+            source_ids: List of source IDs to filter by
+
+        Returns:
+            List of SourceSummary objects
+        """
+        result = await self.repository.find(SourceSummary, filters={"source_id": source_ids})
         return result
 
     async def get_user_source_settings(
@@ -268,8 +276,10 @@ class DataService:
     ) -> UserSourceSettings | list[UserSourceSettings] | None:
         """Returns a list of all user source settings for a user."""
         if source_id is None:
+            # Retrieve all settings for the user
             result = await self.repository.find(UserSourceSettings, filters={"user_id": user_id})
         else:
+            # Retrieve a single setting for the user and source
             result = await self.repository.find_by_id(
                 UserSourceSettings, filters={"user_id": user_id, "source_id": source_id}
             )

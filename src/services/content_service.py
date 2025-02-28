@@ -92,51 +92,57 @@ class ContentService:
 
             # Step 3. Send a crawl request to firecrawl
             try:
-                response = await self.crawler.start_crawl(request=CrawlRequest(**request.request_config.model_dump()))
+                firecrawl_response = await self.crawler.start_crawl(
+                    request=CrawlRequest(**request.request_config.model_dump())
+                )
             except CrawlerError as e:
                 logger.exception(f"Failed to start crawl: {e}")
+
+                if source:
+                    await self.data_service.update_datasource(
+                        source_id=source.source_id,
+                        updates={"status": SourceStage.FAILED, "error": str(e)},
+                    )
                 raise NonRetryableError(str(e)) from e
 
-            # Step 4. Non critcial - publish event
-            await self.event_publisher.publish_event(
-                channel=Channels.content_processing_channel(source.source_id),
-                message=ContentProcessingEvent(
-                    source_id=source.source_id,
-                    stage=source.stage,
-                ),
-            )
+            # Step 4. Create and link job with firecrawl_id
+            try:
+                await self.job_manager.create_job(
+                    job_type=JobType.CRAWL,
+                    details=CrawlJobDetails(
+                        source_id=source.source_id,
+                        url=request.request_config.url,
+                        firecrawl_id=firecrawl_response.job_id,
+                    ),
+                )
+            except SupabaseAPIError as e:
+                logger.exception(f"Failed to create job: {e}")
+                if source:
+                    await self.data_service.update_datasource(
+                        source_id=source.source_id,
+                        updates={"status": SourceStage.FAILED, "error": str(e)},
+                    )
+                if firecrawl_response:
+                    await self.crawler.cancel_crawl(firecrawl_id=firecrawl_response.job_id)
+                raise NonRetryableError(str(e)) from e
 
-            logger.debug("STEP 3. Crawl started successfully")
-
-            # 3. Create and link job with firecrawl_id
-            job = await self.job_manager.create_job(
-                job_type=JobType.CRAWL,
-                details=CrawlJobDetails(
-                    source_id=source.source_id,
-                    url=request.request_config.url,
-                    firecrawl_id=response.job_id,
-                ),
-            )
+            # Step 5. Non critcial - publish event
+            try:
+                await self.event_publisher.publish_event(
+                    channel=Channels.content_processing_channel(source.source_id),
+                    message=ContentProcessingEvent(
+                        source_id=source.source_id,
+                        stage=source.stage,
+                    ),
+                )
+            except Exception as e:
+                logger.exception(f"Failed to publish event: {e}")
+                raise NonRetryableError(str(e)) from e
 
             return AddContentSourceResponse.from_source(source)
-        except CrawlerError as e:
-            logger.exception(f"Crawling of the source failed: {e}")
-            await self.crawler.cancel_crawl(firecrawl_id=response.job_id)
-            raise NonRetryableError(f"Crawling of the source failed: {e}") from e
-        except Exception as e:
-            # Infrastructure error -> returns a response
+        except NonRetryableError as e:
             logger.exception(f"Failed to add source: {e}")
-            if source:
-                await self.data_service.update_datasource(
-                    source_id=source.source_id,
-                    updates={"status": SourceStage.FAILED, "error": str(e)},
-                )
-            if job:
-                await self.job_manager.update_job(
-                    job_id=job.job_id, updates={"status": JobStatus.FAILED, "error": str(e)}
-                )
-
-            # Publish failed event
+            # Just published the event, and do final cleanup
             await self.event_publisher.publish_event(
                 channel=Channels.content_processing_channel(source.source_id),
                 message=self.event_publisher.create_event(
@@ -144,7 +150,12 @@ class ContentService:
                     stage=SourceStage.FAILED,
                 ),
             )
-            raise NonRetryableError("An internal server error occured, we are working on it.") from e
+            if source:
+                await self.data_service.update_datasource(
+                    source_id=source.source_id,
+                    updates={"status": SourceStage.FAILED, "error": str(e)},
+                )
+            raise
 
     async def _create_and_save_datasource(self, request: AddContentSourceRequest, user_id: UUID) -> DataSource:
         """Initiates saving of the datasource record into the database."""
@@ -427,36 +438,48 @@ class ContentService:
             List of SourceListItemDTO objects
         """
         # Get all sources for this user
-        sources = await DataSource.get_by_user_id(user_id)
+        try:
+            sources = await self.data_service.list_datasources(user_id=user_id, include_deleted=include_deleted)
+            logger.debug(f"Found {len(sources)} sources")
+        except SupabaseAPIError as e:
+            logger.error(f"Error fetching sources: {str(e)}")
+            raise NonRetryableError(str(e)) from e
 
         # If no sources, return empty list
         if not sources:
+            logger.debug("No sources found, returning empty list")
             return []
+
+        # Extract source_ids from the user's sources
+        source_ids = [source.source_id for source in sources]
 
         # Get all summaries in one query
         try:
-            all_summaries = await self.data_service.list_source_summaries(user_id=user_id)
+            # Get summaries for the user's sources only
+            all_summaries = await self.data_service.list_source_summaries(source_ids=source_ids)
+            logger.debug(f"Found {len(all_summaries)} source summaries")
             # Convert to mapping for easy lookup
             summary_map = {s.source_id: s for s in all_summaries} if all_summaries else {}
-        except Exception as e:
+        except SupabaseAPIError as e:
             logger.error(f"Error fetching source summaries: {str(e)}")
-            summary_map = {}  # Use empty dict if summaries fetch fails
+            raise NonRetryableError(str(e)) from e
 
         # Get all preferences in one batch
         try:
             all_settings = await self.data_service.get_user_source_settings(user_id)
+            logger.debug(f"Found {len(all_settings)} user settings")
             # Convert to mapping for easy lookup
             settings_map = {setting.source_id: setting for setting in all_settings} if all_settings else {}
-        except Exception as e:
-            logger.error(f"Error fetching user preferences: {str(e)}")
-            settings_map = {}  # Use empty dict if preferences fetch fails
+        except SupabaseAPIError as e:
+            logger.error(f"Error fetching user settings: {str(e)}")
+            raise NonRetryableError(str(e)) from e
 
         # Assemble DTOs
         return [
             SourceListItemDTO.from_models(
                 source=source,
-                summary=summary_map.get(source.source_id),
-                settings=settings_map.get(source.source_id),
+                summary=summary_map.get(source.source_id, None),
+                settings=settings_map.get(source.source_id, None),
             )
             for source in sources
         ]

@@ -125,8 +125,6 @@ disallow_incomplete_defs = true
 disallow_subclassing_any = false
 disallow_any_explicit = false
 
-# For faster performance
-follow_imports = "normal"
 
 plugins = ["pydantic.mypy"]
 

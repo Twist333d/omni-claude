@@ -19,8 +19,11 @@ class KollektivError(Exception):
     def __init__(self, error_message: str | None):
         """Create an exception with an optional error error_message"""
         self.error_message = error_message
+        super().__init__(error_message)  # Pass message to parent Exception class
 
-    pass
+    def __str__(self) -> str:
+        """Return a string representation of the error."""
+        return str(self.error_message) if self.error_message else "Unknown error"
 
 
 class RetryableError(KollektivError):

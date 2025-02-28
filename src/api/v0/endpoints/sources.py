@@ -58,7 +58,9 @@ async def add_source(
         response = await content_service.add_source(request, user_id)
         return response
     except (CrawlerError, NonRetryableError) as e:
-        raise HTTPException(status_code=500, detail=ErrorResponse(code=ErrorCode.SERVER_ERROR, detail=str(e))) from e
+        raise HTTPException(
+            status_code=500, detail=ErrorResponse(code=ErrorCode.SERVER_ERROR, detail=str(e)).model_dump(mode="json")
+        ) from e
 
 
 @router.get(
@@ -83,7 +85,35 @@ async def stream_source_events(source_id: UUID, content_service: ContentServiceD
 
         return EventSourceResponse(event_stream(), media_type="text/event-stream")
     except ValueError as e:
-        raise HTTPException(status_code=404, detail=ErrorResponse(code=ErrorCode.CLIENT_ERROR, detail=str(e))) from e
+        raise HTTPException(
+            status_code=404, detail=ErrorResponse(code=ErrorCode.CLIENT_ERROR, detail=str(e)).model_dump(mode="json")
+        ) from e
+
+
+@router.get(
+    Routes.V0.Sources.SOURCES,
+    response_model=list[SourceListItemDTO],
+    responses={
+        200: {"model": list[SourceListItemDTO]},
+        500: {"model": ErrorResponse, "description": "Internal server error"},
+    },
+    status_code=status.HTTP_200_OK,
+)
+async def get_sources(
+    user_id: UserIdDep,
+    content_service: ContentServiceDep,
+) -> list[SourceListItemDTO]:
+    """Returns a list of all sources that a user has."""
+    try:
+        return await content_service.get_sources_list(user_id=user_id)
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=ErrorResponse(
+                code=ErrorCode.SERVER_ERROR,
+                detail="An error occurred while trying to get the list of sources. We are working on it already.",
+            ).model_dump(mode="json"),
+        ) from e
 
 
 @router.get(
@@ -103,33 +133,14 @@ async def get_source_status(source_id: UUID, content_service: ContentServiceDep)
         if response is None:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
-                detail=ErrorResponse(code=ErrorCode.NOT_FOUND, detail=f"Source {source_id} not found"),
+                detail=ErrorResponse(code=ErrorCode.NOT_FOUND, detail=f"Source {source_id} not found").model_dump(
+                    mode="json"
+                ),
             )
         return response
     except NonRetryableError as e:
-        raise HTTPException(status_code=500, detail=ErrorResponse(code=ErrorCode.SERVER_ERROR, detail=str(e))) from e
-
-
-@router.get(
-    Routes.V0.Sources.SOURCES,
-    response_model=list[SourceListItemDTO],
-    responses={
-        200: {"model": list[SourceListItemDTO]},
-        500: {"model": ErrorResponse, "description": "Internal server error"},
-    },
-    status_code=status.HTTP_200_OK,
-)
-async def get_sources(content_service: ContentServiceDep, user_id: UserIdDep) -> list[SourceListItemDTO]:
-    """Returns a list of all sources that a user has."""
-    try:
-        return await content_service.get_sources_list(user_id=user_id)
-    except Exception as e:
         raise HTTPException(
-            status_code=500,
-            detail=ErrorResponse(
-                code=ErrorCode.SERVER_ERROR,
-                detail="An error occurred while trying to get the list of sources. We are working on it already.",
-            ),
+            status_code=500, detail=ErrorResponse(code=ErrorCode.SERVER_ERROR, detail=str(e)).model_dump(mode="json")
         ) from e
 
 
@@ -155,7 +166,9 @@ async def update_source_settings(
             user_id=user_id, source_id=source_id, is_active=request.is_active
         )
     except Exception as e:
-        raise HTTPException(status_code=500, detail=ErrorResponse(code=ErrorCode.SERVER_ERROR, detail=str(e))) from e
+        raise HTTPException(
+            status_code=500, detail=ErrorResponse(code=ErrorCode.SERVER_ERROR, detail=str(e)).model_dump(mode="json")
+        ) from e
 
 
 @router.delete(
@@ -172,6 +185,10 @@ async def delete_source(source_id: UUID, content_service: ContentServiceDep) -> 
     try:
         return await content_service.delete_source(source_id=source_id)
     except EntityNotFoundError as e:
-        raise HTTPException(status_code=404, detail=ErrorResponse(code=ErrorCode.NOT_FOUND, detail=str(e))) from e
+        raise HTTPException(
+            status_code=404, detail=ErrorResponse(code=ErrorCode.NOT_FOUND, detail=str(e)).model_dump()
+        ) from e
     except Exception as e:
-        raise HTTPException(status_code=500, detail=ErrorResponse(code=ErrorCode.SERVER_ERROR, detail=str(e))) from e
+        raise HTTPException(
+            status_code=500, detail=ErrorResponse(code=ErrorCode.SERVER_ERROR, detail=str(e)).model_dump()
+        ) from e

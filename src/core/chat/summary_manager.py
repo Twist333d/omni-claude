@@ -215,7 +215,7 @@ if __name__ == "__main__":
             # Print results
             logger.info("Summary generation complete!")
             logger.info("=== Generated Summary ===")
-            logger.info(f"Summary: {summary.summary}")
+            logger.info(f"Summary: {summary.summary_text}")
             logger.info("=== Keywords ===")
             logger.info(f"Keywords: {', '.join(summary.keywords)}")
 
