@@ -1,5 +1,16 @@
-from typing import Self
+from typing import Any, Self
 from uuid import UUID
+
+# TODO: Exception handling is a major learning area for me. This is a mess.
+# Proper structure:
+# 1. Define a base exception class (KollektivError)
+# 2. Divide into 2 groups - retryable and non-retryable
+# 3. Divide each group into MECE sub-groups, for example by domains or services (database, llm, validation, etc)
+# 4. Catch all exceptions from 3rd party libraries and services and raise custom exceptions
+# 5. Service layer should catch custom exceptions and raise them to the API layer or handle them internally
+# 6. API layer catches necessary exceptions and raises HTTP status codes
+# 7. There is a global exception handler which catches all missed Exception types and raises HTTP 500
+# 8. The goal is to drive down unhandled exceptions to 0
 
 
 class KollektivError(Exception):
@@ -95,7 +106,7 @@ class EmptyContentError(CrawlerError, RetryableError):
 ## Supabase
 
 
-class DatabaseError(NonRetryableError):
+class SupabaseAPIError(NonRetryableError):
     """Raised when a database operation fails."""
 
     def __init__(
@@ -119,25 +130,25 @@ class DatabaseError(NonRetryableError):
         return self
 
 
-class EntityNotFoundError(DatabaseError):
-    """Raised when an entity is not found in the database."""
+class RetryableDatabaseError(RetryableError):  # Changed from SupabaseAPIError
+    """Retryable database errors (connection, timeout, etc)."""
 
-    def __init__(self, error_message: str, operation: str, entity_type: str):
-        self.error_message = error_message
-        super().__init__(error_message, operation=operation, entity_type=entity_type)
-
-
-class EntityValidationError(DatabaseError):
-    """Raised when entity validation fails."""
-
-    def __init__(self, entity_type: str, validation_errors: dict, operation: str):
-        self.entity_type = entity_type
-        self.validation_errors = validation_errors
-        error_message = f"Validation failed for {entity_type}: {validation_errors}"
-        super().__init__(error_message, entity_type=entity_type, operation=operation)
+    def __init__(self, message: str, operation: str, cause: Exception | None = None):
+        self.operation = operation
+        self.cause = cause
+        super().__init__(message)
 
 
-class BulkOperationError(DatabaseError):
+class EntityNotFoundError(SupabaseAPIError):
+    """Entity not found in database. Only raise when business logic requires it."""
+
+    def __init__(self, entity_type: str, identifier: Any):
+        super().__init__(
+            error_message=f"{entity_type} with id {identifier} not found", operation="find", entity_type=entity_type
+        )
+
+
+class BulkOperationError(SupabaseAPIError):
     """Raised when a bulk database operation fails."""
 
     def __init__(self, entity_type: str, operation: str, failed_items: list, error: Exception | None = None):
@@ -216,3 +227,12 @@ class NonRetryableLLMError(NonRetryableError, LLMError):
     def __init__(self, message: str, original_error: Exception):
         super().__init__(f"A non-retryable error occured in Anthropic chat: {message}")
         self.original_error = original_error
+
+
+class RetryableCrawlerError(RetryableError, CrawlerError):
+    """Retryable crawler errors (network, timeout issues)."""
+
+    def __init__(self, message: str, operation: str, cause: Exception | None = None):
+        self.operation = operation
+        self.cause = cause
+        super().__init__(message)

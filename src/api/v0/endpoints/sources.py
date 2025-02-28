@@ -16,7 +16,8 @@ from src.models.content_models import (
     DeleteSourceResponse,
     SourceEvent,
     SourceListItemDTO,
-    UserSourceSettingsRequest,
+    UpdateSourceSettingsRequest,
+    UserSourceSettings,
 )
 
 logger = get_logger()
@@ -86,7 +87,7 @@ async def stream_source_events(source_id: UUID, content_service: ContentServiceD
 
 
 @router.get(
-    Routes.V0.Sources.SOURCES,
+    Routes.V0.Sources.SOURCE,
     response_model=DataSourceStatusResponse,
     responses={
         200: {"model": DataSourceStatusResponse},
@@ -102,7 +103,7 @@ async def get_source_status(source_id: UUID, content_service: ContentServiceDep)
         if response is None:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
-                detail=ErrorResponse(code=ErrorCode.NOT_FOUND, detail=f"Source {source_id} not found").model_dump(),
+                detail=ErrorResponse(code=ErrorCode.NOT_FOUND, detail=f"Source {source_id} not found"),
             )
         return response
     except NonRetryableError as e:
@@ -133,22 +134,25 @@ async def get_sources(content_service: ContentServiceDep, user_id: UserIdDep) ->
 
 
 @router.patch(
-    Routes.V0.Sources.SOURCE_SETTINGS,
-    response_model=UserSourceSettingsRequest,
+    Routes.V0.Sources.SOURCES,
+    response_model=UserSourceSettings,
     responses={
-        200: {"model": UserSourceSettingsRequest},
+        200: {"model": UserSourceSettings},
         400: {"model": ErrorResponse},
         500: {"model": ErrorResponse},
     },
     status_code=status.HTTP_200_OK,
 )
-async def update_source_preference(
-    source_id: UUID, preference: UserSourceSettingsRequest, user_id: UserIdDep, content_service: ContentServiceDep
-) -> UserSourceSettingsRequest:
-    """Updates a source preference by ID."""
+async def update_source_settings(
+    source_id: UUID,
+    request: UpdateSourceSettingsRequest,
+    user_id: UserIdDep,
+    content_service: ContentServiceDep,
+) -> UserSourceSettings:
+    """Updates a source settings by ID."""
     try:
         return await content_service.update_source_active_state(
-            user_id=user_id, source_id=source_id, is_active=preference.is_active
+            user_id=user_id, source_id=source_id, is_active=request.is_active
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=ErrorResponse(code=ErrorCode.SERVER_ERROR, detail=str(e))) from e

@@ -15,13 +15,14 @@ from anthropic import (
     PermissionDeniedError,
     RateLimitError,
 )
+from pydantic import ValidationError
+from supabase import PostgrestAPIError
 
 from src.core._exceptions import (
-    DatabaseError,
-    EntityNotFoundError,
-    EntityValidationError,
     NonRetryableLLMError,
+    RetryableDatabaseError,
     RetryableLLMError,
+    SupabaseAPIError,
 )
 from src.infra.logger import get_logger
 
@@ -118,46 +119,43 @@ def anthropic_error_handler(func: Callable) -> Callable[..., T]:
 
 def supabase_operation(func: Callable[P, Coroutine[Any, Any, RT]]) -> Callable[P, Coroutine[Any, Any, RT]]:
     """
-    Handles common Supabase operations and errors.
+    Handles Supabase operations and errors.
 
-    This decorator catches common exceptions that can occur during Supabase
-    operations, such as database errors, entity not found errors, and
-    validation errors. It also handles logging of these errors.
-
-    Args:
-        func: The function to decorate.
-
-    Returns:
-        The decorated function.
-
-    Raises:
-        DatabaseError: If a database error occurs.
-        EntityNotFoundError: If an entity is not found.
-        EntityValidationError: If an entity fails validation.
+    Converts PostgrestAPIError to our domain exceptions:
+    - Connection/timeout errors -> RetryableDatabaseError
+    - Other database errors -> SupabaseAPIError
+    - Validation errors -> ValidationError
     """
 
     @wraps(func)
     async def async_wrapper(*args: P.args, **kwargs: P.kwargs) -> RT:
         try:
             return await func(*args, **kwargs)
-        except DatabaseError as e:
-            logger.exception(f"Database error in {func.__name__}: {e.error_message}")
-            raise e from None
-        except EntityNotFoundError as e:
-            logger.warning(f"Entity not found error in {func.__name__}: {e.error_message}")
-            raise e from None
-        except EntityValidationError as e:
-            logger.exception(f"Entity validation error in {func.__name__}: {e.error_message}")
-            raise e from None
-        except Exception as e:
-            logger.exception(f"Unexpected error in {func.__name__}: {e}")
-            raise DatabaseError(
-                error_message=f"Unexpected error in {func.__name__}",
-                operation=func.__name__,
-                entity_type=None,
-                details={"error": str(e)},
-                cause=e,
-            ) from e
+
+        except PostgrestAPIError as e:
+            error_code = getattr(e, "code", "")
+
+            # Connection/resource errors are retryable
+            if (
+                error_code.startswith("08")  # connection errors
+                or error_code.startswith("53")  # resource errors
+                or error_code == "57014"  # query canceled
+            ):
+                logger.warning(
+                    "Retryable database error",
+                    extra={"operation": func.__name__, "error_code": error_code, "error": str(e)},
+                )
+                raise RetryableDatabaseError(message=str(e), operation=func.__name__, cause=e) from e
+
+            # All other Postgres errors
+            logger.error(
+                "Database error", extra={"operation": func.__name__, "error_code": error_code, "error": str(e)}
+            )
+            raise SupabaseAPIError(error_message=str(e), operation=func.__name__, cause=e) from e
+
+        except ValidationError as e:
+            logger.error("Validation error", extra={"operation": func.__name__, "errors": e.errors()})
+            raise ValidationError(e.errors(), e.model) from e
 
     return async_wrapper
 

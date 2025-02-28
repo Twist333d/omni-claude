@@ -10,7 +10,7 @@ from sse_starlette.sse import EventSourceResponse
 from src.api.dependencies import ChatServiceDep, SupabaseManagerDep
 from src.api.routes import CURRENT_API_VERSION, Routes
 from src.api.v0.schemas.base_schemas import ErrorCode, ErrorResponse
-from src.core._exceptions import DatabaseError, EntityNotFoundError, NonRetryableLLMError, RetryableLLMError
+from src.core._exceptions import EntityNotFoundError, NonRetryableLLMError, RetryableLLMError, SupabaseAPIError
 from src.infra.logger import get_logger
 from src.models.chat_models import (
     ConversationHistoryResponse,
@@ -84,7 +84,7 @@ async def list_conversations(user_id: UUID, chat_service: ChatServiceDep) -> Con
     """Get grouped list of conversations."""
     try:
         return await chat_service.get_conversations(user_id)
-    except DatabaseError as e:
+    except SupabaseAPIError as e:
         logger.error(f"Database error while getting conversations for user {user_id}: {e}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -146,7 +146,7 @@ async def get_conversation(
             detail=ErrorResponse(code=ErrorCode.CLIENT_ERROR, detail="Conversation not found."),
         ) from e
     # Handle all other database errors
-    except DatabaseError as e:
+    except SupabaseAPIError as e:
         logger.error(f"Database error while getting conversation {conversation_id}: {e}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,

@@ -6,7 +6,7 @@ from uuid import UUID
 import anthropic
 from anthropic.types import Message, MessageParam, TextBlockParam
 
-from src.core._exceptions import DatabaseError, NonRetryableLLMError, RetryableLLMError
+from src.core._exceptions import NonRetryableLLMError, RetryableLLMError, SupabaseAPIError
 from src.core.chat.prompt_manager import PromptManager
 from src.core.chat.tool_manager import ToolManager, ToolName
 from src.infra.data.data_repository import DataRepository
@@ -165,7 +165,7 @@ class SummaryManager:
             try:
                 # Then try to save it
                 await self.data_service.save(SourceSummary, summary_response)
-            except DatabaseError:
+            except SupabaseAPIError:
                 # Log the full trace for database errors
                 logger.error("Failed to save summary to database", exc_info=True)
                 # In this case, we might still want to return the summary even if save failed

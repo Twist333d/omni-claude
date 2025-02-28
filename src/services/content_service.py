@@ -26,7 +26,7 @@ from src.models.content_models import (
     SourceEvent,
     SourceListItemDTO,
     SourceStage,
-    UserSourceSettingsRequest,
+    UserSourceSettings,
 )
 from src.models.firecrawl_models import CrawlRequest
 from src.models.job_models import CrawlJobDetails, Job, JobStatus, JobType, ProcessingJobDetails
@@ -103,8 +103,8 @@ class ContentService:
 
             return AddContentSourceResponse.from_source(source)
         except CrawlerError as e:
-            # Crawler error -> returns a response
             logger.exception(f"Crawling of the source failed: {e}")
+            await self.crawler.cancel_crawl(firecrawl_id=response.job_id)
             raise NonRetryableError(f"Crawling of the source failed: {e}") from e
         except Exception as e:
             # Infrastructure error -> returns a response
@@ -147,16 +147,19 @@ class ContentService:
         logger.info(f"Data source {data_source.source_id} created successfully")
 
         # Create default source settings (inactive by default)
-        default_settings = UserSourceSettingsRequest(user_id=user_id, source_id=data_source.source_id, is_active=False)
-        await self.data_service.save_user_source_preference(settings=default_settings)
+        default_settings = UserSourceSettings(user_id=user_id, source_id=data_source.source_id, is_active=False)
+        await self.data_service.save_user_source_settings(settings=default_settings)
         logger.info(f"Default settings created for source {data_source.source_id}")
 
         return data_source
 
     async def _save_user_request(self, request: AddContentSourceRequestDB) -> None:
-        logger.debug(f"Saving user request {request.model_dump()}")
-        await self.data_service.save_user_request(request=request)
-        logger.info(f"User request {request.request_id} saved successfully")
+        try:
+            await self.data_service.save_user_request(request=request)
+            logger.info(f"User request {request.request_id} saved successfully")
+        except Exception as e:
+            logger.exception(f"Failed to save user request {request.request_id}: {e}")
+            raise
 
     async def get_source_status(self, source_id: UUID) -> DataSourceStatusResponse | None:
         """GET /sources/{source_id} entrypoint
@@ -441,7 +444,7 @@ class ContentService:
             for source in sources
         ]
 
-    async def update_source_active_state(self, user_id: UUID, source_id: UUID, is_active: bool):
+    async def update_source_active_state(self, user_id: UUID, source_id: UUID, is_active: bool) -> UserSourceSettings:
         """Updates the active state of a source."""
         # Get existing settings (we know they exist because we create them with the source)
         settings = await self.data_service.get_user_source_settings(user_id=user_id, source_id=source_id)
@@ -451,7 +454,7 @@ class ContentService:
 
         # Save updated settings
         await self.data_service.save_user_source_settings(settings=settings)
-        return settings
+        return None
 
     async def delete_source(self, source_id: UUID, hard_delete: bool = False) -> None:
         """Deletes a source by ID.

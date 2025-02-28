@@ -19,7 +19,7 @@ from src.models.content_models import (
     DataSource,
     Document,
     SourceSummary,
-    UserSourceSettingsRequest,
+    UserSourceSettings,
 )
 from src.models.job_models import Job
 from src.models.vector_models import VectorCollection
@@ -29,6 +29,8 @@ logger = get_logger()
 T = TypeVar("T", bound=SupabaseModel)
 
 
+# TODO: This was a mistake I made when I was young and stupid
+# TODO: Will need to fix it later
 class DataService:
     """Service layer responsible for coordinating data operations and business logic.
 
@@ -263,20 +265,20 @@ class DataService:
 
     async def get_user_source_settings(
         self, user_id: UUID, source_id: UUID | None = None
-    ) -> UserSourceSettingsRequest | list[UserSourceSettingsRequest] | None:
+    ) -> UserSourceSettings | list[UserSourceSettings] | None:
         """Returns a list of all user source settings for a user."""
         if source_id is None:
-            result = await self.repository.find(UserSourceSettingsRequest, filters={"user_id": user_id})
+            result = await self.repository.find(UserSourceSettings, filters={"user_id": user_id})
         else:
             result = await self.repository.find_by_id(
-                UserSourceSettingsRequest, filters={"user_id": user_id, "source_id": source_id}
+                UserSourceSettings, filters={"user_id": user_id, "source_id": source_id}
             )
         return result
 
-    async def save_user_source_settings(self, settings: UserSourceSettingsRequest) -> UserSourceSettingsRequest:
+    async def save_user_source_settings(self, settings: UserSourceSettings) -> UserSourceSettings:
         """Save a user source settings."""
         result = await self.repository.save(settings)
-        return UserSourceSettingsRequest.model_validate(result)
+        return UserSourceSettings.model_validate(result)
 
     async def delete_datasource(self, source_id: UUID, hard_delete: bool = False) -> None:
         """Delete a data source by ID.

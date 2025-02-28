@@ -3,9 +3,14 @@ from uuid import UUID
 
 import httpx
 from firecrawl import FirecrawlApp
-from httpx import ConnectError, HTTPStatusError, TimeoutException
+from requests.exceptions import (
+    ConnectionError,  # Failed to connect, DNS failure, refused connection
+    HTTPError,  # HTTP response with 4XX or 5XX status
+    RequestException,  # Base class for all requests exceptions
+    Timeout,  # Request timed out
+)
 
-from src.core._exceptions import CrawlerError, EmptyContentError
+from src.core._exceptions import CrawlerError, EmptyContentError, RetryableCrawlerError
 from src.infra.decorators import generic_error_handler, tenacity_retry_wrapper
 from src.infra.logger import get_logger
 from src.infra.settings import get_settings
@@ -87,7 +92,12 @@ class FireCrawler:
             logger.exception(f"Error building params: {e}")
             raise
 
-    @tenacity_retry_wrapper((TimeoutException, ConnectError))
+    @tenacity_retry_wrapper(
+        exceptions=(
+            ConnectionError,  # Network issues
+            Timeout,  # Timeouts
+        )
+    )
     async def start_crawl(self, request: CrawlRequest) -> FireCrawlResponse:
         """Start a new crawl job with webhook configuration."""
         try:
@@ -97,14 +107,63 @@ class FireCrawler:
 
             logger.info(f"Received response from FireCrawl: {firecrawl_response}")
             return firecrawl_response
-        except (ConnectError, TimeoutException) as e:
-            # Network errors will be retried by tenacity
-            logger.warning(f"Error starting crawl: {e}")
-            raise
-        except HTTPStatusError as e:
-            # Non-network errors will not be retried by tenacity
-            logger.exception(f"Error starting crawl: {e}")
-            raise CrawlerError(f"Error starting crawl: {e}") from e
+
+        except (ConnectionError, Timeout) as e:
+            # Network/timeout errors - will be retried
+            logger.warning(
+                "Retryable network error", extra={"operation": "start_crawl", "error": str(e), "url": str(request.url)}
+            )
+            raise RetryableCrawlerError(message=str(e), operation="start_crawl", cause=e) from e
+
+        except HTTPError as e:
+            # Bad response status - won't retry
+            logger.error(
+                "HTTP error from FireCrawl",
+                extra={
+                    "operation": "start_crawl",
+                    "status_code": e.response.status_code if e.response else None,
+                    "error": str(e),
+                },
+            )
+            raise CrawlerError(f"FireCrawl API error: {e}") from e
+
+        except RequestException as e:
+            # Other request errors - won't retry
+            logger.error(f"Unexpected request error: {e}")
+            raise CrawlerError(f"Unexpected FireCrawl error: {e}") from e
+
+    @tenacity_retry_wrapper(
+        exceptions=(
+            ConnectionError,
+            Timeout,
+        )
+    )
+    async def cancel_crawl(self, firecrawl_id: str) -> None:
+        """Cancel a crawl job with retries on network issues."""
+        try:
+            self.firecrawl_app.cancel_crawl(firecrawl_id)
+
+        except (ConnectionError, Timeout) as e:
+            logger.warning(
+                "Retryable network error",
+                extra={"operation": "cancel_crawl", "error": str(e), "firecrawl_id": firecrawl_id},
+            )
+            raise RetryableCrawlerError(message=str(e), operation="cancel_crawl", cause=e) from e
+
+        except HTTPError as e:
+            logger.error(
+                "HTTP error from FireCrawl",
+                extra={
+                    "operation": "cancel_crawl",
+                    "status_code": e.response.status_code if e.response else None,
+                    "error": str(e),
+                },
+            )
+            raise CrawlerError(f"Failed to cancel crawl: {e}") from e
+
+        except RequestException as e:
+            logger.error(f"Unexpected request error canceling crawl: {e}")
+            raise CrawlerError(f"Unexpected error canceling crawl: {e}") from e
 
     async def get_results(self, firecrawl_id: str, source_id: UUID) -> list[Document]:
         """Get final results for a completed job.

@@ -327,7 +327,7 @@ class SourceEvent(BaseModel):
             )
 
 
-class UserSourceSettingsRequest(SupabaseModel):
+class UserSourceSettings(SupabaseModel):
     """User setting for a source. Controls whether a source is active or not."""
 
     preference_id: UUID = Field(default_factory=uuid4, description="Unique identifier for the preferences")
@@ -336,6 +336,12 @@ class UserSourceSettingsRequest(SupabaseModel):
     is_active: bool = Field(default=False, description="Whether the source is active")
 
     _db_config: ClassVar[dict] = {"schema": "content", "table": "user_preferences", "primary_key": "preferences_id"}
+
+
+class UpdateSourceSettingsRequest(APIModel):
+    """Request model for updating source settings."""
+
+    is_active: bool = Field(..., description="Whether the source should be active")
 
 
 # GET /sources
@@ -358,9 +364,7 @@ class SourceListItemDTO(APIModel):
     is_active: bool = Field(default=False, description="Whether the source is active")
 
     @classmethod
-    def from_models(
-        cls, source: DataSource, summary: SourceSummary, settings: UserSourceSettingsRequest
-    ) -> SourceListItemDTO:
+    def from_models(cls, source: DataSource, summary: SourceSummary, settings: UserSourceSettings) -> SourceListItemDTO:
         return cls(
             source_id=source.source_id,
             url=source.metadata.url,
@@ -373,7 +377,6 @@ class SourceListItemDTO(APIModel):
         )
 
 
-# PUT /sources/{source_id} <<< this can be a list
 # DELETE /sources/{source_id}
 class DeleteSourceResponse(APIModel):
     """Response model for the deletion of a source."""

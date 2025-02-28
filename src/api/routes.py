@@ -32,8 +32,8 @@ class Routes:
             """Content management routes."""
 
             SOURCES = "/sources"
+            SOURCE = "/sources/{source_id}"
             SOURCE_EVENTS = "/sources/{source_id}/events"
-            SOURCE_SETTINGS = "/sources/{source_id}/settings"
 
         class Chat:
             """Chat routes."""

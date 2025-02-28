@@ -1,7 +1,8 @@
 from typing import Any, TypeVar
 from uuid import UUID
 
-from src.infra.decorators import supabase_operation
+from src.domain.exceptions import RetryableDatabaseError
+from src.infra.decorators import supabase_operation, tenacity_retry_wrapper
 from src.infra.external.supabase_manager import SupabaseManager
 from src.infra.logger import get_logger
 from src.models.base_models import SupabaseModel
@@ -61,6 +62,7 @@ class DataRepository:
         self.supabase_manager = supabase_manager
         logger.info("✓ Initialized data repository successfully")
 
+    @tenacity_retry_wrapper(exceptions=(RetryableDatabaseError,))
     @supabase_operation
     async def save(self, entity: T | list[T]) -> T | list[T]:
         """Save or update an entity in the database.
@@ -107,6 +109,7 @@ class DataRepository:
         saved = [entity_type.model_validate(item) for item in result.data]
         return saved if isinstance(entity, list) else saved[0]
 
+    @tenacity_retry_wrapper(exceptions=(RetryableDatabaseError,))
     @supabase_operation
     async def find_by_id(self, model_class: type[T], id: UUID, include_deleted: bool = False) -> T | None:
         """Retrieve a single entity by its primary key.
@@ -135,6 +138,7 @@ class DataRepository:
             return model_class.model_validate(result[0])
         return None
 
+    @tenacity_retry_wrapper(exceptions=(RetryableDatabaseError,))
     @supabase_operation
     async def find(
         self,
@@ -234,6 +238,7 @@ class DataRepository:
         result = await query.execute()
         return [model_class.model_validate(item) for item in result.data]
 
+    @tenacity_retry_wrapper(exceptions=(RetryableDatabaseError,))
     @supabase_operation
     async def delete(self, model_class: type[T], id: UUID, hard_delete: bool = False) -> None:
         """Delete an entity from the database.
